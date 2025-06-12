@@ -27,22 +27,7 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* === Dark theme overrides === */
-        [data-theme="dark"] {
-            --text-primary: #f7fafc;
-            --text-secondary: #cbd5e0;
-            --text-tertiary: #a0aec0;
-            --background-primary: #1a202c;
-            --background-secondary: #2d3748;
-            --background-glass: rgba(26, 32, 44, 0.85);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --primary-color: #3b82f6;
-            --secondary-color: #60a5fa;
-        }
 
-        body[data-theme="dark"] {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-        }
 
 
 
@@ -1120,38 +1105,13 @@
             }
         });
 
-        // Theme toggle + nav scroll helpers
-        function initTheme() {
-            const storedTheme = localStorage.getItem('theme');
-            if (storedTheme) {
-                document.documentElement.setAttribute('data-theme', storedTheme);
-                updateThemeIcon(storedTheme);
-            }
 
-            const toggleBtn = document.getElementById('themeToggle');
-            if (toggleBtn) {
-                toggleBtn.addEventListener('click', () => {
-                    const current = document.documentElement.getAttribute('data-theme') || 'light';
-                    const next = current === 'light' ? 'dark' : 'light';
-                    document.documentElement.setAttribute('data-theme', next);
-                    localStorage.setItem('theme', next);
-                    updateThemeIcon(next);
-                });
-            }
-        }
-
-        function updateThemeIcon(theme) {
-            const icon = document.querySelector('#themeToggle i');
-            if (!icon) return;
-            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        }
 
 
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             typeWriter();
-            initTheme();
         });
     </script>
 </body>
