@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-color: #f093fb;
+            --primary-color: #60a5fa;
+            --secondary-color: #3b82f6;
+            --accent-color: #93c5fd;
             --text-primary: #1a202c;
             --text-secondary: #4a5568;
             --text-tertiary: #718096;
@@ -39,7 +39,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
             min-height: 100vh;
             position: relative;
             transition: var(--transition);
@@ -56,8 +56,8 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(147, 197, 253, 0.1) 0%, transparent 50%);
             z-index: -1;
             animation: backgroundShift 20s ease-in-out infinite;
         }
@@ -74,7 +74,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -126,7 +126,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(96, 165, 250, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
             z-index: -1;
         }
 
@@ -157,7 +157,7 @@
 
         .profile-pic:hover {
             transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 12px 40px rgba(96, 165, 250, 0.3);
         }
 
         .hero-text {
@@ -465,7 +465,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(180deg, rgba(99, 102, 241, 0.4) 0%, rgba(99, 102, 241, 0.2) 100%);
+            background: linear-gradient(180deg, rgba(96, 165, 250, 0.4) 0%, rgba(96, 165, 250, 0.2) 100%);
             border-radius: 1px;
         }
 
@@ -488,7 +488,7 @@
             top: 1.5rem;
             width: 10px;
             height: 10px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
             border-radius: 50%;
             border: 2px solid white;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -529,21 +529,6 @@
         }
 
         @media (max-width: 768px) {
-            .color-control {
-                top: 10px;
-                right: 10px;
-                padding: 0.8rem;
-                font-size: 0.8rem;
-            }
-
-            .color-control label {
-                display: none;
-            }
-
-            .color-slider {
-                width: 100px;
-            }
-
             .hero {
                 padding: 4rem 0 4rem;
             }
@@ -721,62 +706,7 @@
             margin-top: 1rem;
         }
 
-        /* Color Slider Control */
-        .color-control {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--background-glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 1rem;
-            box-shadow: var(--shadow-md);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
 
-        .color-control label {
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .color-slider {
-            width: 120px;
-            height: 6px;
-            border-radius: 3px;
-            background: linear-gradient(to right, #667eea, #764ba2, #f093fb, #f5576c, #4facfe);
-            outline: none;
-            cursor: pointer;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-
-        .color-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid var(--primary-color);
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .color-slider::-moz-range-thumb {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid var(--primary-color);
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
     </style>
 </head>
 <body>
@@ -784,11 +714,7 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Color Control Slider -->
-    <div class="color-control">
-        <label for="colorSlider">Theme Color:</label>
-        <input type="range" id="colorSlider" class="color-slider" min="0" max="360" value="260">
-    </div>
+
 
     <main>
         <section class="hero">
@@ -891,7 +817,10 @@
                     </div>
                     <div class="card">
                         <h3>ESA - AstroPi Challenge</h3>
-                        <div class="meta">Gallarate, VA | March 2022 - June 2023</div>
+                        <div class="meta">
+                            <i class="fas fa-calendar"></i>
+                            Gallarate, VA | March 2022 - June 2023
+                        </div>
                         <p>I participated in a project with ESA, analyzing satellite data from the ISS to study the evolution of water basins and vegetation. I developed a <span class="highlight">SARIMA model</span> optimized with genetic algorithms.</p>
                         <div class="achievements-container">
                             <div class="achievement">ESA Partnership</div>
@@ -901,7 +830,10 @@
                     </div>
                     <div class="card">
                         <h3>Science with Africa</h3>
-                        <div class="meta">Gallarate, VA | March 2022 - September 2022</div>
+                        <div class="meta">
+                            <i class="fas fa-calendar"></i>
+                            Gallarate, VA | March 2022 - September 2022
+                        </div>
                         <p>I coordinated a STEM project for educators in Nigeria, presenting computer science and C++. I developed a documentary website upon the professor's request.</p>
                         <div class="achievements-container">
                             <div class="achievement">International Coordination</div>
@@ -951,17 +883,26 @@
                 <div class="cards-grid">
                     <div class="card">
                         <h3>Computer Engineering</h3>
-                        <div class="meta">Politecnico di Milano | 2023 - Present</div>
+                        <div class="meta">
+                            <i class="fas fa-calendar"></i>
+                            Politecnico di Milano | 2023 - Present
+                        </div>
                         <p>Bachelor's degree program focused on programming, algorithms, system architectures, and innovative technologies.</p>
                     </div>
                     <div class="card">
                         <h3>Scientific High School</h3>
-                        <div class="meta">Liceo Leonardo Da Vinci, Gallarate | 2018 - 2023</div>
+                        <div class="meta">
+                            <i class="fas fa-calendar"></i>
+                            Liceo Leonardo Da Vinci, Gallarate | 2018 - 2023
+                        </div>
                         <p>Scientific high school diploma with focus on mathematics, physics, and applied sciences.</p>
                     </div>
                     <div class="card">
                         <h3>Specialized Courses</h3>
-                        <div class="meta">Continuous Learning</div>
+                        <div class="meta">
+                            <i class="fas fa-graduation-cap"></i>
+                            Continuous Learning
+                        </div>
                         <p><strong>OrientaMatica</strong> - PRISTEM Center Bocconi University<br>
                         <strong>Swift and SwiftUI</strong> - Online courses 2020-2022</p>
                         <div class="achievements-container">
@@ -993,7 +934,10 @@
                 <div class="cards-grid">
                     <div class="card">
                         <h3>Tutor - TOP Project</h3>
-                        <div class="meta">November 2024 - June 2025</div>
+                        <div class="meta">
+                            <i class="fas fa-calendar"></i>
+                            November 2024 - June 2025
+                        </div>
                         <p>Supporting middle school students in difficulty, offering assistance in mathematics and English (3 hours per week).</p>
                         <div class="achievements-container">
                             <a href="https://bestr.it/award/show/4vJ-CbkLS9-EcjdRaQfGPw" target="_blank" class="achievement" style="text-decoration: none; color: white;">Open Badge - Università Bicocca</a>
@@ -1002,7 +946,10 @@
                     </div>
                     <div class="card">
                         <h3>Food Collection - Donacibo</h3>
-                        <div class="meta">March 2022 - June 2023</div>
+                        <div class="meta">
+                            <i class="fas fa-calendar"></i>
+                            March 2022 - June 2023
+                        </div>
                         <p>Volunteering with the La Luna cooperative in Busto Arsizio, dedicated to packaging and distribution of food and hygiene products for families in need.</p>
                         <div class="achievements-container">
                             <div class="achievement">Social Commitment</div>
@@ -1028,32 +975,7 @@
             }, 1500);
         });
 
-        // Color slider functionality
-        function initColorSlider() {
-            const colorSlider = document.getElementById('colorSlider');
-            const root = document.documentElement;
 
-            function updateColors(hue) {
-                const primaryColor = `hsl(${hue}, 70%, 60%)`;
-                const secondaryColor = `hsl(${hue + 30}, 65%, 55%)`;
-                const accentColor = `hsl(${hue + 60}, 75%, 65%)`;
-                
-                root.style.setProperty('--primary-color', primaryColor);
-                root.style.setProperty('--secondary-color', secondaryColor);
-                root.style.setProperty('--accent-color', accentColor);
-            }
-
-            // Load saved color or use default
-            const savedHue = localStorage.getItem('themeHue') || '260';
-            colorSlider.value = savedHue;
-            updateColors(savedHue);
-
-            colorSlider.addEventListener('input', (e) => {
-                const hue = e.target.value;
-                updateColors(hue);
-                localStorage.setItem('themeHue', hue);
-            });
-        }
 
         // Typing effect
         function typeWriter() {
@@ -1157,7 +1079,6 @@
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            initColorSlider();
             typeWriter();
         });
     </script>
