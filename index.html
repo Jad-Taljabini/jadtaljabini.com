@@ -44,70 +44,7 @@
             background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
         }
 
-        /* === Navigation === */
-        .site-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            transition: var(--transition);
-            backdrop-filter: blur(20px);
-            background: var(--background-glass);
-            border-bottom: 1px solid transparent;
-        }
 
-        .site-nav.scrolled {
-            border-color: var(--border-color);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .nav-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.8rem 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--text-primary);
-            letter-spacing: -1px;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            color: var(--primary-color);
-        }
 
         /* Hero angled edge */
         .hero::after {
@@ -817,21 +754,7 @@
         <div class="loader"></div>
     </div>
 
-    <nav class="site-nav" id="siteNav">
-        <div class="container nav-inner">
-            <a href="#" class="logo">JT</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-            </ul>
-            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </nav>
+
 
     <main>
         <section class="hero">
@@ -1223,23 +1146,12 @@
             icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         }
 
-        function initNavScroll() {
-            const nav = document.getElementById('siteNav');
-            if (!nav) return;
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 64) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
-                }
-            });
-        }
+
 
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             typeWriter();
             initTheme();
-            initNavScroll();
         });
     </script>
 </body>
