@@ -78,39 +78,47 @@
 
         .hero-content {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            gap: 2rem;
+            gap: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .profile-pic {
-            width: 120px;
-            height: 120px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #e9ecef;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
         }
 
         .hero h1 {
             font-size: 2.5rem;
             font-weight: 400;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             letter-spacing: -1px;
         }
 
         .hero p {
             font-size: 1.1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             color: #666;
             font-weight: 300;
         }
 
         .contact-info {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
+            justify-content: flex-start;
+            gap: 1rem;
+            margin-bottom: 0;
             flex-wrap: wrap;
         }
 
@@ -295,6 +303,16 @@
                 padding: 4rem 0 3rem;
             }
             
+            .hero-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
             .hero h1 {
                 font-size: 1.8rem;
                 font-weight: 400;
@@ -305,8 +323,8 @@
             }
             
             .profile-pic {
-                width: 100px;
-                height: 100px;
+                width: 150px;
+                height: 150px;
             }
             
             .nav-links {
@@ -318,8 +336,7 @@
             }
             
             .contact-info {
-                flex-direction: column;
-                align-items: center;
+                justify-content: center;
                 gap: 1rem;
             }
             
@@ -406,13 +423,14 @@
             <div class="container">
                 <div class="hero-content">
                     <img src="./profile.png" alt="Jad Taljabini" class="profile-pic" />
-                    <h1>Jad Taljabini</h1>
-                    <p>Student & Developer | Computer Engineering</p>
-                    <div class="contact-info">
-                        <div class="contact-item">📍 Gallarate, Italy</div>
-                        <div class="contact-item">✉️ business@jadtaljabini.com</div>
+                    <div class="hero-text">
+                        <h1>Jad Taljabini</h1>
+                        <p>Student & Developer | Computer Engineering</p>
+                        <div class="contact-info">
+                            <div class="contact-item">📍 Gallarate, Italy</div>
+                            <div class="contact-item">✉️ business@jadtaljabini.com</div>
+                        </div>
                     </div>
-                    <a href="#about" class="cta-button">Discover my work</a>
                 </div>
             </div>
         </section>
