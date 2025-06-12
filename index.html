@@ -1,14 +1,559 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jad Taljabini</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jad Taljabini - Student & Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e5e5;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #333;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            padding: 6rem 0 4rem;
+            text-align: center;
+            color: #333;
+            background: #ffffff;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            color: #666;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-1px);
+            background: #555;
+        }
+
+        .section {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            margin: 3rem 0;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: -1px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .card .meta {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            color: #333;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .skill-category h4 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #e9ecef;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            margin-left: 1rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 1.5rem;
+            width: 8px;
+            height: 8px;
+            background: #333;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .languages {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .language {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            color: #333;
+            padding: 1.5rem;
+            border-radius: 12px;
+            flex: 1;
+            margin: 0 0.5rem;
+        }
+
+        footer {
+            background: #f8f9fa;
+            color: #666;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .profile-section {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .highlight {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .achievement {
+            background: #333;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 0.2rem;
+            font-weight: 400;
+        }
+    </style>
 </head>
-<body style="font-family: sans-serif; text-align: center; margin-top: 100px;">
-  <h1>Jad Taljabini</h1>
-  <p>Developer · Student · Dreamer</p>
-  <p><a href="https://apps.apple.com/it/app/water-alert/id6443403237?l=en" target="_blank">📱 Water Alert on App Store</a></p>
-  <p><a href="mailto:business@jadtaljabini.com">📩 Contact me</a></p>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">JAD TALJABINI</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>JAD TALJABINI</h1>
+                <p>Student & Developer | Computer Engineering</p>
+                <div class="contact-info">
+                    <div class="contact-item">📍 Gallarate, Italy</div>
+                    <div class="contact-item">📞 324 74 22226</div>
+                    <div class="contact-item">✉️ business@jadtaljabini.com</div>
+                </div>
+                <a href="#about" class="cta-button">Scopri il mio lavoro</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="about" class="section profile-section">
+                <h2>Chi Sono</h2>
+                <p style="font-size: 1.1rem; text-align: center; margin-bottom: 2rem;">
+                    Studente di <span class="highlight">Ingegneria Informatica</span> con una forte passione per l'ecosistema Apple e l'innovazione tecnologica. 
+                    Ho esperienza nello sviluppo di app, gestione progetti e analisi dati. Ho pubblicato un'app sull'App Store, 
+                    collaborato con il <span class="highlight">MIT</span> su un sistema di tracking indoor usando beacon Bluetooth e sviluppo continuamente nuove soluzioni digitali.
+                </p>
+                <p style="text-align: center; font-style: italic; color: #666; font-size: 1.2rem; font-weight: 300;">
+                    Il mio obiettivo è trasformare le idee in prodotti di impatto esplorando AI, sviluppo software e business tecnologico.
+                </p>
+            </section>
+
+            <section id="experience" class="section">
+                <h2>Esperienza Professionale</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>App Developer - inTouch</h3>
+                        <div class="meta">Cambridge, MA, USA | Giugno 2022 - Aprile 2023</div>
+                        <p>Ho sviluppato un'app iOS utilizzando <span class="highlight">Swift e SwiftUI</span> per monitorare il tempo trascorso in una stanza attraverso segnali di beacon Bluetooth. Il progetto, condotto al <span class="highlight">MIT</span>, era destinato a un'applicazione industriale, utilizzando i dati per valutare l'efficacia dei filtri dell'aria negli ambienti chiusi.</p>
+                        <div class="achievement">Accuratezza 100%</div>
+                        <div class="achievement">Pubblicato ISEE 2024</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Stagista - Comune di Gallarate</h3>
+                        <div class="meta">Gallarate, VA | Marzo 2021 - Maggio 2021</div>
+                        <p>Ho collaborato a un progetto PCTO per l'installazione di chioschi informativi nei luoghi simbolo della città, promuovendo la storia e la cultura locale. Ho coordinato la distribuzione dei compiti all'interno del mio gruppo, curando i contenuti sulla Basilica di Santa Maria Assunta e la Tomba Gallica.</p>
+                        <div class="achievement">Coordinamento Team</div>
+                        <div class="achievement">Promozione Culturale</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="section">
+                <h2>Progetti Principali</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Water Alert</h3>
+                        <div class="meta">Progetto Individuale | Marzo 2021 - Ottobre 2024</div>
+                        <p>Ho progettato e sviluppato Water Alert per iOS, iPadOS e WatchOS. L'app traccia l'idratazione quotidiana e invia promemoria personalizzati per incoraggiare l'assunzione regolare di acqua.</p>
+                        <div class="achievement">App Store</div>
+                        <div class="achievement">Multi-Platform</div>
+                        <div class="achievement">SwiftUI</div>
+                    </div>
+                    <div class="card">
+                        <h3>ESA - AstroPi Challenge</h3>
+                        <div class="meta">Gallarate, VA | Marzo 2022 - Giugno 2023</div>
+                        <p>Ho partecipato a un progetto con l'ESA, analizzando dati satellitari dalla ISS per studiare l'evoluzione di bacini idrici e vegetazione. Ho sviluppato un <span class="highlight">modello SARIMA</span> ottimizzato con algoritmi genetici.</p>
+                        <div class="achievement">ESA Partnership</div>
+                        <div class="achievement">Machine Learning</div>
+                        <div class="achievement">Python</div>
+                    </div>
+                    <div class="card">
+                        <h3>Science with Africa</h3>
+                        <div class="meta">Gallarate, VA | Marzo 2022 - Settembre 2022</div>
+                        <p>Ho coordinato un progetto STEM per educatori in Nigeria, presentando informatica e C++. Ho sviluppato un sito web documentario su richiesta del professore.</p>
+                        <div class="achievement">Coordinamento Internazionale</div>
+                        <div class="achievement">STEM Education</div>
+                        <div class="achievement">Web Development</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2>Competenze Tecniche</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Sviluppo</h4>
+                        <ul class="skill-list">
+                            <li>Swift & SwiftUI</li>
+                            <li>C/C++</li>
+                            <li>Python</li>
+                            <li>Xcode</li>
+                            <li>PyCharm</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Produttività</h4>
+                        <ul class="skill-list">
+                            <li>Numbers</li>
+                            <li>Pages</li>
+                            <li>Keynote</li>
+                            <li>Project Management</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Competenze Trasversali</h4>
+                        <ul class="skill-list">
+                            <li>Problem Solving</li>
+                            <li>Communication</li>
+                            <li>Data Analysis</li>
+                            <li>Machine Learning</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <h2>Formazione</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Ingegneria Informatica</h3>
+                        <div class="meta">Politecnico di Milano | 2023 - Presente</div>
+                        <p>Corso di laurea triennale focalizzato su programmazione, algoritmi, architetture dei sistemi e tecnologie innovative.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Liceo Scientifico</h3>
+                        <div class="meta">Liceo Leonardo Da Vinci, Gallarate | 2018 - 2023</div>
+                        <p>Diploma di maturità scientifica con focus su matematica, fisica e scienze applicate.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Corsi Specialistici</h3>
+                        <div class="meta">Formazione Continua</div>
+                        <p><strong>OrientaMatica</strong> - Centro PRISTEM Università Bocconi<br>
+                        <strong>Swift e SwiftUI</strong> - Corsi online 2020-2022</p>
+                        <div class="achievement">Bocconi</div>
+                        <div class="achievement">Apple Technologies</div>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 3rem;">Lingue</h2>
+                <div class="languages">
+                    <div class="language">
+                        <h4>Italiano</h4>
+                        <p>Madrelingua</p>
+                    </div>
+                    <div class="language">
+                        <h4>Inglese</h4>
+                        <p>Avanzato</p>
+                    </div>
+                    <div class="language">
+                        <h4>Arabo</h4>
+                        <p>Intermedio</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Volontariato & Riconoscimenti</h2>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>Tutor - TOP Project</h3>
+                        <div class="meta">Novembre 2024 - Giugno 2025</div>
+                        <p>Supporto studenti delle medie in difficoltà, offrendo assistenza in matematica e inglese (3 ore settimanali).</p>
+                        <div class="achievement">Open Badge - Università Bicocca</div>
+                        <div class="achievement">Certificato Harvard-Bocconi</div>
+                    </div>
+                    <div class="card">
+                        <h3>Raccolta Alimentare - Donacibo</h3>
+                        <div class="meta">Marzo 2022 - Giugno 2023</div>
+                        <p>Volontariato con la cooperativa La Luna di Busto Arsizio, dedicato al confezionamento e distribuzione di cibo e prodotti per l'igiene per famiglie bisognose.</p>
+                        <div class="achievement">Impegno Sociale</div>
+                        <div class="achievement">Collaborazione Team</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Jad Taljabini. Tutti i diritti riservati.</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">
+                "Trasformare idee in prodotti di impatto attraverso innovazione e tecnologia"
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling per i link di navigazione
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animazione fade-in per le sezioni quando entrano nella viewport
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Inizializza le animazioni
+        document.querySelectorAll('.section, .card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Parallax effect per l'hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = `translate3d(0, ${speed}px, 0)`;
+        });
+    </script>
 </body>
 </html>
