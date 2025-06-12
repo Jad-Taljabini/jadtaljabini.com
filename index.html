@@ -77,14 +77,14 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 300;
+            font-size: 2.5rem;
+            font-weight: 400;
             margin-bottom: 1rem;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
             color: #666;
             font-weight: 300;
@@ -126,9 +126,9 @@
         .section {
             background: #ffffff;
             border: 1px solid #e9ecef;
-            margin: 3rem 0;
+            margin: 2rem 0;
             border-radius: 12px;
-            padding: 3rem;
+            padding: 2rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
@@ -275,8 +275,17 @@
         }
 
         @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+            
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
+                font-weight: 400;
+            }
+            
+            .hero p {
+                font-size: 1rem;
             }
             
             .nav-links {
@@ -290,6 +299,46 @@
             .contact-info {
                 flex-direction: column;
                 align-items: center;
+                gap: 1rem;
+            }
+            
+            .section {
+                margin: 1.5rem 0;
+                padding: 1.5rem;
+            }
+            
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            nav {
+                padding: 1rem 15px;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+            }
+            
+            .timeline {
+                padding-left: 1rem;
+            }
+            
+            .timeline-item {
+                margin-left: 0.5rem;
+                padding: 1rem;
+            }
+            
+            .languages {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .language {
+                margin: 0;
             }
         }
 
@@ -330,11 +379,10 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>JAD TALJABINI</h1>
+                <h1>Jad Taljabini</h1>
                 <p>Student & Developer | Computer Engineering</p>
                 <div class="contact-info">
                     <div class="contact-item">📍 Gallarate, Italy</div>
-                    <div class="contact-item">📞 324 74 22226</div>
                     <div class="contact-item">✉️ business@jadtaljabini.com</div>
                 </div>
                 <a href="#about" class="cta-button">Scopri il mio lavoro</a>
