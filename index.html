@@ -27,7 +27,115 @@
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* === Dark theme overrides === */
+        [data-theme="dark"] {
+            --text-primary: #f7fafc;
+            --text-secondary: #cbd5e0;
+            --text-tertiary: #a0aec0;
+            --background-primary: #1a202c;
+            --background-secondary: #2d3748;
+            --background-glass: rgba(26, 32, 44, 0.85);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary-color: #3b82f6;
+            --secondary-color: #60a5fa;
+        }
 
+        body[data-theme="dark"] {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+
+        /* === Navigation === */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            transition: var(--transition);
+            backdrop-filter: blur(20px);
+            background: var(--background-glass);
+            border-bottom: 1px solid transparent;
+        }
+
+        .site-nav.scrolled {
+            border-color: var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.8rem 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero angled edge */
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: var(--background-glass);
+            transform-origin: bottom left;
+            transform: skewY(-3deg);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Card interactive tilt */
+        .card {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
 
         * {
             margin: 0;
@@ -45,8 +153,6 @@
             transition: var(--transition);
             overflow-x: hidden;
         }
-
-
 
         body::before {
             content: '';
@@ -105,8 +211,6 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-
-
 
         .hero {
             padding: 4rem 0 6rem;
@@ -706,8 +810,6 @@
             text-align: left;
             margin-top: 1rem;
         }
-
-
     </style>
 </head>
 <body>
@@ -715,7 +817,21 @@
         <div class="loader"></div>
     </div>
 
-
+    <nav class="site-nav" id="siteNav">
+        <div class="container nav-inner">
+            <a href="#" class="logo">JT</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
 
     <main>
         <section class="hero">
@@ -981,8 +1097,6 @@
             }, 1500);
         });
 
-
-
         // Typing effect
         function typeWriter() {
             const texts = ['Computer Engineering', 'iOS Developer', 'Student Researcher', 'Problem Solver'];
@@ -1083,9 +1197,49 @@
             }
         });
 
+        // Theme toggle + nav scroll helpers
+        function initTheme() {
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+                document.documentElement.setAttribute('data-theme', storedTheme);
+                updateThemeIcon(storedTheme);
+            }
+
+            const toggleBtn = document.getElementById('themeToggle');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    const current = document.documentElement.getAttribute('data-theme') || 'light';
+                    const next = current === 'light' ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', next);
+                    localStorage.setItem('theme', next);
+                    updateThemeIcon(next);
+                });
+            }
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.querySelector('#themeToggle i');
+            if (!icon) return;
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        function initNavScroll() {
+            const nav = document.getElementById('siteNav');
+            if (!nav) return;
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 64) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        }
+
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             typeWriter();
+            initTheme();
+            initNavScroll();
         });
     </script>
 </body>
