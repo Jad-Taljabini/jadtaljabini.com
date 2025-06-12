@@ -550,9 +550,16 @@
             backdrop-filter: blur(20px);
         }
 
-        .profile-section {
-            background: transparent;
-            border: none;
+        .section.profile-section {
+            background: transparent !important;
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+        }
+
+        .section.profile-section::before {
+            display: none !important;
         }
 
         @media (max-width: 768px) {
