@@ -984,41 +984,13 @@
         }
 
         .footer-bottom {
-            text-align: center;
+                text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(37, 99, 235, 0.1);
             color: var(--text-tertiary);
         }
 
-        /* Scroll to Top */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border: none;
-            border-radius: 50%;
-            color: white;
-                font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(100px);
-            transition: var(--transition);
-            z-index: 1000;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .scroll-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .scroll-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
+        
 
         /* Responsive Design */
         @media (max-width: 1024px) {
@@ -1145,22 +1117,20 @@
         .animate-delay-4 { animation-delay: 0.4s; }
         .animate-delay-5 { animation-delay: 0.5s; }
 
-        /* Custom scrollbar */
+        /* Hide scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 0px;
+            background: transparent;
         }
 
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
+        /* For Firefox */
+        html {
+            scrollbar-width: none;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--gradient-primary);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-dark);
+        /* For IE and Edge */
+        body {
+            -ms-overflow-style: none;
         }
     </style>
 </head>
@@ -1649,10 +1619,7 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -1832,23 +1799,7 @@
         document.getElementById('about') && aboutObserver.observe(document.getElementById('about'));
         document.getElementById('skills') && skillsObserver.observe(document.getElementById('skills'));
 
-        // Scroll to Top Button
-        const scrollToTopBtn = document.getElementById('scrollToTop');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                scrollToTopBtn.classList.add('visible');
-            } else {
-                scrollToTopBtn.classList.remove('visible');
-            }
-        });
-
-        scrollToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
 
         // Contact Form
         const contactForm = document.getElementById('contactForm');
