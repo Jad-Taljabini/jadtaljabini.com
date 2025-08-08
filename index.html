@@ -1030,21 +1030,26 @@
             }
 
             .section {
-                padding: 6rem 0;
-            }
-
-            .section-header {
-                margin-bottom: 4rem;
-                padding-top: 3rem;
-            }
-
-            .section-subtitle {
-                margin-top: 2rem;
-                padding: 0 1rem;
+                padding: 8rem 0;
             }
 
             #about {
-                margin-top: 3rem;
+                padding: 12rem 0 !important;
+                margin-top: 6rem !important;
+            }
+
+            .section-header {
+                margin-bottom: 6rem;
+                padding-top: 5rem;
+            }
+
+            .section-subtitle {
+                margin-top: 4rem;
+                padding: 0 1rem;
+            }
+
+            .about-content {
+                margin-top: 5rem;
             }
 
             .nav-menu {
@@ -1805,6 +1810,9 @@
                 const duration = 2000;
                 const increment = target / (duration / 16);
                 let current = 0;
+                
+                // Reset counter to 0 first
+                counter.textContent = '0';
 
                 const updateCounter = () => {
                     current += increment;
@@ -1816,7 +1824,7 @@
                     }
                 };
 
-                updateCounter();
+                setTimeout(updateCounter, 300);
             });
         };
 
@@ -1834,14 +1842,22 @@
 
         // Intersection Observer for animations
         const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const aboutObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && entry.target.id === 'about') {
-                    animateCounters();
+                    // Reset all counters first
+                    const counters = document.querySelectorAll('[data-count]');
+                    counters.forEach(counter => {
+                        counter.textContent = '0';
+                    });
+                    // Then animate
+                    setTimeout(() => {
+                        animateCounters();
+                    }, 200);
                 }
             });
         }, observerOptions);
