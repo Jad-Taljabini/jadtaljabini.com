@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hostario - Termini e Condizioni e Privacy Policy</title>
-    <meta name="description" content="Termini e Condizioni, Privacy Policy e Disclaimer dell'applicazione Hostario per la gestione di strutture ricettive">
+    <title>Hostario - Termini e Condizioni</title>
+    <meta name="description" content="Termini e Condizioni e Disclaimer dell'applicazione Hostario per la gestione di strutture ricettive">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -204,7 +204,14 @@
             font-size: 1.2rem;
             color: var(--text-secondary);
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 2rem;
+        }
+
+        .page-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .legal-section {
@@ -433,258 +440,27 @@
     <main class="main-content">
         <!-- Page Header -->
         <div class="page-header">
-            <h1 class="page-title">Hostario</h1>
+            <h1 class="page-title">Hostario - Termini e Condizioni</h1>
             <p class="page-subtitle">
-                Termini e Condizioni, Privacy Policy e Disclaimer
+                Termini e Condizioni e Disclaimer dell'applicazione
             </p>
+            <div class="page-links">
+                <a href="hostario-privacy.html" class="btn btn-secondary">
+                    <i class="fas fa-shield-alt"></i>
+                    Privacy Policy
+                </a>
+            </div>
         </div>
 
         <!-- Table of Contents -->
         <div class="toc">
             <h3><i class="fas fa-list"></i> Indice</h3>
             <ul>
-                <li><a href="#privacy-policy">📋 Privacy Policy</a></li>
                 <li><a href="#termini-condizioni">📜 Termini e Condizioni</a></li>
                 <li><a href="#disclaimer">⚠️ Disclaimer e Limitazioni di Responsabilità</a></li>
             </ul>
         </div>
 
-        <!-- Privacy Policy -->
-        <div id="privacy-policy" class="legal-section">
-            <h3 class="section-title">PRIVACY POLICY - HOSTARIO</h3>
-            
-            <div class="subsection">
-                <h4>1. DESCRIZIONE DELL'APPLICAZIONE</h4>
-                <p><strong>Nome:</strong> Hostario</p>
-                <p><strong>Piattaforma:</strong> iOS (iPhone/iPad)</p>
-                <p><strong>Scopo:</strong> Applicazione per la gestione di check-in e adempimenti burocratici per proprietari di strutture ricettive turistiche in Italia (case vacanze, affitti brevi)</p>
-            </div>
-
-            <div class="subsection">
-                <h4>2. FUNZIONALITÀ PRINCIPALI</h4>
-                <p>L'app permette di:</p>
-                <ul>
-                    <li><strong>Gestire immobili:</strong> registrare proprietà con dati completi (CIR, CIN, indirizzo, tassa di soggiorno)</li>
-                    <li><strong>Registrare check-in:</strong> inserire prenotazioni con date arrivo/partenza, numero ospiti</li>
-                    <li><strong>Gestire dati ospiti:</strong> raccogliere informazioni complete degli ospiti (anagrafiche, documenti, cittadinanza)</li>
-                    <li><strong>Scansionare documenti:</strong> utilizzare la fotocamera per leggere automaticamente dati da passaporti e carte d'identità tramite codice MRZ</li>
-                    <li><strong>Generare contratti:</strong> creare PDF di contratti di locazione turistica con firma digitale dell'ospite</li>
-                    <li><strong>Generare ricevute:</strong> creare ricevute per la tassa di soggiorno in 3 stili diversi</li>
-                    <li><strong>Inviare dati ad AlloggiatiWeb:</strong> trasmettere le schedine alloggiati alla Polizia di Stato (obbligo di legge)</li>
-                    <li><strong>Inviare dati ROSS1000:</strong> trasmettere statistiche turismo alle Regioni tramite sistema Turismo5</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h4>3. DATI RACCOLTI E TRATTATI</h4>
-                
-                <h5>3.1 Dati degli Immobili</h5>
-                <ul>
-                    <li>Nome della struttura</li>
-                    <li>Indirizzo completo (via, città, provincia)</li>
-                    <li>CIR (Codice Identificativo Regionale)</li>
-                    <li>CIN (Codice Identificativo Nazionale)</li>
-                    <li>Foto opzionale della proprietà</li>
-                    <li>Configurazione tassa di soggiorno</li>
-                </ul>
-
-                <h5>3.2 Dati del Proprietario/Locatore</h5>
-                <ul>
-                    <li>Nome completo</li>
-                    <li>Luogo e data di nascita</li>
-                    <li>Indirizzo di residenza completo</li>
-                    <li>Codice fiscale</li>
-                    <li>Firma digitale (acquisita tramite touchscreen)</li>
-                </ul>
-
-                <h5>3.3 Dati degli Ospiti</h5>
-                <p><strong>Dati anagrafici obbligatori:</strong></p>
-                <ul>
-                    <li>Nome e cognome</li>
-                    <li>Sesso</li>
-                    <li>Data di nascita</li>
-                    <li>Cittadinanza (codice e nome paese)</li>
-                    <li>Paese di nascita (e comune se Italia)</li>
-                    <li>Paese di residenza (e comune se Italia)</li>
-                </ul>
-
-                <p><strong>Dati del documento d'identità (solo per ospite principale):</strong></p>
-                <ul>
-                    <li>Tipo documento (passaporto, carta d'identità, patente, ecc.)</li>
-                    <li>Numero documento</li>
-                    <li>Paese di rilascio (e comune se Italia)</li>
-                </ul>
-
-                <p><strong>Dati aggiuntivi per ROSS1000 (statistiche):</strong></p>
-                <ul>
-                    <li>Tipo turismo (lavoro, vacanza, ecc.)</li>
-                    <li>Mezzo di trasporto</li>
-                    <li>Canale di prenotazione</li>
-                    <li>Titolo di studio</li>
-                    <li>Professione</li>
-                    <li>Eventuale esenzione imposta</li>
-                </ul>
-
-                <h5>3.4 Dati delle Prenotazioni</h5>
-                <ul>
-                    <li>Date di arrivo e partenza</li>
-                    <li>Numero ospiti</li>
-                    <li>Numero notti</li>
-                    <li>Prezzo prenotazione</li>
-                    <li>Piattaforma di prenotazione (Airbnb, Booking.com, altro)</li>
-                    <li>Contratto firmato digitalmente (PDF con firma ospite)</li>
-                </ul>
-
-                <h5>3.5 Credenziali Servizi Esterni</h5>
-                <ul>
-                    <li>Username e password AlloggiatiWeb</li>
-                    <li>WsKey AlloggiatiWeb</li>
-                    <li>Credenziali ROSS1000/Turismo5</li>
-                </ul>
-                <p style="font-style: italic;"><strong>NB:</strong> Salvate in modo sicuro nel Keychain di iOS, non in chiaro</p>
-            </div>
-
-            <div class="subsection">
-                <h4>4. SERVIZI ESTERNI E TRASMISSIONE DATI</h4>
-                
-                <h5>4.1 AlloggiatiWeb - Polizia di Stato</h5>
-                <ul>
-                    <li><strong>URL:</strong> https://alloggiatiweb.poliziadistato.it</li>
-                    <li><strong>Scopo:</strong> Adempimento obbligo legale di comunicazione presenze (art. 109 TULPS)</li>
-                    <li><strong>Dati trasmessi:</strong> Tutti i dati anagrafici e documenti degli ospiti</li>
-                    <li><strong>Protocollo:</strong> SOAP 1.1/1.2</li>
-                    <li><strong>Base legale:</strong> Obbligo di legge</li>
-                </ul>
-
-                <h5>4.2 ROSS1000 / Turismo5 (Sistema Regionale)</h5>
-                <ul>
-                    <li><strong>Endpoint:</strong> Configurabile per regione</li>
-                    <li><strong>Scopo:</strong> Statistiche movimentazione turistica regionale</li>
-                    <li><strong>Dati trasmessi:</strong> Dati ospiti + statistiche (tipo turismo, mezzo trasporto, ecc.)</li>
-                    <li><strong>Protocollo:</strong> SOAP 1.1</li>
-                    <li><strong>Autenticazione:</strong> Basic Auth</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h4>5. MODALITÀ DI CONSERVAZIONE DATI</h4>
-                
-                <h5>5.1 Storage Locale</h5>
-                <ul>
-                    <li><strong>Tecnologia:</strong> SwiftData (database locale Apple)</li>
-                    <li><strong>Ubicazione:</strong> Dispositivo iOS dell'utente</li>
-                    <li><strong>NO cloud:</strong> I dati NON vengono sincronizzati su cloud (salvo backup iCloud del dispositivo gestito dall'utente)</li>
-                    <li><strong>Crittografia:</strong> Protetti dalla crittografia del dispositivo iOS</li>
-                </ul>
-
-                <h5>5.2 Keychain iOS</h5>
-                <ul>
-                    <li>Credenziali AlloggiatiWeb e ROSS1000</li>
-                    <li>Salvate in iOS Keychain con attributo kSecAttrAccessibleWhenUnlockedThisDeviceOnly</li>
-                    <li>Non sincronizzate tra dispositivi</li>
-                    <li>Protette da hardware security enclave</li>
-                </ul>
-
-                <h5>5.3 File Temporanei</h5>
-                <ul>
-                    <li>PDF generati (contratti, ricevute) salvati temporaneamente in directory temporanea</li>
-                    <li>Eliminati automaticamente dal sistema</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h4>6. FUNZIONALITÀ CAMERA E SCANSIONE</h4>
-                <ul>
-                    <li><strong>Scopo:</strong> Leggere automaticamente dati da passaporti/carte d'identità (MRZ - Machine Readable Zone)</li>
-                    <li><strong>Accesso:</strong> Richiede permesso fotocamera</li>
-                    <li><strong>Dati estratti:</strong> Nome, cognome, data nascita, nazionalità, numero documento</li>
-                    <li><strong>Foto:</strong> Le foto NON vengono salvate, viene solo estratto il testo MRZ</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h4>7. SICUREZZA</h4>
-                <ul>
-                    <li>Nessuna connessione a server propri dell'app</li>
-                    <li>Comunicazione solo con servizi governativi ufficiali (HTTPS)</li>
-                    <li>Credenziali in Keychain crittografato</li>
-                    <li>Dati su dispositivo protetti da crittografia iOS</li>
-                    <li>NO analytics, NO tracking, NO pubblicità</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h4>8. RETENTION / CONSERVAZIONE</h4>
-                <ul>
-                    <li><strong>Dati gestiti dall'utente:</strong> L'utente può cancellare manualmente check-in e listing</li>
-                    <li><strong>Nessuna retention automatica:</strong> L'app non cancella automaticamente i dati</li>
-                    <li><strong>Responsabilità:</strong> È responsabilità del proprietario conservare i dati per i termini di legge (attualmente 2 anni per AlloggiatiWeb)</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h4>9. DIRITTI GDPR</h4>
-                <p>Gli ospiti i cui dati vengono inseriti nell'app hanno diritto a:</p>
-                <ul>
-                    <li>Accesso ai propri dati</li>
-                    <li>Rettifica</li>
-                    <li>Cancellazione</li>
-                    <li>Portabilità</li>
-                    <li>Opposizione al trattamento</li>
-                </ul>
-                <p><strong>Chi è il titolare del trattamento?</strong> Il proprietario della struttura che utilizza l'app (NON lo sviluppatore dell'app)</p>
-            </div>
-
-            <div class="subsection">
-                <h4>10. BASE GIURIDICA DEL TRATTAMENTO</h4>
-                <ul>
-                    <li><strong>Obbligo legale:</strong> Art. 109 TULPS per comunicazione presenze</li>
-                    <li><strong>Adempimento contrattuale:</strong> Generazione contratto di locazione</li>
-                    <li><strong>Legittimo interesse:</strong> Gestione amministrativa della struttura</li>
-                    <li><strong>Consenso:</strong> Per eventuali finalità aggiuntive</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h4>11. TRASFERIMENTI INTERNAZIONALI</h4>
-                <ul>
-                    <li>NO trasferimenti fuori UE</li>
-                    <li>Tutti i dati restano sul dispositivo in Italia o trasmessi a server italiani (.it)</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h4>12. INFORMAZIONI AGGIUNTIVE</h4>
-                
-                <p><strong>NO:</strong></p>
-                <ul>
-                    <li>Analytics o telemetria</li>
-                    <li>Pubblicità</li>
-                    <li>Profilazione</li>
-                    <li>Condivisione con terze parti commerciali</li>
-                    <li>Server propri che raccolgono dati</li>
-                    <li>Account utente cloud</li>
-                    <li>Sincronizzazione automatica</li>
-                </ul>
-
-                <p><strong>SÌ:</strong></p>
-                <ul>
-                    <li>Tutto locale sul dispositivo</li>
-                    <li>Comunicazione solo con enti governativi</li>
-                    <li>Pieno controllo dell'utente sui dati</li>
-                </ul>
-            </div>
-
-            <div class="subsection">
-                <h4>13. NOTE LEGALI IMPORTANTI</h4>
-                <ul>
-                    <li><strong>L'app è uno strumento:</strong> Il titolare del trattamento è il proprietario della struttura, NON lo sviluppatore</li>
-                    <li><strong>Obbligo di legge:</strong> La comunicazione ad AlloggiatiWeb è obbligatoria per legge</li>
-                    <li><strong>Responsabilità del proprietario:</strong> È il proprietario responsabile della corretta raccolta e conservazione dati</li>
-                    <li><strong>No garanzie:</strong> L'app non garantisce l'accettazione dei dati da parte dei sistemi governativi (che possono avere problemi tecnici)</li>
-                </ul>
-            </div>
-        </div>
 
         <!-- Termini e Condizioni -->
         <div id="termini-condizioni" class="legal-section terms-section">
