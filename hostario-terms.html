@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostario - Termini e Condizioni e Privacy Policy</title>
+    <meta name="description" content="Termini e Condizioni, Privacy Policy e Disclaimer dell'applicazione Hostario per la gestione di strutture ricettive">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            /* Light Theme Colors */
+            --primary-color: #2563eb;
+            --primary-light: #93c5fd;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #3b82f6;
+            --accent-color: #0ea5e9;
+            --accent-secondary: #0284c7;
+            
+            /* Text Colors */
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-tertiary: #64748b;
+            --text-muted: #94a3b8;
+            
+            /* Background Colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --bg-glass: rgba(255, 255, 255, 0.8);
+            --bg-glass-strong: rgba(255, 255, 255, 0.95);
+            
+            /* Dark Theme Colors */
+            --dark-bg-primary: #0f172a;
+            --dark-bg-secondary: #1e293b;
+            --dark-bg-tertiary: #334155;
+            --dark-text-primary: #f8fafc;
+            --dark-text-secondary: #cbd5e1;
+            --dark-text-tertiary: #94a3b8;
+            --dark-bg-glass: rgba(15, 23, 42, 0.8);
+            --dark-bg-glass-strong: rgba(15, 23, 42, 0.95);
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.3);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            --gradient-accent: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            --gradient-text: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #0ea5e9 100%);
+            
+            /* Layout */
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        [data-theme="dark"] {
+            --text-primary: var(--dark-text-primary);
+            --text-secondary: var(--dark-text-secondary);
+            --text-tertiary: var(--dark-text-tertiary);
+            --bg-primary: var(--dark-bg-primary);
+            --bg-secondary: var(--dark-bg-secondary);
+            --bg-tertiary: var(--dark-bg-tertiary);
+            --bg-glass: var(--dark-bg-glass);
+            --bg-glass-strong: var(--dark-bg-glass-strong);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: var(--bg-glass-strong);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-section {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+        }
+
+        .legal-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .subsection {
+            margin-bottom: 3rem;
+        }
+
+        .subsection h4 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .subsection h5 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin: 1.5rem 0 0.5rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .subsection ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 2rem;
+            list-style: disc;
+            margin-bottom: 1rem;
+        }
+
+        .subsection ul.checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .subsection ul.checklist li::before {
+            content: '✓ ';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .highlight-box {
+            background: rgba(37, 99, 235, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .warning-section {
+            background: linear-gradient(135deg, rgba(255, 59, 48, 0.1), rgba(255, 149, 0, 0.1));
+            border: 2px solid rgba(255, 59, 48, 0.3);
+        }
+
+        .terms-section {
+            background: linear-gradient(135deg, rgba(255, 59, 48, 0.05), rgba(255, 149, 0, 0.05));
+        }
+
+        .final-declaration {
+            background: rgba(255, 59, 48, 0.2);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 3px solid #ff3b30;
+            margin-top: 2rem;
+        }
+
+        .final-declaration h4 {
+            color: #ff3b30;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .final-declaration p {
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .footer-info {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        .footer-info p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .footer-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+            }
+
+            .legal-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .subsection h4 {
+                font-size: 1.1rem;
+            }
+
+            .main-content {
+                padding: 100px 1rem 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .toc h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Jad Taljabini</a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Torna al Sito
+                </a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Hostario</h1>
+            <p class="page-subtitle">
+                Termini e Condizioni, Privacy Policy e Disclaimer
+            </p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h3><i class="fas fa-list"></i> Indice</h3>
+            <ul>
+                <li><a href="#privacy-policy">📋 Privacy Policy</a></li>
+                <li><a href="#termini-condizioni">📜 Termini e Condizioni</a></li>
+                <li><a href="#disclaimer">⚠️ Disclaimer e Limitazioni di Responsabilità</a></li>
+            </ul>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div id="privacy-policy" class="legal-section">
+            <h3 class="section-title">PRIVACY POLICY - HOSTARIO</h3>
+            
+            <div class="subsection">
+                <h4>1. DESCRIZIONE DELL'APPLICAZIONE</h4>
+                <p><strong>Nome:</strong> Hostario</p>
+                <p><strong>Piattaforma:</strong> iOS (iPhone/iPad)</p>
+                <p><strong>Scopo:</strong> Applicazione per la gestione di check-in e adempimenti burocratici per proprietari di strutture ricettive turistiche in Italia (case vacanze, affitti brevi)</p>
+            </div>
+
+            <div class="subsection">
+                <h4>2. FUNZIONALITÀ PRINCIPALI</h4>
+                <p>L'app permette di:</p>
+                <ul>
+                    <li><strong>Gestire immobili:</strong> registrare proprietà con dati completi (CIR, CIN, indirizzo, tassa di soggiorno)</li>
+                    <li><strong>Registrare check-in:</strong> inserire prenotazioni con date arrivo/partenza, numero ospiti</li>
+                    <li><strong>Gestire dati ospiti:</strong> raccogliere informazioni complete degli ospiti (anagrafiche, documenti, cittadinanza)</li>
+                    <li><strong>Scansionare documenti:</strong> utilizzare la fotocamera per leggere automaticamente dati da passaporti e carte d'identità tramite codice MRZ</li>
+                    <li><strong>Generare contratti:</strong> creare PDF di contratti di locazione turistica con firma digitale dell'ospite</li>
+                    <li><strong>Generare ricevute:</strong> creare ricevute per la tassa di soggiorno in 3 stili diversi</li>
+                    <li><strong>Inviare dati ad AlloggiatiWeb:</strong> trasmettere le schedine alloggiati alla Polizia di Stato (obbligo di legge)</li>
+                    <li><strong>Inviare dati ROSS1000:</strong> trasmettere statistiche turismo alle Regioni tramite sistema Turismo5</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>3. DATI RACCOLTI E TRATTATI</h4>
+                
+                <h5>3.1 Dati degli Immobili</h5>
+                <ul>
+                    <li>Nome della struttura</li>
+                    <li>Indirizzo completo (via, città, provincia)</li>
+                    <li>CIR (Codice Identificativo Regionale)</li>
+                    <li>CIN (Codice Identificativo Nazionale)</li>
+                    <li>Foto opzionale della proprietà</li>
+                    <li>Configurazione tassa di soggiorno</li>
+                </ul>
+
+                <h5>3.2 Dati del Proprietario/Locatore</h5>
+                <ul>
+                    <li>Nome completo</li>
+                    <li>Luogo e data di nascita</li>
+                    <li>Indirizzo di residenza completo</li>
+                    <li>Codice fiscale</li>
+                    <li>Firma digitale (acquisita tramite touchscreen)</li>
+                </ul>
+
+                <h5>3.3 Dati degli Ospiti</h5>
+                <p><strong>Dati anagrafici obbligatori:</strong></p>
+                <ul>
+                    <li>Nome e cognome</li>
+                    <li>Sesso</li>
+                    <li>Data di nascita</li>
+                    <li>Cittadinanza (codice e nome paese)</li>
+                    <li>Paese di nascita (e comune se Italia)</li>
+                    <li>Paese di residenza (e comune se Italia)</li>
+                </ul>
+
+                <p><strong>Dati del documento d'identità (solo per ospite principale):</strong></p>
+                <ul>
+                    <li>Tipo documento (passaporto, carta d'identità, patente, ecc.)</li>
+                    <li>Numero documento</li>
+                    <li>Paese di rilascio (e comune se Italia)</li>
+                </ul>
+
+                <p><strong>Dati aggiuntivi per ROSS1000 (statistiche):</strong></p>
+                <ul>
+                    <li>Tipo turismo (lavoro, vacanza, ecc.)</li>
+                    <li>Mezzo di trasporto</li>
+                    <li>Canale di prenotazione</li>
+                    <li>Titolo di studio</li>
+                    <li>Professione</li>
+                    <li>Eventuale esenzione imposta</li>
+                </ul>
+
+                <h5>3.4 Dati delle Prenotazioni</h5>
+                <ul>
+                    <li>Date di arrivo e partenza</li>
+                    <li>Numero ospiti</li>
+                    <li>Numero notti</li>
+                    <li>Prezzo prenotazione</li>
+                    <li>Piattaforma di prenotazione (Airbnb, Booking.com, altro)</li>
+                    <li>Contratto firmato digitalmente (PDF con firma ospite)</li>
+                </ul>
+
+                <h5>3.5 Credenziali Servizi Esterni</h5>
+                <ul>
+                    <li>Username e password AlloggiatiWeb</li>
+                    <li>WsKey AlloggiatiWeb</li>
+                    <li>Credenziali ROSS1000/Turismo5</li>
+                </ul>
+                <p style="font-style: italic;"><strong>NB:</strong> Salvate in modo sicuro nel Keychain di iOS, non in chiaro</p>
+            </div>
+
+            <div class="subsection">
+                <h4>4. SERVIZI ESTERNI E TRASMISSIONE DATI</h4>
+                
+                <h5>4.1 AlloggiatiWeb - Polizia di Stato</h5>
+                <ul>
+                    <li><strong>URL:</strong> https://alloggiatiweb.poliziadistato.it</li>
+                    <li><strong>Scopo:</strong> Adempimento obbligo legale di comunicazione presenze (art. 109 TULPS)</li>
+                    <li><strong>Dati trasmessi:</strong> Tutti i dati anagrafici e documenti degli ospiti</li>
+                    <li><strong>Protocollo:</strong> SOAP 1.1/1.2</li>
+                    <li><strong>Base legale:</strong> Obbligo di legge</li>
+                </ul>
+
+                <h5>4.2 ROSS1000 / Turismo5 (Sistema Regionale)</h5>
+                <ul>
+                    <li><strong>Endpoint:</strong> Configurabile per regione</li>
+                    <li><strong>Scopo:</strong> Statistiche movimentazione turistica regionale</li>
+                    <li><strong>Dati trasmessi:</strong> Dati ospiti + statistiche (tipo turismo, mezzo trasporto, ecc.)</li>
+                    <li><strong>Protocollo:</strong> SOAP 1.1</li>
+                    <li><strong>Autenticazione:</strong> Basic Auth</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>5. MODALITÀ DI CONSERVAZIONE DATI</h4>
+                
+                <h5>5.1 Storage Locale</h5>
+                <ul>
+                    <li><strong>Tecnologia:</strong> SwiftData (database locale Apple)</li>
+                    <li><strong>Ubicazione:</strong> Dispositivo iOS dell'utente</li>
+                    <li><strong>NO cloud:</strong> I dati NON vengono sincronizzati su cloud (salvo backup iCloud del dispositivo gestito dall'utente)</li>
+                    <li><strong>Crittografia:</strong> Protetti dalla crittografia del dispositivo iOS</li>
+                </ul>
+
+                <h5>5.2 Keychain iOS</h5>
+                <ul>
+                    <li>Credenziali AlloggiatiWeb e ROSS1000</li>
+                    <li>Salvate in iOS Keychain con attributo kSecAttrAccessibleWhenUnlockedThisDeviceOnly</li>
+                    <li>Non sincronizzate tra dispositivi</li>
+                    <li>Protette da hardware security enclave</li>
+                </ul>
+
+                <h5>5.3 File Temporanei</h5>
+                <ul>
+                    <li>PDF generati (contratti, ricevute) salvati temporaneamente in directory temporanea</li>
+                    <li>Eliminati automaticamente dal sistema</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>6. FUNZIONALITÀ CAMERA E SCANSIONE</h4>
+                <ul>
+                    <li><strong>Scopo:</strong> Leggere automaticamente dati da passaporti/carte d'identità (MRZ - Machine Readable Zone)</li>
+                    <li><strong>Accesso:</strong> Richiede permesso fotocamera</li>
+                    <li><strong>Dati estratti:</strong> Nome, cognome, data nascita, nazionalità, numero documento</li>
+                    <li><strong>Foto:</strong> Le foto NON vengono salvate, viene solo estratto il testo MRZ</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>7. SICUREZZA</h4>
+                <ul>
+                    <li>Nessuna connessione a server propri dell'app</li>
+                    <li>Comunicazione solo con servizi governativi ufficiali (HTTPS)</li>
+                    <li>Credenziali in Keychain crittografato</li>
+                    <li>Dati su dispositivo protetti da crittografia iOS</li>
+                    <li>NO analytics, NO tracking, NO pubblicità</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>8. RETENTION / CONSERVAZIONE</h4>
+                <ul>
+                    <li><strong>Dati gestiti dall'utente:</strong> L'utente può cancellare manualmente check-in e listing</li>
+                    <li><strong>Nessuna retention automatica:</strong> L'app non cancella automaticamente i dati</li>
+                    <li><strong>Responsabilità:</strong> È responsabilità del proprietario conservare i dati per i termini di legge (attualmente 2 anni per AlloggiatiWeb)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>9. DIRITTI GDPR</h4>
+                <p>Gli ospiti i cui dati vengono inseriti nell'app hanno diritto a:</p>
+                <ul>
+                    <li>Accesso ai propri dati</li>
+                    <li>Rettifica</li>
+                    <li>Cancellazione</li>
+                    <li>Portabilità</li>
+                    <li>Opposizione al trattamento</li>
+                </ul>
+                <p><strong>Chi è il titolare del trattamento?</strong> Il proprietario della struttura che utilizza l'app (NON lo sviluppatore dell'app)</p>
+            </div>
+
+            <div class="subsection">
+                <h4>10. BASE GIURIDICA DEL TRATTAMENTO</h4>
+                <ul>
+                    <li><strong>Obbligo legale:</strong> Art. 109 TULPS per comunicazione presenze</li>
+                    <li><strong>Adempimento contrattuale:</strong> Generazione contratto di locazione</li>
+                    <li><strong>Legittimo interesse:</strong> Gestione amministrativa della struttura</li>
+                    <li><strong>Consenso:</strong> Per eventuali finalità aggiuntive</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>11. TRASFERIMENTI INTERNAZIONALI</h4>
+                <ul>
+                    <li>NO trasferimenti fuori UE</li>
+                    <li>Tutti i dati restano sul dispositivo in Italia o trasmessi a server italiani (.it)</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>12. INFORMAZIONI AGGIUNTIVE</h4>
+                
+                <p><strong>NO:</strong></p>
+                <ul>
+                    <li>Analytics o telemetria</li>
+                    <li>Pubblicità</li>
+                    <li>Profilazione</li>
+                    <li>Condivisione con terze parti commerciali</li>
+                    <li>Server propri che raccolgono dati</li>
+                    <li>Account utente cloud</li>
+                    <li>Sincronizzazione automatica</li>
+                </ul>
+
+                <p><strong>SÌ:</strong></p>
+                <ul>
+                    <li>Tutto locale sul dispositivo</li>
+                    <li>Comunicazione solo con enti governativi</li>
+                    <li>Pieno controllo dell'utente sui dati</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>13. NOTE LEGALI IMPORTANTI</h4>
+                <ul>
+                    <li><strong>L'app è uno strumento:</strong> Il titolare del trattamento è il proprietario della struttura, NON lo sviluppatore</li>
+                    <li><strong>Obbligo di legge:</strong> La comunicazione ad AlloggiatiWeb è obbligatoria per legge</li>
+                    <li><strong>Responsabilità del proprietario:</strong> È il proprietario responsabile della corretta raccolta e conservazione dati</li>
+                    <li><strong>No garanzie:</strong> L'app non garantisce l'accettazione dei dati da parte dei sistemi governativi (che possono avere problemi tecnici)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Termini e Condizioni -->
+        <div id="termini-condizioni" class="legal-section terms-section">
+            <h3 class="section-title">TERMINI E CONDIZIONI - HOSTARIO</h3>
+            
+            <div class="subsection">
+                <h4>1. ACCETTAZIONE DEI TERMINI</h4>
+                <p>Utilizzando Hostario, accetti integralmente questi Termini e Condizioni. L'utente è responsabile della conformità legale dell'uso dell'applicazione.</p>
+            </div>
+
+            <div class="subsection">
+                <h4>2. LICENZA D'USO</h4>
+                <p>Hostario è concesso in licenza d'uso, non venduto. L'utente ha diritto ad utilizzare l'applicazione per la gestione delle proprie strutture ricettive, nel rispetto delle normative vigenti.</p>
+            </div>
+
+            <div class="subsection">
+                <h4>3. RESPONSABILITÀ DELL'UTENTE</h4>
+                <p>L'utente è esclusivamente responsabile di:</p>
+                <ul>
+                    <li>Verificare l'esattezza di tutti i dati inseriti</li>
+                    <li>Assicurarsi che i documenti generati siano conformi alla legge</li>
+                    <li>Controllare che le ricevute riportino importi corretti</li>
+                    <li>Verificare l'effettivo invio e accettazione delle comunicazioni</li>
+                    <li>Conservare i dati per i termini di legge (attualmente 2 anni)</li>
+                    <li>Effettuare backup regolari dei dati</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>4. MODIFICHE AI TERMINI</h4>
+                <p>Hostario si riserva il diritto di modificare questi Termini in qualsiasi momento. È responsabilità dell'utente controllare periodicamente gli aggiornamenti. L'uso continuato dell'applicazione dopo le modifiche costituisce accettazione implicita dei nuovi termini.</p>
+            </div>
+
+            <div class="subsection">
+                <h4>5. LEGGE APPLICABILE</h4>
+                <p>Questi Termini sono regolati dalla legge italiana. Per ogni controversia sarà competente il Foro italiano.</p>
+            </div>
+        </div>
+
+        <!-- Disclaimer e Limitazioni -->
+        <div id="disclaimer" class="legal-section warning-section">
+            <h3 class="section-title" style="color: #ff3b30;">⚠️ DISCLAIMER E LIMITAZIONI DI RESPONSABILITÀ</h3>
+            
+            <div class="subsection">
+                <h4>1. NESSUNA RESPONSABILITÀ PER SERVIZI ESTERNI</h4>
+                <p>Hostario è esclusivamente uno strumento di ausilio e NON è in alcun modo responsabile per:</p>
+                <ul>
+                    <li>Il funzionamento, la disponibilità o le interruzioni del servizio AlloggiatiWeb della Polizia di Stato</li>
+                    <li>Il funzionamento, la disponibilità o le interruzioni del sistema ROSS1000 / Turismo5 regionale</li>
+                    <li>Eventuali modifiche unilaterali ai protocolli, API o requisiti di AlloggiatiWeb o ROSS1000</li>
+                    <li>Errori, malfunzionamenti o indisponibilità dei server governativi o regionali</li>
+                    <li>Rifiuto, rigetto o mancata accettazione dei dati trasmessi</li>
+                    <li>Sanzioni, multe o conseguenze legali derivanti da comunicazioni errate, incomplete o mancate</li>
+                </ul>
+                <div class="highlight-box">
+                    L'utente riconosce espressamente che AlloggiatiWeb e ROSS1000 sono servizi esterni gestiti da enti terzi sui quali Hostario non ha alcun controllo.
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>2. NESSUNA GARANZIA DI CORRETTEZZA DEI DATI</h4>
+                <p>Hostario NON garantisce in alcun modo:</p>
+                <ul>
+                    <li>La correttezza, completezza o accuratezza dei dati inseriti dall'utente</li>
+                    <li>La conformità dei dati inseriti alle normative vigenti</li>
+                    <li>La correttezza dei calcoli della tassa di soggiorno</li>
+                    <li>La correttezza delle ricevute generate</li>
+                    <li>La validità legale dei contratti generati</li>
+                    <li>L'interpretazione corretta delle normative fiscali o turistiche</li>
+                    <li>L'aggiornamento in tempo reale rispetto a modifiche normative</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>3. DISCLAIMER SU SCHEDINE E RICEVUTE</h4>
+                <p>Hostario NON è responsabile per:</p>
+                <ul>
+                    <li>Errori di formattazione delle schedine inviate ad AlloggiatiWeb</li>
+                    <li>Errori nei codici utilizzati (nazionalità, comuni, documenti)</li>
+                    <li>Incompletezza dei dati trasmessi</li>
+                    <li>Errori di calcolo nella tassa di soggiorno</li>
+                    <li>Errori grafici o di contenuto nelle ricevute PDF generate</li>
+                    <li>Mancato aggiornamento delle tabelle di riferimento</li>
+                    <li>Modifiche ai requisiti non immediatamente recepite dall'app</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>L'UTENTE È TENUTO A:</strong> Verificare visivamente ogni schedina prima dell'invio, controllare ogni ricevuta generata prima di consegnarla all'ospite, verificare ogni contratto prima della firma.
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>4. NESSUNA GARANZIA DI CONFORMITÀ LEGALE</h4>
+                <p>Hostario è fornito "COSÌ COM'È" senza alcuna garanzia di conformità a:</p>
+                <ul>
+                    <li>D.Lgs. 196/2003 (Codice Privacy)</li>
+                    <li>GDPR (Regolamento UE 2016/679)</li>
+                    <li>Art. 109 TULPS</li>
+                    <li>D.L. 50/2017 (locazioni brevi)</li>
+                    <li>Normative regionali sul turismo</li>
+                    <li>Normative comunali sulla tassa di soggiorno</li>
+                    <li>Future modifiche legislative</li>
+                </ul>
+                <p><strong>L'utente riconosce di essere l'unico responsabile della conformità legale dell'attività svolta e di essere titolare del trattamento dati degli ospiti ai sensi del GDPR.</strong></p>
+            </div>
+
+            <div class="subsection">
+                <h4>5. LIMITAZIONI DI RESPONSABILITÀ ECONOMICA</h4>
+                <p>In nessun caso Hostario o i suoi sviluppatori saranno responsabili per:</p>
+                <ul>
+                    <li>Danni diretti, indiretti, incidentali, speciali o consequenziali</li>
+                    <li>Perdita di profitti o guadagni</li>
+                    <li>Perdita di dati</li>
+                    <li>Interruzione dell'attività</li>
+                    <li>Multe o sanzioni amministrative</li>
+                    <li>Spese legali</li>
+                    <li>Danni reputazionali</li>
+                </ul>
+                <div class="highlight-box" style="background: rgba(255, 59, 48, 0.15);">
+                    <strong>LA RESPONSABILITÀ MASSIMA</strong>, in ogni caso, è limitata all'importo effettivamente pagato dall'utente per l'acquisto dell'applicazione.
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>6. NESSUN SUPPORTO LEGALE O FISCALE</h4>
+                <p>Hostario NON fornisce:</p>
+                <ul>
+                    <li>Consulenza legale</li>
+                    <li>Consulenza fiscale</li>
+                    <li>Consulenza amministrativa</li>
+                    <li>Interpretazione di normative</li>
+                    <li>Assistenza in caso di contestazioni con autorità</li>
+                </ul>
+                <p>L'utente è invitato a rivolgersi a professionisti qualificati (avvocati, commercialisti, consulenti) per qualsiasi questione di natura legale, fiscale o amministrativa.</p>
+            </div>
+
+            <div class="subsection">
+                <h4>7. OBBLIGO DI VERIFICA DELL'UTENTE</h4>
+                <p><strong>PRIMA DI OGNI INVIO O GENERAZIONE DI DOCUMENTI</strong>, l'utente è tenuto a:</p>
+                <ul class="checklist">
+                    <li>Verificare che tutti i dati inseriti siano corretti e completi</li>
+                    <li>Controllare che i codici utilizzati (comuni, stati) siano aggiornati</li>
+                    <li>Verificare che la connessione ai servizi esterni funzioni correttamente</li>
+                    <li>Effettuare test di invio quando disponibili</li>
+                    <li>Verificare che i PDF generati siano leggibili e corretti</li>
+                    <li>Conservare copie di backup di tutti i documenti importanti</li>
+                    <li>Scaricare le ricevute ufficiali dai portali governativi</li>
+                    <li>Consultare un commercialista per la corretta applicazione della tassa di soggiorno</li>
+                    <li>Consultare un legale per la validità dei contratti generati</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>8. OBBLIGO DI BACKUP</h4>
+                <p><strong>L'UTENTE È ESCLUSIVAMENTE RESPONSABILE</strong> di:</p>
+                <ul>
+                    <li>Effettuare backup regolari dei dati</li>
+                    <li>Conservare copie di sicurezza dei documenti generati</li>
+                    <li>Esportare periodicamente i dati in formati esterni</li>
+                    <li>Conservare ricevute e contratti in sistemi esterni</li>
+                </ul>
+                <p>Hostario NON è responsabile per perdita di dati dovuta a malfunzionamenti, aggiornamenti iOS, disinstallazione accidentale o reset del dispositivo.</p>
+            </div>
+
+            <div class="final-declaration">
+                <h4>DICHIARAZIONE FINALE</h4>
+                <p>HOSTARIO È UNO STRUMENTO SOFTWARE FORNITO "COSÌ COM'È" PER FACILITARE LA GESTIONE AMMINISTRATIVA DI STRUTTURE RICETTIVE. NON COSTITUISCE NÉ SOSTITUISCE CONSULENZA LEGALE, FISCALE O AMMINISTRATIVA PROFESSIONALE.</p>
+                <p style="margin-top: 1rem;">OGNI UTENTE È PIENAMENTE E UNICAMENTE RESPONSABILE DELL'USO CHE NE FA, DELLA VERIFICA DELLA CORRETTEZZA DEI DATI E DOCUMENTI GENERATI, E DELLA CONFORMITÀ ALLE NORMATIVE VIGENTI.</p>
+                <p style="margin-top: 1rem;">GLI SVILUPPATORI DI HOSTARIO NON POTRANNO IN ALCUN CASO ESSERE RITENUTI RESPONSABILI PER DANNI, PERDITE, SANZIONI O CONSEGUENZE DI QUALSIASI NATURA DERIVANTI DALL'USO DELL'APPLICAZIONE.</p>
+            </div>
+
+            <div class="footer-info">
+                <p style="font-style: italic;">Ultimo aggiornamento: Dicembre 2024</p>
+                <p style="margin-top: 1rem;">Per domande su questi termini, contattare: <a href="mailto:business@jadtaljabini.com">business@jadtaljabini.com</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
