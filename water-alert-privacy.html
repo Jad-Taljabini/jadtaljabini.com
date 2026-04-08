@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Alert - Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for the Water Alert hydration tracking app">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-light: #93c5fd;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #3b82f6;
+            --accent-color: #0ea5e9;
+            --accent-secondary: #0284c7;
+
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-tertiary: #64748b;
+            --text-muted: #94a3b8;
+
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --bg-glass: rgba(255, 255, 255, 0.8);
+            --bg-glass-strong: rgba(255, 255, 255, 0.95);
+
+            --dark-bg-primary: #0f172a;
+            --dark-bg-secondary: #1e293b;
+            --dark-bg-tertiary: #334155;
+            --dark-text-primary: #f8fafc;
+            --dark-text-secondary: #cbd5e1;
+            --dark-text-tertiary: #94a3b8;
+            --dark-bg-glass: rgba(15, 23, 42, 0.8);
+            --dark-bg-glass-strong: rgba(15, 23, 42, 0.95);
+
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --shadow-glow: 0 0 40px rgba(37,99,235,0.3);
+
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            --gradient-accent: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            --gradient-text: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #0ea5e9 100%);
+
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --text-primary: var(--dark-text-primary);
+            --text-secondary: var(--dark-text-secondary);
+            --text-tertiary: var(--dark-text-tertiary);
+            --bg-primary: var(--dark-bg-primary);
+            --bg-secondary: var(--dark-bg-secondary);
+            --bg-tertiary: var(--dark-bg-tertiary);
+            --bg-glass: var(--dark-bg-glass);
+            --bg-glass-strong: var(--dark-bg-glass-strong);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: var(--bg-glass-strong);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-actions { display: flex; gap: 1rem; align-items: center; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary-color);
+            background: rgba(37,99,235,0.1);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .page-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Language Tabs */
+        .lang-tabs {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .lang-tab {
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            border: 2px solid var(--primary-color);
+            background: var(--bg-glass);
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-tab:hover,
+        .lang-tab.active {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Language Sections */
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
+
+        .lang-section[data-lang="ar"] {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .lang-section[data-lang="ar"] .subsection ul {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+
+        .legal-section {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+        }
+
+        .legal-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .subsection { margin-bottom: 2.5rem; }
+
+        .subsection h4 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .subsection ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 2rem;
+            list-style: disc;
+            margin-bottom: 1rem;
+        }
+
+        .footer-info {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(37,99,235,0.1);
+        }
+
+        .footer-info p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .footer-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer-info a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 2rem; }
+            .page-subtitle { font-size: 1rem; }
+            .legal-section { padding: 2rem 1.5rem; }
+            .section-title { font-size: 1.5rem; }
+            .subsection h4 { font-size: 1.1rem; }
+            .main-content { padding: 100px 1rem 2rem; }
+            .nav-container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Jad Taljabini</a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Site
+                </a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Water Alert – Privacy Policy</h1>
+            <p class="page-subtitle">
+                Privacy Policy for the Water Alert hydration tracking app
+            </p>
+            <div class="page-links">
+                <a href="water-alert-terms.html" class="btn btn-secondary">
+                    <i class="fas fa-file-contract"></i>
+                    Terms and Conditions
+                </a>
+            </div>
+        </div>
+
+        <!-- Language Tabs -->
+        <div class="lang-tabs">
+            <button class="lang-tab active" onclick="switchLang('en')">🇬🇧 English</button>
+            <button class="lang-tab" onclick="switchLang('it')">🇮🇹 Italiano</button>
+            <button class="lang-tab" onclick="switchLang('ar')">🇸🇦 العربية</button>
+            <button class="lang-tab" onclick="switchLang('de')">🇩🇪 Deutsch</button>
+            <button class="lang-tab" onclick="switchLang('es')">🇪🇸 Español</button>
+        </div>
+
+        <!-- ── ENGLISH ── -->
+        <div class="lang-section active" data-lang="en">
+            <div class="legal-section">
+                <h3 class="section-title">PRIVACY POLICY – WATER ALERT</h3>
+
+                <div class="subsection">
+                    <h4>1. Data We Collect</h4>
+                    <p>We do not collect any personal data. The App does not require registration, login, or any personal information to function.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. Data Stored on Your Device</h4>
+                    <p>All data you enter (water intake logs, daily goals, containers, reminders) is stored locally on your device using SwiftData. If you have iCloud enabled, this data may sync across your Apple devices via iCloud. We have no access to this data.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. HealthKit</h4>
+                    <p>The App uses Apple HealthKit as an optional feature to write your water intake data to the Health app. Specifically:</p>
+                    <ul>
+                        <li>Water Alert only writes water intake data to HealthKit when you log a drink.</li>
+                        <li>Water Alert does not read any data from HealthKit.</li>
+                        <li>Water Alert does not collect, store, or transmit any HealthKit data to external servers or third parties.</li>
+                        <li>You can deny HealthKit access at any time through Settings &gt; Health &gt; Data Access.</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. Analytics and Tracking</h4>
+                    <p>The App does not use any analytics services, advertising SDKs, or tracking technologies. We do not track your behavior, location, or usage patterns.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. Third-Party Services</h4>
+                    <p>The App does not integrate with any third-party services that collect data. No data is shared with advertisers, analytics providers, or any other external parties.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. Notifications</h4>
+                    <p>The App uses local notifications to send you hydration reminders. These notifications are processed entirely on your device and no notification data is sent to any server.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. Children's Privacy</h4>
+                    <p>The App does not knowingly collect information from children under 13. The App is safe for users of all ages as it collects no personal data.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>8. Data Deletion</h4>
+                    <p>You can delete all your data at any time from within the App (Settings &gt; Clear all data). Since no data is stored on our servers, deletion is immediate and complete.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>9. Changes to This Policy</h4>
+                    <p>We may update this Privacy Policy from time to time. Any changes will be reflected in the "Last updated" date above.</p>
+                </div>
+
+                <div class="footer-info">
+                    <p style="font-style: italic;">Last updated: April 8, 2026</p>
+                    <p style="margin-top: 1rem;">If you have questions about this Privacy Policy, visit the <a href="index.html#contact">contact page</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── ITALIANO ── -->
+        <div class="lang-section" data-lang="it">
+            <div class="legal-section">
+                <h3 class="section-title">INFORMATIVA SULLA PRIVACY – WATER ALERT</h3>
+
+                <div class="subsection">
+                    <h4>1. Dati che raccogliamo</h4>
+                    <p>Non raccogliamo alcun dato personale. L'App non richiede registrazione, accesso o informazioni personali per funzionare.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. Dati memorizzati sul tuo dispositivo</h4>
+                    <p>Tutti i dati che inserisci (registrazioni del consumo d'acqua, obiettivi giornalieri, contenitori, promemoria) sono conservati localmente sul tuo dispositivo tramite SwiftData. Se hai iCloud abilitato, questi dati possono sincronizzarsi tra i tuoi dispositivi Apple tramite iCloud. Noi non abbiamo accesso a questi dati.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. HealthKit</h4>
+                    <p>L'App utilizza Apple HealthKit come funzionalità opzionale per scrivere i dati sul consumo d'acqua nell'app Salute. Nello specifico:</p>
+                    <ul>
+                        <li>Water Alert scrive solamente i dati sul consumo d'acqua su HealthKit quando registri una bevanda.</li>
+                        <li>Water Alert non legge alcun dato da HealthKit.</li>
+                        <li>Water Alert non raccoglie, memorizza o trasmette alcun dato HealthKit a server esterni o terze parti.</li>
+                        <li>Puoi negare l'accesso a HealthKit in qualsiasi momento tramite Impostazioni &gt; Salute &gt; Accesso ai dati.</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. Analisi e tracciamento</h4>
+                    <p>L'App non utilizza servizi di analisi, SDK pubblicitari o tecnologie di tracciamento. Non tracciamo il tuo comportamento, la tua posizione o i tuoi modelli di utilizzo.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. Servizi di terze parti</h4>
+                    <p>L'App non si integra con servizi di terze parti che raccolgono dati. Nessun dato viene condiviso con inserzionisti, fornitori di analisi o altre parti esterne.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. Notifiche</h4>
+                    <p>L'App utilizza notifiche locali per inviarti promemoria sull'idratazione. Queste notifiche sono elaborate interamente sul tuo dispositivo e nessun dato relativo alle notifiche viene inviato ad alcun server.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. Privacy dei minori</h4>
+                    <p>L'App non raccoglie consapevolmente informazioni da minori di 13 anni. L'App è sicura per utenti di tutte le età poiché non raccoglie dati personali.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>8. Cancellazione dei dati</h4>
+                    <p>Puoi cancellare tutti i tuoi dati in qualsiasi momento dall'interno dell'App (Impostazioni &gt; Cancella tutti i dati). Poiché nessun dato è memorizzato sui nostri server, la cancellazione è immediata e completa.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>9. Modifiche a questa Informativa</h4>
+                    <p>Potremmo aggiornare questa Informativa sulla Privacy di tanto in tanto. Eventuali modifiche saranno riflesse nella data di "Ultimo aggiornamento" sopra indicata.</p>
+                </div>
+
+                <div class="footer-info">
+                    <p style="font-style: italic;">Ultimo aggiornamento: 8 aprile 2026</p>
+                    <p style="margin-top: 1rem;">Per domande su questa Informativa sulla Privacy, visita la <a href="index.html#contact">pagina dei contatti</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── ARABIC ── -->
+        <div class="lang-section" data-lang="ar">
+            <div class="legal-section">
+                <h3 class="section-title">سياسة الخصوصية – Water Alert</h3>
+
+                <div class="subsection">
+                    <h4>1. البيانات التي نجمعها</h4>
+                    <p>نحن لا نجمع أي بيانات شخصية. لا يتطلب التطبيق التسجيل أو تسجيل الدخول أو أي معلومات شخصية للعمل.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. البيانات المخزنة على جهازك</h4>
+                    <p>جميع البيانات التي تدخلها (سجلات استهلاك الماء، الأهداف اليومية، الحاويات، التذكيرات) يتم تخزينها محلياً على جهازك باستخدام SwiftData. إذا كان لديك iCloud مفعّلاً، فقد تتم مزامنة هذه البيانات عبر أجهزة Apple الخاصة بك عبر iCloud. ليس لدينا وصول إلى هذه البيانات.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. HealthKit</h4>
+                    <p>يستخدم التطبيق Apple HealthKit كميزة اختيارية لكتابة بيانات استهلاك الماء في تطبيق الصحة. على وجه التحديد:</p>
+                    <ul>
+                        <li>Water Alert يكتب فقط بيانات استهلاك الماء إلى HealthKit عند تسجيل مشروب.</li>
+                        <li>Water Alert لا يقرأ أي بيانات من HealthKit.</li>
+                        <li>Water Alert لا يجمع أو يخزن أو ينقل أي بيانات HealthKit إلى خوادم خارجية أو أطراف ثالثة.</li>
+                        <li>يمكنك رفض الوصول إلى HealthKit في أي وقت من خلال الإعدادات &gt; الصحة &gt; الوصول إلى البيانات.</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. التحليلات والتتبع</h4>
+                    <p>لا يستخدم التطبيق أي خدمات تحليلات أو حزم إعلانية أو تقنيات تتبع. نحن لا نتتبع سلوكك أو موقعك أو أنماط استخدامك.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. خدمات الطرف الثالث</h4>
+                    <p>لا يتكامل التطبيق مع أي خدمات طرف ثالث تجمع البيانات. لا يتم مشاركة أي بيانات مع المعلنين أو مزودي التحليلات أو أي أطراف خارجية أخرى.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. الإشعارات</h4>
+                    <p>يستخدم التطبيق إشعارات محلية لإرسال تذكيرات بشرب الماء. تتم معالجة هذه الإشعارات بالكامل على جهازك ولا يتم إرسال أي بيانات إشعارات إلى أي خادم.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. خصوصية الأطفال</h4>
+                    <p>لا يجمع التطبيق عن قصد معلومات من الأطفال دون سن 13 عاماً. التطبيق آمن للمستخدمين من جميع الأعمار لأنه لا يجمع بيانات شخصية.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>8. حذف البيانات</h4>
+                    <p>يمكنك حذف جميع بياناتك في أي وقت من داخل التطبيق (الإعدادات &gt; مسح جميع البيانات). نظراً لعدم تخزين أي بيانات على خوادمنا، فإن الحذف فوري وكامل.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>9. التغييرات على هذه السياسة</h4>
+                    <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. ستنعكس أي تغييرات في تاريخ "آخر تحديث" المذكور أعلاه.</p>
+                </div>
+
+                <div class="footer-info" style="direction: rtl; text-align: right;">
+                    <p style="font-style: italic;">آخر تحديث: 8 أبريل 2026</p>
+                    <p style="margin-top: 1rem;">إذا كانت لديك أسئلة حول سياسة الخصوصية هذه، زر <a href="index.html#contact">صفحة الاتصال</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── DEUTSCH ── -->
+        <div class="lang-section" data-lang="de">
+            <div class="legal-section">
+                <h3 class="section-title">DATENSCHUTZRICHTLINIE – WATER ALERT</h3>
+
+                <div class="subsection">
+                    <h4>1. Daten, die wir erheben</h4>
+                    <p>Wir erheben keine personenbezogenen Daten. Die App erfordert weder eine Registrierung noch eine Anmeldung oder persönliche Informationen, um zu funktionieren.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. Auf Ihrem Gerät gespeicherte Daten</h4>
+                    <p>Alle von Ihnen eingegebenen Daten (Wasseraufnahmeprotokolle, Tagesziele, Behälter, Erinnerungen) werden lokal auf Ihrem Gerät mit SwiftData gespeichert. Wenn Sie iCloud aktiviert haben, können diese Daten über iCloud zwischen Ihren Apple-Geräten synchronisiert werden. Wir haben keinen Zugriff auf diese Daten.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. HealthKit</h4>
+                    <p>Die App nutzt Apple HealthKit als optionale Funktion, um Ihre Wasseraufnahmedaten in die Health-App zu schreiben. Im Einzelnen:</p>
+                    <ul>
+                        <li>Water Alert schreibt nur Wasseraufnahmedaten in HealthKit, wenn Sie ein Getränk erfassen.</li>
+                        <li>Water Alert liest keine Daten aus HealthKit.</li>
+                        <li>Water Alert erhebt, speichert oder überträgt keine HealthKit-Daten an externe Server oder Dritte.</li>
+                        <li>Sie können den HealthKit-Zugriff jederzeit über Einstellungen &gt; Gesundheit &gt; Datenzugriff verweigern.</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. Analysen und Tracking</h4>
+                    <p>Die App verwendet keine Analysedienste, Werbe-SDKs oder Tracking-Technologien. Wir verfolgen weder Ihr Verhalten noch Ihren Standort oder Ihre Nutzungsmuster.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. Dienste Dritter</h4>
+                    <p>Die App integriert sich nicht mit Drittanbieterdiensten, die Daten sammeln. Es werden keine Daten an Werbetreibende, Analyseanbieter oder andere externe Parteien weitergegeben.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. Benachrichtigungen</h4>
+                    <p>Die App verwendet lokale Benachrichtigungen, um Ihnen Erinnerungen zur Flüssigkeitszufuhr zu senden. Diese Benachrichtigungen werden vollständig auf Ihrem Gerät verarbeitet und es werden keine Benachrichtigungsdaten an Server gesendet.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. Datenschutz für Kinder</h4>
+                    <p>Die App erhebt wissentlich keine Informationen von Kindern unter 13 Jahren. Die App ist für Nutzer aller Altersgruppen sicher, da keine personenbezogenen Daten erhoben werden.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>8. Datenlöschung</h4>
+                    <p>Sie können alle Ihre Daten jederzeit innerhalb der App löschen (Einstellungen &gt; Alle Daten löschen). Da keine Daten auf unseren Servern gespeichert sind, erfolgt die Löschung sofort und vollständig.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>9. Änderungen dieser Richtlinie</h4>
+                    <p>Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Änderungen werden im oben angegebenen Datum „Letzte Aktualisierung" berücksichtigt.</p>
+                </div>
+
+                <div class="footer-info">
+                    <p style="font-style: italic;">Letzte Aktualisierung: 8. April 2026</p>
+                    <p style="margin-top: 1rem;">Bei Fragen zu dieser Datenschutzrichtlinie besuchen Sie die <a href="index.html#contact">Kontaktseite</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── ESPAÑOL ── -->
+        <div class="lang-section" data-lang="es">
+            <div class="legal-section">
+                <h3 class="section-title">POLÍTICA DE PRIVACIDAD – WATER ALERT</h3>
+
+                <div class="subsection">
+                    <h4>1. Datos que recopilamos</h4>
+                    <p>No recopilamos ningún dato personal. La App no requiere registro, inicio de sesión ni información personal para funcionar.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. Datos almacenados en tu dispositivo</h4>
+                    <p>Todos los datos que ingresas (registros de consumo de agua, objetivos diarios, contenedores, recordatorios) se almacenan localmente en tu dispositivo utilizando SwiftData. Si tienes iCloud habilitado, estos datos pueden sincronizarse entre tus dispositivos Apple a través de iCloud. No tenemos acceso a estos datos.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. HealthKit</h4>
+                    <p>La App utiliza Apple HealthKit como función opcional para escribir tus datos de consumo de agua en la app Salud. Específicamente:</p>
+                    <ul>
+                        <li>Water Alert solo escribe datos de consumo de agua en HealthKit cuando registras una bebida.</li>
+                        <li>Water Alert no lee ningún dato de HealthKit.</li>
+                        <li>Water Alert no recopila, almacena ni transmite ningún dato de HealthKit a servidores externos o terceros.</li>
+                        <li>Puedes denegar el acceso a HealthKit en cualquier momento a través de Ajustes &gt; Salud &gt; Acceso a datos.</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. Análisis y seguimiento</h4>
+                    <p>La App no utiliza servicios de análisis, SDKs publicitarios ni tecnologías de seguimiento. No rastreamos tu comportamiento, ubicación ni patrones de uso.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. Servicios de terceros</h4>
+                    <p>La App no se integra con servicios de terceros que recopilen datos. No se comparten datos con anunciantes, proveedores de análisis ni otras partes externas.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. Notificaciones</h4>
+                    <p>La App utiliza notificaciones locales para enviarte recordatorios de hidratación. Estas notificaciones se procesan completamente en tu dispositivo y no se envían datos de notificación a ningún servidor.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. Privacidad de menores</h4>
+                    <p>La App no recopila deliberadamente información de menores de 13 años. La App es segura para usuarios de todas las edades ya que no recopila datos personales.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>8. Eliminación de datos</h4>
+                    <p>Puedes eliminar todos tus datos en cualquier momento desde la App (Ajustes &gt; Borrar todos los datos). Dado que no se almacenan datos en nuestros servidores, la eliminación es inmediata y completa.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>9. Cambios en esta Política</h4>
+                    <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Cualquier cambio se reflejará en la fecha de "Última actualización" indicada arriba.</p>
+                </div>
+
+                <div class="footer-info">
+                    <p style="font-style: italic;">Última actualización: 8 de abril de 2026</p>
+                    <p style="margin-top: 1rem;">Si tienes preguntas sobre esta Política de Privacidad, visita la <a href="index.html#contact">página de contacto</a>.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector('.lang-section[data-lang="' + lang + '"]').classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    </script>
+</body>
+</html>
