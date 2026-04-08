@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Alert - Terms and Conditions</title>
+    <meta name="description" content="Terms and Conditions for the Water Alert hydration tracking app">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-light: #93c5fd;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #3b82f6;
+            --accent-color: #0ea5e9;
+            --accent-secondary: #0284c7;
+
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-tertiary: #64748b;
+            --text-muted: #94a3b8;
+
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --bg-glass: rgba(255, 255, 255, 0.8);
+            --bg-glass-strong: rgba(255, 255, 255, 0.95);
+
+            --dark-bg-primary: #0f172a;
+            --dark-bg-secondary: #1e293b;
+            --dark-bg-tertiary: #334155;
+            --dark-text-primary: #f8fafc;
+            --dark-text-secondary: #cbd5e1;
+            --dark-text-tertiary: #94a3b8;
+            --dark-bg-glass: rgba(15, 23, 42, 0.8);
+            --dark-bg-glass-strong: rgba(15, 23, 42, 0.95);
+
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --shadow-glow: 0 0 40px rgba(37,99,235,0.3);
+
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            --gradient-secondary: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+            --gradient-accent: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            --gradient-text: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #0ea5e9 100%);
+
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --text-primary: var(--dark-text-primary);
+            --text-secondary: var(--dark-text-secondary);
+            --text-tertiary: var(--dark-text-tertiary);
+            --bg-primary: var(--dark-bg-primary);
+            --bg-secondary: var(--dark-bg-secondary);
+            --bg-tertiary: var(--dark-bg-tertiary);
+            --bg-glass: var(--dark-bg-glass);
+            --bg-glass-strong: var(--dark-bg-glass-strong);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: var(--bg-glass-strong);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-actions { display: flex; gap: 1rem; align-items: center; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary-color);
+            background: rgba(37,99,235,0.1);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .page-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Language Tabs */
+        .lang-tabs {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .lang-tab {
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            border: 2px solid var(--primary-color);
+            background: var(--bg-glass);
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-tab:hover,
+        .lang-tab.active {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Language Sections */
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
+
+        .lang-section[data-lang="ar"] {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .lang-section[data-lang="ar"] .subsection ul {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+
+        .legal-section {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-xl);
+            transition: var(--transition);
+        }
+
+        .legal-section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .subsection { margin-bottom: 2.5rem; }
+
+        .subsection h4 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .subsection ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-left: 2rem;
+            list-style: disc;
+            margin-bottom: 1rem;
+        }
+
+        .footer-info {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(37,99,235,0.1);
+        }
+
+        .footer-info p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .footer-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .footer-info a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 2rem; }
+            .page-subtitle { font-size: 1rem; }
+            .legal-section { padding: 2rem 1.5rem; }
+            .section-title { font-size: 1.5rem; }
+            .subsection h4 { font-size: 1.1rem; }
+            .main-content { padding: 100px 1rem 2rem; }
+            .nav-container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Jad Taljabini</a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Site
+                </a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1 class="page-title">Water Alert – Terms and Conditions</h1>
+            <p class="page-subtitle">
+                Terms and Conditions for the Water Alert hydration tracking app
+            </p>
+            <div class="page-links">
+                <a href="water-alert-privacy.html" class="btn btn-secondary">
+                    <i class="fas fa-shield-alt"></i>
+                    Privacy Policy
+                </a>
+            </div>
+        </div>
+
+        <!-- Language Tabs -->
+        <div class="lang-tabs">
+            <button class="lang-tab active" onclick="switchLang('en')">🇬🇧 English</button>
+            <button class="lang-tab" onclick="switchLang('it')">🇮🇹 Italiano</button>
+            <button class="lang-tab" onclick="switchLang('ar')">🇸🇦 العربية</button>
+            <button class="lang-tab" onclick="switchLang('de')">🇩🇪 Deutsch</button>
+            <button class="lang-tab" onclick="switchLang('es')">🇪🇸 Español</button>
+        </div>
+
+        <!-- ── ENGLISH ── -->
+        <div class="lang-section active" data-lang="en">
+            <div class="legal-section">
+                <h3 class="section-title">TERMS AND CONDITIONS – WATER ALERT</h3>
+
+                <div class="subsection">
+                    <h4>1. Use of the App</h4>
+                    <p>Water Alert is a personal hydration tracking tool designed to help you monitor your daily water intake and set reminders. The App is intended for informational purposes only and does not constitute medical advice.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. HealthKit Integration</h4>
+                    <p>The App integrates with Apple HealthKit to allow you to save your water intake data to the Health app. This feature is entirely optional. Water Alert only writes data to HealthKit at your request; it does not read or collect any data from HealthKit. No health data is transmitted to our servers or any third party.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. User Data</h4>
+                    <p>All data you enter in the App (water intake, goals, containers, reminders) is stored locally on your device and, if enabled, synced via iCloud to your other devices. We do not collect, store, or transmit any of your personal data to external servers.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. No Account Required</h4>
+                    <p>The App does not require you to create an account or provide any personal information.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. Intellectual Property</h4>
+                    <p>All content, design, and code of the App are the property of the developer. You may not copy, modify, or distribute any part of the App without prior written consent.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. Disclaimer</h4>
+                    <p>The App is provided "as is" without warranty of any kind. The developer is not responsible for any health decisions made based on the App's data. Always consult a healthcare professional for medical advice.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. Changes to These Terms</h4>
+                    <p>We reserve the right to update these Terms at any time. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
+                </div>
+
+                <div class="footer-info">
+                    <p style="font-style: italic;">Last updated: April 8, 2026</p>
+                    <p style="margin-top: 1rem;">For questions about these Terms, visit the <a href="index.html#contact">contact page</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── ITALIANO ── -->
+        <div class="lang-section" data-lang="it">
+            <div class="legal-section">
+                <h3 class="section-title">TERMINI E CONDIZIONI – WATER ALERT</h3>
+
+                <div class="subsection">
+                    <h4>1. Utilizzo dell'App</h4>
+                    <p>Water Alert è uno strumento personale per il monitoraggio dell'idratazione, progettato per aiutarti a tenere traccia del consumo giornaliero di acqua e impostare promemoria. L'App è destinata esclusivamente a scopi informativi e non costituisce consulenza medica.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. Integrazione con HealthKit</h4>
+                    <p>L'App si integra con Apple HealthKit per consentirti di salvare i dati sul consumo d'acqua nell'app Salute. Questa funzionalità è del tutto facoltativa. Water Alert scrive dati su HealthKit solo su tua richiesta; non legge né raccoglie alcun dato da HealthKit. Nessun dato sanitario viene trasmesso ai nostri server o a terze parti.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. Dati dell'utente</h4>
+                    <p>Tutti i dati inseriti nell'App (consumo d'acqua, obiettivi, contenitori, promemoria) sono conservati localmente sul tuo dispositivo e, se abilitato, sincronizzati tramite iCloud sugli altri tuoi dispositivi. Non raccogliamo, memorizziamo né trasmettiamo alcun dato personale a server esterni.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. Nessun account richiesto</h4>
+                    <p>L'App non richiede la creazione di un account né la fornitura di informazioni personali.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. Proprietà intellettuale</h4>
+                    <p>Tutti i contenuti, il design e il codice dell'App sono di proprietà dello sviluppatore. Non è consentito copiare, modificare o distribuire alcuna parte dell'App senza previo consenso scritto.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. Esclusione di responsabilità</h4>
+                    <p>L'App è fornita "così com'è" senza garanzia di alcun tipo. Lo sviluppatore non è responsabile per decisioni sanitarie prese sulla base dei dati dell'App. Consulta sempre un professionista sanitario per consigli medici.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. Modifiche ai presenti Termini</h4>
+                    <p>Ci riserviamo il diritto di aggiornare i presenti Termini in qualsiasi momento. L'uso continuato dell'App dopo le modifiche costituisce accettazione dei nuovi Termini.</p>
+                </div>
+
+                <div class="footer-info">
+                    <p style="font-style: italic;">Ultimo aggiornamento: 8 aprile 2026</p>
+                    <p style="margin-top: 1rem;">Per domande sui presenti Termini, visita la <a href="index.html#contact">pagina dei contatti</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── ARABIC ── -->
+        <div class="lang-section" data-lang="ar">
+            <div class="legal-section">
+                <h3 class="section-title">الشروط والأحكام – Water Alert</h3>
+
+                <div class="subsection">
+                    <h4>1. استخدام التطبيق</h4>
+                    <p>Water Alert هو أداة شخصية لتتبع شرب الماء مصممة لمساعدتك في مراقبة استهلاكك اليومي من الماء وتعيين تذكيرات. التطبيق مخصص لأغراض إعلامية فقط ولا يشكل نصيحة طبية.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. التكامل مع HealthKit</h4>
+                    <p>يتكامل التطبيق مع Apple HealthKit للسماح لك بحفظ بيانات استهلاك الماء في تطبيق الصحة. هذه الميزة اختيارية بالكامل. يقوم Water Alert بكتابة البيانات إلى HealthKit فقط بناءً على طلبك؛ ولا يقرأ أو يجمع أي بيانات من HealthKit. لا يتم نقل أي بيانات صحية إلى خوادمنا أو أي طرف ثالث.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. بيانات المستخدم</h4>
+                    <p>جميع البيانات التي تدخلها في التطبيق (استهلاك الماء، الأهداف، الحاويات، التذكيرات) يتم تخزينها محلياً على جهازك، وإذا كانت مفعّلة، تتم مزامنتها عبر iCloud مع أجهزتك الأخرى. نحن لا نجمع أو نخزن أو ننقل أي بيانات شخصية إلى خوادم خارجية.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. لا حاجة لحساب</h4>
+                    <p>لا يتطلب التطبيق إنشاء حساب أو تقديم أي معلومات شخصية.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. الملكية الفكرية</h4>
+                    <p>جميع المحتوى والتصميم والكود الخاص بالتطبيق ملك للمطور. لا يجوز نسخ أو تعديل أو توزيع أي جزء من التطبيق دون موافقة كتابية مسبقة.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. إخلاء المسؤولية</h4>
+                    <p>يتم تقديم التطبيق "كما هو" دون أي ضمان من أي نوع. المطور غير مسؤول عن أي قرارات صحية تُتخذ بناءً على بيانات التطبيق. استشر دائماً متخصصاً في الرعاية الصحية للحصول على نصيحة طبية.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. التغييرات على هذه الشروط</h4>
+                    <p>نحتفظ بالحق في تحديث هذه الشروط في أي وقت. يُعتبر الاستمرار في استخدام التطبيق بعد التغييرات قبولاً للشروط الجديدة.</p>
+                </div>
+
+                <div class="footer-info" style="direction: rtl; text-align: right;">
+                    <p style="font-style: italic;">آخر تحديث: 8 أبريل 2026</p>
+                    <p style="margin-top: 1rem;">للأسئلة حول هذه الشروط، زر <a href="index.html#contact">صفحة الاتصال</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── DEUTSCH ── -->
+        <div class="lang-section" data-lang="de">
+            <div class="legal-section">
+                <h3 class="section-title">NUTZUNGSBEDINGUNGEN – WATER ALERT</h3>
+
+                <div class="subsection">
+                    <h4>1. Nutzung der App</h4>
+                    <p>Water Alert ist ein persönliches Tool zur Überwachung der Flüssigkeitszufuhr, das Ihnen hilft, Ihren täglichen Wasserkonsum zu verfolgen und Erinnerungen einzustellen. Die App dient ausschließlich zu Informationszwecken und stellt keine medizinische Beratung dar.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. HealthKit-Integration</h4>
+                    <p>Die App integriert sich mit Apple HealthKit, damit Sie Ihre Wasseraufnahmedaten in der Health-App speichern können. Diese Funktion ist vollständig optional. Water Alert schreibt Daten nur auf Ihre Anfrage in HealthKit; es werden keine Daten aus HealthKit gelesen oder gesammelt. Keine Gesundheitsdaten werden an unsere Server oder Dritte übertragen.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. Nutzerdaten</h4>
+                    <p>Alle Daten, die Sie in der App eingeben (Wasseraufnahme, Ziele, Behälter, Erinnerungen), werden lokal auf Ihrem Gerät gespeichert und, falls aktiviert, über iCloud mit Ihren anderen Geräten synchronisiert. Wir erheben, speichern oder übermitteln keine Ihrer persönlichen Daten an externe Server.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. Kein Konto erforderlich</h4>
+                    <p>Die App erfordert weder die Erstellung eines Kontos noch die Angabe persönlicher Informationen.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. Geistiges Eigentum</h4>
+                    <p>Alle Inhalte, das Design und der Code der App sind Eigentum des Entwicklers. Das Kopieren, Ändern oder Verbreiten von Teilen der App ohne vorherige schriftliche Genehmigung ist nicht gestattet.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. Haftungsausschluss</h4>
+                    <p>Die App wird „wie besehen" ohne jegliche Garantie bereitgestellt. Der Entwickler haftet nicht für gesundheitliche Entscheidungen, die auf Grundlage der App-Daten getroffen werden. Konsultieren Sie stets einen medizinischen Fachmann für medizinische Beratung.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. Änderungen dieser Bedingungen</h4>
+                    <p>Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu aktualisieren. Die fortgesetzte Nutzung der App nach Änderungen gilt als Annahme der neuen Bedingungen.</p>
+                </div>
+
+                <div class="footer-info">
+                    <p style="font-style: italic;">Letzte Aktualisierung: 8. April 2026</p>
+                    <p style="margin-top: 1rem;">Bei Fragen zu diesen Bedingungen besuchen Sie die <a href="index.html#contact">Kontaktseite</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── ESPAÑOL ── -->
+        <div class="lang-section" data-lang="es">
+            <div class="legal-section">
+                <h3 class="section-title">TÉRMINOS Y CONDICIONES – WATER ALERT</h3>
+
+                <div class="subsection">
+                    <h4>1. Uso de la App</h4>
+                    <p>Water Alert es una herramienta personal de seguimiento de hidratación diseñada para ayudarte a controlar tu consumo diario de agua y configurar recordatorios. La App está destinada únicamente a fines informativos y no constituye asesoramiento médico.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>2. Integración con HealthKit</h4>
+                    <p>La App se integra con Apple HealthKit para permitirte guardar tus datos de consumo de agua en la app Salud. Esta función es completamente opcional. Water Alert solo escribe datos en HealthKit a tu solicitud; no lee ni recopila ningún dato de HealthKit. Ningún dato de salud se transmite a nuestros servidores ni a terceros.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>3. Datos del usuario</h4>
+                    <p>Todos los datos que ingresas en la App (consumo de agua, objetivos, contenedores, recordatorios) se almacenan localmente en tu dispositivo y, si está habilitado, se sincronizan a través de iCloud con tus otros dispositivos. No recopilamos, almacenamos ni transmitimos ningún dato personal a servidores externos.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>4. Sin cuenta requerida</h4>
+                    <p>La App no requiere crear una cuenta ni proporcionar información personal.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>5. Propiedad intelectual</h4>
+                    <p>Todo el contenido, diseño y código de la App son propiedad del desarrollador. No se permite copiar, modificar ni distribuir ninguna parte de la App sin consentimiento previo por escrito.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>6. Exención de responsabilidad</h4>
+                    <p>La App se proporciona "tal cual" sin garantía de ningún tipo. El desarrollador no es responsable de decisiones de salud tomadas con base en los datos de la App. Consulta siempre a un profesional de la salud para obtener asesoramiento médico.</p>
+                </div>
+
+                <div class="subsection">
+                    <h4>7. Cambios en estos Términos</h4>
+                    <p>Nos reservamos el derecho de actualizar estos Términos en cualquier momento. El uso continuado de la App después de los cambios constituye la aceptación de los nuevos Términos.</p>
+                </div>
+
+                <div class="footer-info">
+                    <p style="font-style: italic;">Última actualización: 8 de abril de 2026</p>
+                    <p style="margin-top: 1rem;">Para preguntas sobre estos Términos, visita la <a href="index.html#contact">página de contacto</a>.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
+            document.querySelector('.lang-section[data-lang="' + lang + '"]').classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    </script>
+</body>
+</html>
