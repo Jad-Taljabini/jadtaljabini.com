@@ -272,6 +272,51 @@
             margin-bottom: 1rem;
         }
 
+        .processor-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin-top: 1rem;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            background: var(--bg-glass-strong);
+            font-size: 0.95rem;
+        }
+
+        .processor-table th,
+        .processor-table td {
+            padding: 0.9rem 1rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.12);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .processor-table th {
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--primary-color);
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .processor-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .processor-table tr:hover td {
+            background: rgba(37, 99, 235, 0.04);
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
         .footer-info {
             text-align: center;
             margin-top: 2rem;
@@ -351,7 +396,7 @@
                 Informativa sulla privacy per l'applicazione Hostario
             </p>
             <div class="page-links">
-                <a href="hostario-terms.html" class="btn btn-secondary">
+                <a href="/hostario-terms" class="btn btn-secondary">
                     <i class="fas fa-file-contract"></i>
                     Termini e Condizioni
                 </a>
@@ -472,7 +517,50 @@
                     <li><strong>Dati trasmessi:</strong> Dati ospiti + statistiche (tipo turismo, mezzo trasporto, ecc.)</li>
                     <li><strong>Protocollo:</strong> SOAP 1.1</li>
                     <li><strong>Autenticazione:</strong> Basic Auth</li>
+                    <li><strong>Base legale:</strong> Obbligo di legge (normative regionali sul turismo)</li>
                 </ul>
+
+                <h5>4.3 Apple Inc.</h5>
+                <ul>
+                    <li><strong>Fornitore:</strong> Apple Inc., One Apple Park Way, Cupertino, CA 95014, USA</li>
+                    <li><strong>Servizi utilizzati:</strong> StoreKit (gestione abbonamenti in-app), App Store, eventuale backup iCloud del dispositivo se abilitato dall'utente a livello di sistema operativo</li>
+                    <li><strong>Dati trattati:</strong> Dati di acquisto e abbonamento gestiti da Apple, Apple ID dell'utente (mai visibile all'app), eventuali dati applicativi inclusi nel backup iCloud del dispositivo</li>
+                    <li><strong>Scopo:</strong> Elaborazione pagamenti e abbonamenti in conformità alle policy dell'App Store; backup di sistema se attivato</li>
+                    <li><strong>Base legale:</strong> Esecuzione del contratto (acquisto dell'abbonamento)</li>
+                    <li><strong>Privacy policy:</strong> <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a></li>
+                </ul>
+
+                <h5>4.4 TelemetryDeck - Analytics Anonimi</h5>
+                <p>A partire da Aprile 2026 Hostario utilizza <strong>TelemetryDeck</strong> per raccogliere statistiche di utilizzo <strong>completamente anonime</strong>, necessarie per capire come viene usata l'app e migliorarla. Nessun dato personale e nessun dato degli ospiti viene mai inviato a TelemetryDeck.</p>
+                <ul>
+                    <li><strong>Fornitore:</strong> TelemetryDeck GmbH, Augsburg, Germania</li>
+                    <li><strong>Server:</strong> Germania (Unione Europea), soggetto al GDPR</li>
+                    <li><strong>Privacy policy:</strong> <a href="https://telemetrydeck.com/privacy/" target="_blank" rel="noopener">telemetrydeck.com/privacy</a></li>
+                    <li><strong>Base legale:</strong> Legittimo interesse (art. 6(1)(f) GDPR) al miglioramento dell'applicazione, con possibilità per l'utente di opporsi disattivando l'opzione in qualsiasi momento</li>
+                </ul>
+
+                <p><strong>Dati raccolti (anonimi):</strong></p>
+                <ul>
+                    <li>Eventi di utilizzo dell'app (es. avvio app, completamento onboarding, creazione di un check-in, invio dati ad AlloggiatiWeb / ROSS1000, apertura paywall, acquisto abbonamento)</li>
+                    <li>Modello del dispositivo (es. "iPhone 15 Pro")</li>
+                    <li>Versione di iOS / iPadOS</li>
+                    <li>Lingua di sistema</li>
+                    <li>Hash SHA-256 dell'<code>identifierForVendor</code> di Apple, utilizzato come identificatore anonimo e non reversibile all'identità dell'utente</li>
+                </ul>
+
+                <p><strong>Dati NON raccolti:</strong></p>
+                <ul>
+                    <li>Indirizzo IP (non memorizzato da TelemetryDeck)</li>
+                    <li>IDFA, Advertising Identifier o altri identificatori pubblicitari</li>
+                    <li>Nome, email, codice fiscale o qualunque altro dato personale dell'utente</li>
+                    <li>Qualsiasi dato relativo agli ospiti, agli immobili, alle prenotazioni o ai documenti</li>
+                    <li>Posizione geografica (GPS)</li>
+                    <li>Contenuto delle schermate, testi inseriti o screenshot</li>
+                </ul>
+
+                <p><strong>Disattivazione:</strong> è possibile disattivare completamente la raccolta di analytics in qualsiasi momento dall'app, nel pannello <em>Impostazioni &rarr; Privacy</em>. La modifica ha effetto immediato, senza bisogno di riavviare l'app.</p>
+
+                <p style="font-style: italic;"><strong>NB giuridico:</strong> poiché TelemetryDeck tratta esclusivamente dati anonimizzati e non correlabili a persone fisiche identificate o identificabili, secondo la documentazione ufficiale del fornitore <strong>non opera come responsabile del trattamento</strong> ai sensi degli artt. 26 e 28 GDPR. Ciononostante, viene elencato in questa informativa per completezza e trasparenza.</p>
             </div>
 
             <div class="subsection">
@@ -499,6 +587,13 @@
                     <li>PDF generati (contratti, ricevute) salvati temporaneamente in directory temporanea</li>
                     <li>Eliminati automaticamente dal sistema</li>
                 </ul>
+
+                <h5>5.4 Eventi Analytics</h5>
+                <ul>
+                    <li>Gli eventi di analytics anonimi (vedi sezione 4.4) NON vengono memorizzati in SwiftData né nel Keychain</li>
+                    <li>Sono inviati in modalità "fire-and-forget" ai server di TelemetryDeck in Germania e scartati localmente dopo l'invio</li>
+                    <li>In caso di assenza di connessione, gli eventi vengono bufferizzati temporaneamente dall'SDK di TelemetryDeck e scartati al successivo invio o al termine della sessione</li>
+                </ul>
             </div>
 
             <div class="subsection">
@@ -514,11 +609,13 @@
             <div class="subsection">
                 <h4>7. SICUREZZA</h4>
                 <ul>
-                    <li>Nessuna connessione a server propri dell'app</li>
-                    <li>Comunicazione solo con servizi governativi ufficiali (HTTPS)</li>
-                    <li>Credenziali in Keychain crittografato</li>
-                    <li>Dati su dispositivo protetti da crittografia iOS</li>
-                    <li>NO analytics, NO tracking, NO pubblicità</li>
+                    <li>Nessun server proprietario dello sviluppatore: nessun account, nessun login, nessuna sincronizzazione cloud sotto il nostro controllo</li>
+                    <li>Comunicazioni verso l'esterno limitate a servizi governativi ufficiali (AlloggiatiWeb, ROSS1000), Apple (StoreKit) e TelemetryDeck (analytics anonimi), sempre su HTTPS</li>
+                    <li>Credenziali AlloggiatiWeb / ROSS1000 salvate nel Keychain iOS, protetto dalla Secure Enclave</li>
+                    <li>Dati degli ospiti e dei listing protetti dalla crittografia a livello di file system di iOS</li>
+                    <li>Analytics anonimi e disattivabili (vedi sezione 4.4)</li>
+                    <li>NO tracking pubblicitario, NO IDFA, NO profilazione, NO pubblicità in-app</li>
+                    <li>NO condivisione di dati con broker, social network o terze parti commerciali</li>
                 </ul>
             </div>
 
@@ -557,35 +654,90 @@
             <div class="subsection">
                 <h4>11. TRASFERIMENTI INTERNAZIONALI</h4>
                 <ul>
-                    <li>NO trasferimenti fuori UE</li>
-                    <li>Tutti i dati restano sul dispositivo in Italia o trasmessi a server italiani (.it)</li>
+                    <li><strong>Dati degli ospiti e della struttura:</strong> restano sul dispositivo dell'utente; quando trasmessi, vengono inviati esclusivamente a server italiani (Polizia di Stato, enti regionali)</li>
+                    <li><strong>Analytics anonimi:</strong> trasmessi a TelemetryDeck GmbH, con server in Germania &mdash; quindi all'interno dell'Unione Europea / Spazio Economico Europeo, con piena applicazione del GDPR</li>
+                    <li><strong>Abbonamenti e App Store:</strong> gestiti da Apple Inc., che può trattare i dati di acquisto anche al di fuori dell'UE secondo la propria privacy policy e sulla base di clausole contrattuali standard approvate dalla Commissione Europea</li>
+                    <li><strong>Nessun altro trasferimento</strong> extra-UE di dati personali viene effettuato dall'app</li>
                 </ul>
             </div>
 
             <div class="subsection">
                 <h4>12. INFORMAZIONI AGGIUNTIVE</h4>
-                
+
+                <p>La privacy è uno dei punti forti di Hostario. Per essere chiari su cosa succede e cosa <em>non</em> succede:</p>
+
                 <p><strong>NO:</strong></p>
                 <ul>
-                    <li>Analytics o telemetria</li>
-                    <li>Pubblicità</li>
-                    <li>Profilazione</li>
-                    <li>Condivisione con terze parti commerciali</li>
-                    <li>Server propri che raccolgono dati</li>
-                    <li>Account utente cloud</li>
-                    <li>Sincronizzazione automatica</li>
+                    <li>Nessun cookie</li>
+                    <li>Nessun tracker pubblicitario, nessun IDFA, nessun SDK di terze parti a fini di marketing</li>
+                    <li>Nessuna profilazione dell'utente o degli ospiti</li>
+                    <li>Nessuna condivisione di dati personali con terze parti commerciali</li>
+                    <li>Nessun server proprietario dello sviluppatore che raccoglie dati degli utenti o degli ospiti</li>
+                    <li>Nessun account cloud, nessun login</li>
+                    <li>Nessuna sincronizzazione automatica al di fuori del normale backup iCloud del dispositivo (gestito dall'utente)</li>
                 </ul>
 
                 <p><strong>SÌ:</strong></p>
                 <ul>
-                    <li>Tutto locale sul dispositivo</li>
-                    <li>Comunicazione solo con enti governativi</li>
-                    <li>Pieno controllo dell'utente sui dati</li>
+                    <li>Tutti i dati di ospiti, immobili, prenotazioni e documenti restano locali sul dispositivo</li>
+                    <li>Nessun dato identificativo degli ospiti lascia mai il dispositivo, salvo invio esplicito ai portali ufficiali (AlloggiatiWeb, ROSS1000) dietro azione diretta dell'utente</li>
+                    <li>Analytics anonimi e completamente opzionali, disattivabili in qualsiasi momento dalle impostazioni dell'app</li>
+                    <li>Comunicazioni verso servizi esterni limitate a Polizia di Stato, enti regionali, Apple (StoreKit) e TelemetryDeck (analytics anonimi)</li>
+                    <li>Pieno controllo dell'utente sui dati, sempre esportabili e cancellabili</li>
                 </ul>
             </div>
 
             <div class="subsection">
-                <h4>13. NOTE LEGALI IMPORTANTI</h4>
+                <h4>13. ELENCO DEI FORNITORI E RESPONSABILI DEL TRATTAMENTO</h4>
+                <p>Riepilogo dei soggetti esterni con cui Hostario può scambiare dati, con relativa finalità, tipologia di dati e base giuridica:</p>
+                <div class="table-scroll">
+                    <table class="processor-table">
+                        <thead>
+                            <tr>
+                                <th>Fornitore</th>
+                                <th>Ruolo / Servizio</th>
+                                <th>Dati trattati</th>
+                                <th>Ubicazione</th>
+                                <th>Base giuridica</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Apple Inc.</strong></td>
+                                <td>StoreKit (abbonamenti), App Store, eventuale backup iCloud del dispositivo</td>
+                                <td>Dati di acquisto e abbonamento, Apple ID, eventuali dati applicativi inclusi nel backup iCloud</td>
+                                <td>USA + data center globali (clausole contrattuali standard)</td>
+                                <td>Esecuzione del contratto</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Polizia di Stato</strong> &ndash; AlloggiatiWeb</td>
+                                <td>Comunicazione schedine alloggiati</td>
+                                <td>Dati anagrafici e documenti degli ospiti (su azione esplicita dell'utente)</td>
+                                <td>Italia</td>
+                                <td>Obbligo di legge (art. 109 TULPS)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Enti regionali</strong> &ndash; ROSS1000 / Turismo5</td>
+                                <td>Statistiche sui movimenti turistici</td>
+                                <td>Dati ospiti + informazioni statistiche (su azione esplicita dell'utente)</td>
+                                <td>Italia</td>
+                                <td>Obbligo di legge (normative regionali)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TelemetryDeck GmbH</strong></td>
+                                <td>Statistiche di utilizzo anonime (non &egrave; responsabile del trattamento ai sensi artt. 26/28 GDPR poich&eacute; tratta solo dati anonimi)</td>
+                                <td>Eventi di utilizzo anonimi, modello device, versione iOS, lingua, hash SHA-256 dell'<code>identifierForVendor</code></td>
+                                <td>Germania (UE)</td>
+                                <td>Legittimo interesse (opt-out disponibile)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="margin-top: 1.5rem;"><strong>Titolare del trattamento dei dati degli ospiti:</strong> il proprietario della struttura ricettiva che utilizza Hostario. Lo sviluppatore dell'app non &egrave; titolare n&eacute; responsabile del trattamento dei dati inseriti dall'utente riguardo agli ospiti.</p>
+            </div>
+
+            <div class="subsection">
+                <h4>14. NOTE LEGALI IMPORTANTI</h4>
                 <ul>
                     <li><strong>L'app è uno strumento:</strong> Il titolare del trattamento è il proprietario della struttura, NON lo sviluppatore</li>
                     <li><strong>Obbligo di legge:</strong> La comunicazione ad AlloggiatiWeb è obbligatoria per legge</li>
@@ -595,7 +747,8 @@
             </div>
 
             <div class="footer-info">
-                <p style="font-style: italic;">Ultimo aggiornamento: Aprile 2026</p>
+                <p style="font-style: italic;">Ultimo aggiornamento: 18 Aprile 2026</p>
+                <p style="margin-top: 0.5rem;">Versione: 1.1 &mdash; introdotti analytics anonimi tramite TelemetryDeck, aggiornato elenco data processor.</p>
                 <p style="margin-top: 1rem;">Per domande su questa privacy policy, contattare: <a href="mailto:business@jadtaljabini.com">business@jadtaljabini.com</a></p>
             </div>
         </div>
