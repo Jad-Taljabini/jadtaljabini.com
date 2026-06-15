@@ -626,10 +626,27 @@
         }
 
         .project-title {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-primary);
+        }
+
+        .project-badge-new {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background: #facc15;
+            color: #713f12;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
 
         .project-description {
@@ -1384,7 +1401,7 @@
                         <i class="fas fa-house-user"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Hostario</h3>
+                        <h3 class="project-title">Hostario <span class="project-badge-new">New</span></h3>
                         <p class="project-description">
                             App for hosts and property managers to streamline check-ins, scan guest documents, auto-fill official portals (Alloggiati Web, ROSS1000), and generate contracts, receipts, and tourist tax summaries.
                         </p>
@@ -1448,7 +1465,7 @@
                         <i class="fas fa-chess-board"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Havannah UI Fuzzer</h3>
+                        <h3 class="project-title">Havannah UI Fuzzer <span class="project-badge-new">New</span></h3>
                         <p class="project-description">
                             Implemented a digital version of the board game Havannah using Rulebook/RLC, Python, and Tkinter, then built a fuzzing engine to test the GUI against intentionally buggy versions with reproducible benchmark scripts.
                         </p>
@@ -1462,6 +1479,10 @@
                             <a href="https://github.com/Jad-Taljabini/rlc/tree/UI_Fuzzer/projects/Havannah" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i>
                                 GitHub
+                            </a>
+                            <a href="docs/Implementazione%20digitale%20di%20giochi%20da%20tavolo.pdf" target="_blank" class="project-link secondary">
+                                <i class="fas fa-file-alt"></i>
+                                Report
                             </a>
                             <a href="docs/MANUALE.pdf" target="_blank" class="project-link secondary">
                                 <i class="fas fa-file-pdf"></i>
@@ -1608,7 +1629,7 @@
                                 <h3 class="timeline-title">Project Coordinator</h3>
                                 <p class="timeline-company">Municipality of Gallarate</p>
                     </div>
-                            <span class="timeline-date">2021</span>
+                            <span class="timeline-date">2021 - 2022</span>
                     </div>
                         <p class="timeline-description">
                             Led a PCTO project for installing information kiosks in symbolic city locations, promoting local history and culture. Managed task distribution within the team and developed content about the Basilica of Santa Maria Assunta and the Gallic Tomb.
