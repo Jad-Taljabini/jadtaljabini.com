@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jad Taljabini - AI Enthusiast & Developer</title>
+    <title>Jad Taljabini</title>
+    <meta name="description" content="Computer Engineer and iOS developer. Two App Store apps, MIT research collaboration, and software engineering at Politecnico di Milano.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -96,55 +98,6 @@
 
 
 
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            transition: opacity 0.8s ease;
-        }
-
-        .loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            border-top: 3px solid white;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-
-        .loading-text {
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
         /* Navigation */
         .navbar {
             position: fixed;
@@ -158,7 +111,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: var(--transition);
             transform: translateY(-100%);
-            animation: slideDown 0.8s ease forwards 2s;
+            animation: slideDown 0.8s ease forwards;
         }
 
         @keyframes slideDown {
@@ -492,84 +445,6 @@
             font-weight: 600;
         }
 
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            padding: 2.5rem;
-            border-radius: var(--border-radius-lg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-        }
-
-        .skill-category:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .skill-category h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .skill-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .skill-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-name {
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .skill-level {
-            font-size: 0.9rem;
-            color: var(--text-tertiary);
-            font-weight: 500;
-        }
-
-        .skill-bar {
-            width: 100%;
-            height: 8px;
-            background: var(--bg-tertiary);
-            border-radius: 4px;
-            margin-top: 0.5rem;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: var(--gradient-primary);
-            border-radius: 4px;
-            transition: width 2s ease-in-out;
-            width: 0%;
-        }
-
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -811,6 +686,81 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 500;
+        }
+
+        /* Education */
+        .edu-card {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-lg);
+            transition: var(--transition);
+        }
+
+        .edu-card--poly { border-left: 4px solid #c41e3a; }
+        .edu-card--lvt { border-left: 4px solid var(--primary-color); }
+
+        .edu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .edu-icon {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 0.875rem;
+        }
+
+        .edu-icon--poly {
+            background: rgba(196, 30, 58, 0.1);
+            color: #c41e3a;
+        }
+
+        .edu-icon--lvt {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+        }
+
+        .edu-body {
+            flex: 1;
+        }
+
+        .edu-body h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+        }
+
+        .edu-body p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .edu-card {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         /* Contact Section */
@@ -1131,10 +1081,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
             .about-stats {
                 grid-template-columns: 1fr;
             }
@@ -1220,23 +1166,16 @@
 </head>
 <body>
 
-
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loader"></div>
-        <div class="loading-text">LOADING</div>
-    </div>
-
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Jad Taljabini</a>
+            <a href="#home" class="logo">Jad Taljabini</a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button></li>
             </ul>
@@ -1253,7 +1192,7 @@
                 <div class="hero-greeting">Hello, I'm</div>
                 <h1 class="hero-title">Jad Taljabini</h1>
                 <p class="hero-subtitle">
-                    AI Enthusiast & Developer | Innovation Driver
+                    Computer Engineer · iOS Developer
                 </p>
                         <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
@@ -1304,98 +1243,17 @@
                 </div>
                 <div class="about-text" data-aos="fade-left">
                     <p>
-                        I'm a <span class="highlight">Computer Engineering</span> student with a deep passion for the Apple ecosystem and cutting-edge technological innovation. My journey combines academic excellence with hands-on experience in app development, project management, and data analysis.
+                        I'm a <span class="highlight">Computer Engineer</span> focused on the Apple ecosystem — building iOS products, research tools, and software that holds up under real use.
                     </p>
                     <p>
-                        I've successfully published two apps on the App Store: <a href="https://apps.apple.com/it/app/water-alert/id6443403237?l=en-GB" target="_blank" class="highlight" style="text-decoration: none;">Water Alert</a>, a hydration tracking app for iPhone, iPad, and Apple Watch, and <a href="https://apps.apple.com/it/app/hostario/id6753862247" target="_blank" class="highlight" style="text-decoration: none;">Hostario</a>, a property management app for hosts and short-term rental managers. I also collaborated with <span class="highlight">MIT</span> on groundbreaking indoor tracking systems using Bluetooth beacons, and continuously push the boundaries of digital innovation.
+                        Two apps on the App Store: <a href="https://apps.apple.com/it/app/water-alert/id6443403237?l=en-GB" target="_blank" class="highlight" style="text-decoration: none;">Water Alert</a> for hydration tracking across iPhone, iPad, and Apple Watch, and <a href="https://apps.apple.com/it/app/hostario/id6753862247" target="_blank" class="highlight" style="text-decoration: none;">Hostario</a> for short-term rental hosts. I've also worked with <span class="highlight">MIT</span> on Bluetooth-based indoor tracking and built research projects including a GUI fuzzer for a digital board game.
                     </p>
                     <p>
-                        My mission is to transform innovative ideas into impactful products by exploring the limitless possibilities of AI, software development, and technology entrepreneurship. I believe in creating solutions that not only solve problems but also inspire and empower others.
+                        I build software to solve concrete problems — shipped apps, reproducible research, and tools tested against real constraints.
                     </p>
                 </div>
             </div>
         </div>
-            </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section" data-aos="fade-up">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
-                <p class="section-subtitle">
-                    A comprehensive toolkit for building innovative digital solutions.
-                </p>
-                            </div>
-            <div class="skills-grid">
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <h3>
-                        <div class="skill-icon"><i class="fas fa-code"></i></div>
-                        Development
-                    </h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Swift & SwiftUI</span>
-                        <span class="skill-level">Advanced</span>
-                        </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                        </div>
-                    
-                    <div class="skill-item">
-                        <span class="skill-name">Python</span>
-                        <span class="skill-level">Intermediate</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
-                            </div>
-                    
-                    <div class="skill-item">
-                        <span class="skill-name">C/C++</span>
-                        <span class="skill-level">Intermediate</span>
-                        </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
-                    </div>
-                </div>
-
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <h3>
-                        <div class="skill-icon"><i class="fas fa-users"></i></div>
-                        Working Style
-                    </h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Shipping Personal Products</span>
-                        <span class="skill-level">Proven</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="88"></div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <span class="skill-name">Research</span>
-                        <span class="skill-level">Hands-on</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="82"></div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <span class="skill-name">Testing Mindset</span>
-                        <span class="skill-level">Project-based</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <span class="skill-name">Documentation</span>
-                        <span class="skill-level">Practical</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="78"></div>
-                    </div>
-                        </div>
-                    </div>
-                </div>
             </section>
 
     <!-- Projects Section -->
@@ -1443,7 +1301,7 @@
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
+                    <div class="project-image" style="background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);">
                         <i class="fas fa-tint"></i>
                         </div>
                     <div class="project-content">
@@ -1503,7 +1361,7 @@
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="project-image">
+                    <div class="project-image" style="background: linear-gradient(135deg, #0f172a 0%, #6366f1 100%);">
                         <i class="fas fa-satellite"></i>
                         </div>
                     <div class="project-content">
@@ -1517,17 +1375,11 @@
                             <span class="project-tag">SARIMA</span>
                             <span class="project-tag">ESA Partnership</span>
                     </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link secondary">
-                                <i class="fas fa-info-circle"></i>
-                                Details
-                            </a>
-                            </div>
                         </div>
                         </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="project-image">
+                    <div class="project-image" style="background: linear-gradient(135deg, #9f1239 0%, #f43f5e 100%);">
                         <i class="fas fa-bluetooth"></i>
                     </div>
                     <div class="project-content">
@@ -1555,7 +1407,7 @@
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="project-image">
+                    <div class="project-image" style="background: linear-gradient(135deg, #15803d 0%, #f59e0b 100%);">
                         <i class="fas fa-globe-africa"></i>
                     </div>
                     <div class="project-content">
@@ -1569,12 +1421,6 @@
                             <span class="project-tag">International</span>
                             <span class="project-tag">STEM</span>
                     </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link secondary">
-                                <i class="fas fa-info-circle"></i>
-                                Learn More
-                            </a>
-                        </div>
                     </div>
                 </div>
 
@@ -1588,31 +1434,11 @@
             <div class="section-header">
                 <h2 class="section-title">Professional Experience</h2>
                 <p class="section-subtitle">
-                    A journey of continuous learning, innovation, and impactful contributions.
+                    Work, research collaborations, and roles outside the classroom.
                 </p>
                             </div>
             <div class="timeline">
                 <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3 class="timeline-title">App Developer</h3>
-                                <p class="timeline-company">inTouch - MIT Collaboration</p>
-                        </div>
-                            <span class="timeline-date">2022 - 2023</span>
-                    </div>
-                        <p class="timeline-description">
-                            Developed a cutting-edge iOS application using Swift and SwiftUI to monitor room occupancy through Bluetooth beacon signals. This groundbreaking project, conducted at MIT, achieved 100% accuracy and was designed for industrial applications to evaluate air filter effectiveness in closed environments.
-                        </p>
-                        <div class="achievement-tags">
-                            <span class="achievement-tag">100% Accuracy</span>
-                            <span class="achievement-tag">Published Research</span>
-                            <span class="achievement-tag">Industrial Application</span>
-                            </div>
-                        </div>
-                    </div>
-
-                <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
@@ -1622,38 +1448,65 @@
                             <span class="timeline-date">2024 - 2025</span>
                         </div>
                         <p class="timeline-description">
-                            Supporting middle school students with academic difficulties, providing specialized assistance in mathematics and English for 3 hours per week. Earned Harvard-Bocconi certification and Open Badge recognition for educational excellence.
+                            Supported middle school students in mathematics and English. Harvard-Bocconi certified with Open Badge recognition.
                         </p>
                         <div class="achievement-tags">
                             <span class="achievement-tag">Harvard-Bocconi Certified</span>
                             <span class="achievement-tag">Open Badge</span>
-                            <span class="achievement-tag">Educational Impact</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="150">
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3 class="timeline-title">Project Coordinator</h3>
-                                <p class="timeline-company">Municipality of Gallarate</p>
-                    </div>
-                            <span class="timeline-date">2021 - 2022</span>
-                    </div>
+                                <h3 class="timeline-title">App Developer</h3>
+                                <p class="timeline-company">inTouch - MIT Collaboration</p>
+                            </div>
+                            <span class="timeline-date">2022 - 2023</span>
+                        </div>
                         <p class="timeline-description">
-                            Led a PCTO project for installing information kiosks in symbolic city locations, promoting local history and culture. Managed task distribution within the team and developed content about the Basilica of Santa Maria Assunta and the Gallic Tomb.
+                            Built an iOS app in Swift/SwiftUI to monitor room occupancy through Bluetooth beacon signals for MIT research on air filter effectiveness in industrial environments.
                         </p>
                         <div class="achievement-tags">
-                            <span class="achievement-tag">Team Leadership</span>
-                            <span class="achievement-tag">Cultural Promotion</span>
-                            <span class="achievement-tag">Project Management</span>
+                            <span class="achievement-tag">Published Research</span>
+                            <span class="achievement-tag">Industrial Application</span>
+                            <span class="achievement-tag">Swift</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section" data-aos="fade-up" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">
+                    Academic background in computer engineering and applied sciences.
+                </p>
+            </div>
+            <div class="edu-list">
+                <div class="edu-card edu-card--poly" data-aos="fade-up">
+                    <div class="edu-icon edu-icon--poly">POLI</div>
+                    <div class="edu-body">
+                        <h3>Computer Engineering</h3>
+                        <p>Politecnico di Milano</p>
                     </div>
                 </div>
-            </section>
+                <div class="edu-card edu-card--lvt" data-aos="fade-up" data-aos-delay="100">
+                    <div class="edu-icon edu-icon--lvt">LVT</div>
+                    <div class="edu-body">
+                        <h3>Scientific High School — Applied Sciences</h3>
+                        <p>Licei di Viale dei Tigli, Gallarate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section" data-aos="fade-up">
@@ -1732,7 +1585,7 @@
                 <div class="footer-brand">
                     <h3>Jad Taljabini</h3>
                     <p>
-                        Passionate Computer Engineering student and AI enthusiast, dedicated to creating innovative digital solutions that make a meaningful impact on the world.
+                        Computer Engineer building iOS products and research tools. Based in Italy, Politecnico di Milano.
                     </p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/jad-taljabini/" target="_blank" class="social-link" title="LinkedIn">
@@ -1754,25 +1607,24 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#experience">Experience</a></li>
+                        <li><a href="#education">Education</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4>Focus</h4>
                     <ul class="footer-links">
-                        <li><a href="#">iOS App Development</a></li>
-                        <li><a href="#">Machine Learning</a></li>
-                        <li><a href="#">Data Analysis</a></li>
-                        <li><a href="#">Project Management</a></li>
-                        <li><a href="#">Consulting</a></li>
+                        <li><a href="#projects">iOS App Development</a></li>
+                        <li><a href="#projects">Research Projects</a></li>
+                        <li><a href="#projects">Python & Systems</a></li>
+                        <li><a href="#projects">Testing & QA</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Jad Taljabini. All rights reserved. Built with passion and innovation.</p>
+                <p>&copy; 2026 Jad Taljabini. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1788,17 +1640,6 @@
             once: true,
             offset: 100
         });
-
-        // Loading Screen
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loadingScreen').classList.add('hidden');
-            }, 2000);
-        });
-
-
-
-        
 
         // Navigation
         const navbar = document.getElementById('navbar');
@@ -1883,19 +1724,6 @@
             });
         };
 
-        // Skill Progress Animation
-        const animateSkillBars = () => {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            
-            skillBars.forEach(bar => {
-                const progress = bar.getAttribute('data-progress');
-                setTimeout(() => {
-                    bar.style.width = progress + '%';
-                }, 500);
-            });
-        };
-
-        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.2,
             rootMargin: '0px 0px -100px 0px'
@@ -1904,12 +1732,10 @@
         const aboutObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && entry.target.id === 'about') {
-                    // Reset all counters first
                     const counters = document.querySelectorAll('[data-count]');
                     counters.forEach(counter => {
                         counter.textContent = '0';
                     });
-                    // Then animate
                     setTimeout(() => {
                         animateCounters();
                     }, 200);
@@ -1917,16 +1743,7 @@
             });
         }, observerOptions);
 
-        const skillsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.target.id === 'skills') {
-                    animateSkillBars();
-                }
-            });
-        }, observerOptions);
-
         document.getElementById('about') && aboutObserver.observe(document.getElementById('about'));
-        document.getElementById('skills') && skillsObserver.observe(document.getElementById('skills'));
 
 
 
