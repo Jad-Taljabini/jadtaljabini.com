@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jad Taljabini | Computer Engineer &amp; iOS Developer</title>
+  <title>Jad Taljabini</title>
   <meta name="description" content="Computer engineer and independent developer behind Hostario and Water Alert. Building useful iOS products, research tools and software systems.">
+  <meta property="og:title" content="Jad Taljabini">
+  <meta property="og:description" content="Computer engineer and independent developer behind Hostario and Water Alert.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jadtaljabini.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jad Taljabini">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,34 +51,49 @@
         <p>Not concepts or course exercises. Software shipped, tested and used outside a portfolio page.</p>
       </div>
 
-      <a class="featured-project" href="https://apps.apple.com/it/app/hostario/id6753862247" target="_blank" rel="noreferrer">
-        <div class="project-kicker"><span>01</span><span>iPhone · iPad</span></div>
-        <div class="project-main">
-          <div><p class="project-type">Product design &amp; development</p><h3>Hostario</h3></div>
-          <p>A practical workspace for short-term rental hosts. It handles guest documents, official reporting, contracts, receipts and tourist-tax summaries from one native app.</p>
-        </div>
-        <div class="project-footer">
-          <span>Swift · SwiftUI · Vision · SOAP integrations</span>
-          <span class="project-arrow">App Store <span aria-hidden="true">↗</span></span>
-        </div>
-      </a>
+      <article class="featured-project" data-project-card="hostario">
+        <button class="featured-project-open" type="button" data-open-project="hostario" aria-haspopup="dialog">
+          <span class="project-kicker"><span>01</span><span>iPhone · iPad</span></span>
+          <span class="project-main">
+            <span><span class="project-type">Product design &amp; development</span><strong class="project-title">Hostario</strong></span>
+            <span class="project-description">A practical workspace for short-term rental hosts. It handles guest documents, official reporting, contracts, receipts and tourist-tax summaries from one native app.</span>
+          </span>
+          <span class="project-footer">
+            <span>Swift · SwiftUI · Vision · SOAP integrations</span>
+            <span class="project-arrow">Explore the workflow <span aria-hidden="true">→</span></span>
+          </span>
+        </button>
+        <a class="featured-external" href="https://apps.apple.com/it/app/hostario/id6753862247" target="_blank" rel="noreferrer">App Store <span aria-hidden="true">↗</span></a>
+      </article>
 
       <div class="project-list" aria-label="More selected projects">
-        <a href="https://apps.apple.com/it/app/water-alert/id6443403237?l=en-GB" target="_blank" rel="noreferrer">
-          <span class="project-number">02</span>
-          <span><strong>Water Alert</strong><small>Native hydration tracking across iPhone, iPad and Apple Watch.</small></span>
-          <span class="project-meta">SwiftUI · HealthKit</span><span aria-hidden="true">↗</span>
-        </a>
-        <a href="https://github.com/Jad-Taljabini/rlc/tree/UI_Fuzzer/projects/Havannah" target="_blank" rel="noreferrer">
-          <span class="project-number">03</span>
-          <span><strong>Havannah UI Fuzzer</strong><small>A coverage-guided engine that stress-tests a game interface against real invariants.</small></span>
-          <span class="project-meta">Python · Testing research</span><span aria-hidden="true">↗</span>
-        </a>
-        <a href="docs/Indoor_Location_Detection_Poster.pdf" target="_blank" rel="noreferrer">
-          <span class="project-number">04</span>
-          <span><strong>inTouch</strong><small>Bluetooth-based indoor occupancy tracking built for environmental health research.</small></span>
-          <span class="project-meta">Swift · MIT collaboration</span><span aria-hidden="true">↗</span>
-        </a>
+        <article class="project-row" data-project-card="water-alert">
+          <button type="button" data-open-project="water-alert" aria-haspopup="dialog">
+            <span class="project-number">02</span>
+            <span><strong>Water Alert</strong><small>Native hydration tracking across iPhone, iPad and Apple Watch.</small></span>
+            <span class="project-meta">SwiftUI · HealthKit</span>
+            <span class="project-row-arrow" aria-hidden="true">→</span>
+          </button>
+          <a class="project-external" href="https://apps.apple.com/it/app/water-alert/id6443403237?l=en-GB" target="_blank" rel="noreferrer">App Store <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="project-row" data-project-card="havannah">
+          <button type="button" data-open-project="havannah" aria-haspopup="dialog">
+            <span class="project-number">03</span>
+            <span><strong>Havannah UI Fuzzer</strong><small>A coverage-guided engine that stress-tests a game interface against real invariants.</small></span>
+            <span class="project-meta">Python · Testing research</span>
+            <span class="project-row-arrow" aria-hidden="true">→</span>
+          </button>
+          <a class="project-external" href="https://github.com/Jad-Taljabini/rlc/tree/UI_Fuzzer/projects/Havannah" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="project-row" data-project-card="intouch">
+          <button type="button" data-open-project="intouch" aria-haspopup="dialog">
+            <span class="project-number">04</span>
+            <span><strong>inTouch</strong><small>Bluetooth-based indoor occupancy tracking built for environmental health research.</small></span>
+            <span class="project-meta">Swift · MIT collaboration</span>
+            <span class="project-row-arrow" aria-hidden="true">→</span>
+          </button>
+          <a class="project-external" href="docs/Indoor_Location_Detection_Poster.pdf" target="_blank" rel="noreferrer">Research poster <span aria-hidden="true">↗</span></a>
+        </article>
       </div>
     </section>
 
@@ -121,5 +142,43 @@
       </div>
     </footer>
   </main>
+
+  <dialog class="walkthrough" id="project-walkthrough" aria-labelledby="walkthrough-title" aria-describedby="walkthrough-description">
+    <div class="walkthrough-shell">
+      <header class="walkthrough-header">
+        <div>
+          <p class="walkthrough-project" id="walkthrough-project"></p>
+          <p class="walkthrough-position" id="walkthrough-position"></p>
+        </div>
+        <button class="walkthrough-close" type="button" data-close-walkthrough aria-label="Close project walkthrough">
+          <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <div class="walkthrough-body">
+        <figure class="walkthrough-visual">
+          <img id="walkthrough-image" src="" alt="">
+          <figcaption>Conceptual product visual</figcaption>
+        </figure>
+        <div class="walkthrough-copy">
+          <p class="walkthrough-step-label" id="walkthrough-step-label"></p>
+          <h2 id="walkthrough-title"></h2>
+          <p id="walkthrough-description"></p>
+          <div class="walkthrough-dots" id="walkthrough-dots" aria-label="Walkthrough steps"></div>
+        </div>
+      </div>
+
+      <footer class="walkthrough-footer">
+        <a id="walkthrough-external" href="#" target="_blank" rel="noreferrer"></a>
+        <div class="walkthrough-actions">
+          <button class="walkthrough-back" type="button" data-walkthrough-back>Back</button>
+          <button class="walkthrough-next" type="button" data-walkthrough-next>Next <span aria-hidden="true">→</span></button>
+        </div>
+      </footer>
+    </div>
+  </dialog>
+
+  <script src="assets/walkthrough-images.js" defer></script>
+  <script src="assets/site.js" defer></script>
 </body>
 </html>
