@@ -149,7 +149,7 @@ const title = document.querySelector("#walkthrough-title");
 const description = document.querySelector("#walkthrough-description");
 const image = document.querySelector("#walkthrough-image");
 const dots = document.querySelector("#walkthrough-dots");
-const external = document.querySelector("#walkthrough-external");
+const footerPosition = document.querySelector("#walkthrough-footer-position");
 const back = document.querySelector("[data-walkthrough-back]");
 const next = document.querySelector("[data-walkthrough-next]");
 const close = document.querySelector("[data-close-walkthrough]");
@@ -169,10 +169,9 @@ function renderStep() {
   description.textContent = step.description;
   image.src = window.walkthroughImages?.[step.image] ?? step.image;
   image.alt = step.alt;
-  external.textContent = project.externalLabel;
-  external.href = project.externalUrl;
+  footerPosition.textContent = `${activeStep + 1} of ${project.steps.length}`;
   back.disabled = activeStep === 0;
-  next.innerHTML = finalStep ? "Close" : "Next <span aria-hidden=\"true\">→</span>";
+  next.innerHTML = finalStep ? "Close" : "Next step <span aria-hidden=\"true\">→</span>";
 
   dots.replaceChildren(...project.steps.map((item, index) => {
     const dot = document.createElement("button");
