@@ -87,11 +87,11 @@ h1 { max-width:900px; margin:1.7rem 0 1.5rem; font-size:clamp(3.7rem,6.3vw,6.75r
 .contact .section-index { color:#ead5cc; }
 .contact h2 { max-width:1100px; margin:2.5rem 0 4rem; font-size:clamp(4rem,8vw,8.6rem); font-weight:560; letter-spacing:-.075em; line-height:.9; }
 .contact-link { display:flex; padding:1.35rem 0; justify-content:space-between; border-top:1px solid rgb(245 242 236/45%); border-bottom:1px solid rgb(245 242 236/45%); font-size:clamp(1.05rem,2vw,1.55rem); }
-footer { display:flex; padding:2rem max(4.5rem,calc((100vw - 1440px)/2)); align-items:center; justify-content:space-between; background:var(--ink); color:#aaa; font-size:.82rem; }
-footer p { margin:0; }
-footer div { display:flex; gap:2rem; }
-footer a { transition:color 160ms ease; }
-footer a:hover { color:var(--paper); }
+main>footer { display:flex; padding:2rem max(4.5rem,calc((100vw - 1440px)/2)); align-items:center; justify-content:space-between; background:var(--ink); color:#aaa; font-size:.82rem; }
+main>footer p { margin:0; }
+main>footer div { display:flex; gap:2rem; }
+main>footer a { transition:color 160ms ease; }
+main>footer a:hover { color:var(--paper); }
 
 .walkthrough { width:min(1440px,calc(100vw - 2rem)); max-width:none; height:min(900px,calc(100dvh - 2rem)); max-height:none; margin:auto; padding:0; overflow:hidden; border:0; border-radius:1.25rem; background:#ede8df; color:var(--ink); box-shadow:0 30px 120px rgb(0 0 0/45%); }
 .walkthrough::backdrop { background:rgb(10 11 10/78%); backdrop-filter:blur(10px); }
@@ -177,8 +177,8 @@ footer a:hover { color:var(--paper); }
   .background,.contact { padding-right:1.5rem; padding-left:1.5rem; }
   .timeline article { grid-template-columns:1fr; }
   .timeline article>p:last-child { grid-column:auto; }
-  footer { padding:2rem 1.5rem; align-items:flex-start; flex-direction:column; gap:1.5rem; }
-  footer div { flex-wrap:wrap; gap:1rem 1.5rem; }
+  main>footer { padding:2rem 1.5rem; align-items:flex-start; flex-direction:column; gap:1.5rem; }
+  main>footer div { flex-wrap:wrap; gap:1rem 1.5rem; }
 }
 
 @media (prefers-reduced-motion:no-preference) {
