@@ -1,0 +1,209 @@
+:root {
+  --paper: #f5f2ec !important;
+  --ink: #171816 !important;
+  --body-copy: #565852 !important;
+  --rule-editorial: #d8d2c8 !important;
+  --rust: #a34e36 !important;
+  --primary-color: #a34e36 !important;
+  --primary-light: #cf8f7d !important;
+  --primary-dark: #793724 !important;
+  --secondary-color: #171816 !important;
+  --accent-color: #a34e36 !important;
+  --accent-secondary: #793724 !important;
+  --text-primary: #171816 !important;
+  --text-secondary: #565852 !important;
+  --text-tertiary: #676a5b !important;
+  --text-muted: #8b8c84 !important;
+  --bg-primary: #f5f2ec !important;
+  --bg-secondary: #f5f2ec !important;
+  --bg-tertiary: #e9e4db !important;
+  --bg-glass: #f5f2ec !important;
+  --bg-glass-strong: #f5f2ec !important;
+  --shadow-sm: none !important;
+  --shadow-md: none !important;
+  --shadow-lg: none !important;
+  --shadow-xl: none !important;
+  --shadow-2xl: none !important;
+  --shadow-glow: none !important;
+  --gradient-primary: none !important;
+  --gradient-secondary: none !important;
+  --gradient-accent: none !important;
+  --gradient-text: none !important;
+  --border-radius: 0 !important;
+  --border-radius-lg: 0 !important;
+}
+
+[data-theme="dark"] {
+  --text-primary: #f5f2ec !important;
+  --text-secondary: #c7c7c1 !important;
+  --text-tertiary: #9fa099 !important;
+  --bg-primary: #171816 !important;
+  --bg-secondary: #171816 !important;
+  --bg-tertiary: #292a27 !important;
+  --bg-glass: #171816 !important;
+  --bg-glass-strong: #171816 !important;
+}
+
+html { background: var(--bg-secondary) !important; }
+body {
+  background: var(--bg-secondary) !important;
+  font-family: "Geist", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif !important;
+  letter-spacing: -.01em;
+}
+
+.navbar {
+  padding: 0 !important;
+  background: var(--bg-glass-strong) !important;
+  border-bottom: 1px solid var(--rule-editorial) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.nav-container {
+  height: 88px !important;
+  max-width: 1320px !important;
+  padding: 0 36px !important;
+}
+
+.logo {
+  background: none !important;
+  color: var(--text-primary) !important;
+  font-size: 1.45rem !important;
+  font-weight: 650 !important;
+  letter-spacing: -.045em !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+.btn,
+.lang-tab {
+  min-height: 44px;
+  padding: .65rem 1.2rem !important;
+  border: 1px solid var(--text-primary) !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  box-shadow: none !important;
+}
+
+.btn:hover,
+.lang-tab:hover,
+.lang-tab.active {
+  background: var(--text-primary) !important;
+  color: var(--bg-primary) !important;
+  transform: none !important;
+}
+
+.theme-toggle {
+  color: var(--text-primary) !important;
+}
+
+.main-content {
+  max-width: 1180px !important;
+  padding: 148px 36px 96px !important;
+}
+
+.page-header {
+  margin-bottom: 72px !important;
+  text-align: left !important;
+}
+
+.page-title {
+  max-width: 1000px;
+  margin: 0 0 20px !important;
+  background: none !important;
+  color: var(--text-primary) !important;
+  font-size: clamp(3.3rem, 7vw, 6.5rem) !important;
+  font-weight: 580 !important;
+  letter-spacing: -.065em !important;
+  line-height: .95 !important;
+  -webkit-text-fill-color: currentColor !important;
+}
+
+.page-subtitle {
+  max-width: 680px !important;
+  margin: 0 0 30px !important;
+  color: var(--text-secondary) !important;
+  font-size: 1.1rem !important;
+}
+
+.page-links,
+.lang-tabs { justify-content: flex-start !important; }
+
+.legal-section,
+.terms-section,
+.warning-section {
+  margin-bottom: 0 !important;
+  padding: 54px 0 !important;
+  border: 0 !important;
+  border-top: 1px solid var(--rule-editorial) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.legal-section:hover { transform: none !important; box-shadow: none !important; }
+.section-title {
+  margin-bottom: 48px !important;
+  color: var(--text-primary) !important;
+  font-family: inherit !important;
+  font-size: clamp(2.2rem, 4vw, 4rem) !important;
+  font-weight: 560 !important;
+  letter-spacing: -.055em !important;
+  line-height: 1 !important;
+  text-align: left !important;
+}
+
+.subsection { max-width: 880px; margin-bottom: 42px !important; }
+.subsection h4,
+.subsection h5 {
+  color: var(--text-primary) !important;
+  font-family: inherit !important;
+  font-weight: 620 !important;
+  letter-spacing: -.025em !important;
+}
+.subsection h4 { padding-top: 10px; font-size: 1.35rem !important; }
+.subsection h5 { color: var(--rust) !important; }
+.subsection p,
+.subsection li,
+.footer-info p { color: var(--text-secondary) !important; }
+.subsection p { line-height: 1.75 !important; }
+.subsection a,
+.footer-info a { color: var(--rust) !important; text-underline-offset: 3px; }
+
+.highlight-box,
+.warning-box {
+  border: 0 !important;
+  border-left: 3px solid var(--rust) !important;
+  border-radius: 0 !important;
+  background: color-mix(in srgb, var(--rust) 8%, transparent) !important;
+}
+
+.processor-table {
+  border: 1px solid var(--rule-editorial) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.processor-table th { background: var(--bg-tertiary) !important; color: var(--text-primary) !important; }
+.processor-table th,
+.processor-table td { border-color: var(--rule-editorial) !important; }
+
+.toc,
+.table-of-contents {
+  border: 1px solid var(--rule-editorial) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 700px) {
+  .nav-container { height: 72px !important; padding: 0 20px !important; }
+  .logo { font-size: 1.1rem !important; }
+  .main-content { padding: 112px 20px 64px !important; }
+  .page-title { font-size: clamp(2.8rem, 13vw, 4.3rem) !important; }
+  .legal-section,
+  .terms-section,
+  .warning-section { padding: 40px 0 !important; }
+  .processor-table { display: block; overflow-x: auto; }
+}
