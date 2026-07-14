@@ -176,6 +176,22 @@
     </div>
   </dialog>
 
+  <script>
+    const ENABLE_FLIGHT_INTRO = false;
+
+    if (ENABLE_FLIGHT_INTRO) {
+      const introStyles = document.createElement("link");
+      introStyles.rel = "stylesheet";
+      introStyles.href = "assets/flight-intro.css?v=20260714-1";
+      introStyles.addEventListener("load", () => {
+        const introScript = document.createElement("script");
+        introScript.src = "assets/flight-intro.js?v=20260714-1";
+        document.body.append(introScript);
+      }, { once: true });
+      document.head.append(introStyles);
+    }
+  </script>
+
   <script src="assets/walkthrough-images.js?v=20260710-4" defer></script>
   <script src="assets/site.js?v=20260710-4" defer></script>
 </body>
