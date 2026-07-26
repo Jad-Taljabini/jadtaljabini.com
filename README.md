@@ -2,7 +2,7 @@
 
 This repository contains the source of my personal website.
 The site is built with a single HTML file (`index.html`) and a profile image (`profile.png`).
-It showcases my background as a student and developer and includes animated sections written in vanilla CSS and JavaScript.
+It showcases my background as a computer engineering graduate and independent developer and includes animated sections written in vanilla CSS and JavaScript.
 
 ## Running locally
 
