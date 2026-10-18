@@ -2,13 +2,12 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hostario - Termini e Condizioni</title>
     <meta name="description" content="Termini e Condizioni e Disclaimer dell'applicazione Hostario per la gestione di strutture ricettive">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fonts.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <style>
         :root {
             /* Light Theme Colors */
@@ -652,16 +651,17 @@
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
                 themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', 'light');
+                try { localStorage.setItem('theme', 'light'); } catch { /* The theme still works when storage is blocked. */ }
             } else {
                 body.setAttribute('data-theme', 'dark');
                 themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('theme', 'dark');
+                try { localStorage.setItem('theme', 'dark'); } catch { /* The theme still works when storage is blocked. */ }
             }
         });
 
         // Load saved theme
-        const savedTheme = localStorage.getItem('theme');
+        let savedTheme = null;
+        try { savedTheme = localStorage.getItem('theme'); } catch { /* Use the default theme when storage is blocked. */ }
         if (savedTheme === 'dark') {
             body.setAttribute('data-theme', 'dark');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
@@ -682,6 +682,7 @@
             });
         });
     </script>
+<footer class="website-legal-links" aria-label="Informazioni sul sito"><a href="../../privacy.html">Website privacy &amp; cookies</a> · <a href="../../terms.html">Website terms</a></footer>
 </body>
 </html>
 

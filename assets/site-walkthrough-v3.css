@@ -1,4 +1,9 @@
 :root { --paper:#f5f2ec; --ink:#171816; --body:#565852; --muted:#676a5b; --rule:#d8d2c8; --rust:#a34e36; --dark:#171816; --dark-rule:#363733; }
+.contact-privacy { max-width: 45rem; color: var(--paper); font-size: .9rem; line-height: 1.6; }
+.contact-privacy a { text-decoration: underline; text-underline-offset: .2em; }
+main>footer div { flex-wrap: wrap; }
+main>footer { gap: 1.5rem; }
+main>footer p { flex-shrink: 0; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:"Geist",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif; text-rendering:optimizeLegibility; }

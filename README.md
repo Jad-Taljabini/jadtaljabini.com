@@ -22,3 +22,9 @@ $ open index.html  # or use your browser's file-open dialog
 - Contact information and call-to-action buttons
 
 Feel free to fork the project and adapt it for your own website.
+
+## Website privacy
+
+`privacy.html` and `terms.html` cover the website itself. App policies remain under `apps/`.
+Fonts and icon assets are served locally from `assets/vendor/`, with their licenses included.
+Keep these notices aligned with the hosting configuration and actual data-retention practices. These pages alone do not certify GDPR compliance.

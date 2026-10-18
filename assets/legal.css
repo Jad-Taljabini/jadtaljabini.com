@@ -32,6 +32,8 @@
   --border-radius: 0 !important;
   --border-radius-lg: 0 !important;
 }
+.website-legal-links { padding: 2rem; text-align: center; font-size: .9rem; }
+.website-legal-links a { color: var(--text-primary); text-underline-offset: .2em; }
 
 [data-theme="dark"] {
   --text-primary: #f5f2ec !important;

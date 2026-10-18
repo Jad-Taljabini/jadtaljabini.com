@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Water Alert - Terms and Conditions</title>
     <meta name="description" content="Terms and Conditions for the Water Alert hydration tracking app">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/vendor/fonts/fonts.css">
+    <link rel="stylesheet" href="../../assets/vendor/fontawesome/css/all.min.css">
     <style>
         :root {
             --primary-color: #2563eb;
@@ -318,9 +317,9 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">Jad Taljabini</a>
+            <a href="../../index.html" class="logo">Jad Taljabini</a>
             <div class="nav-actions">
-                <a href="index.html" class="btn btn-secondary">
+                <a href="../../index.html" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i>
                     Back to Site
                 </a>
@@ -340,7 +339,7 @@
                 Terms and Conditions for the Water Alert hydration tracking app
             </p>
             <div class="page-links">
-                <a href="water-alert-privacy.html" class="btn btn-secondary">
+                <a href="privacy.html" class="btn btn-secondary">
                     <i class="fas fa-shield-alt"></i>
                     Privacy Policy
                 </a>
@@ -398,7 +397,7 @@
 
                 <div class="footer-info">
                     <p style="font-style: italic;">Last updated: April 8, 2026</p>
-                    <p style="margin-top: 1rem;">For questions about these Terms, visit the <a href="index.html#contact">contact page</a>.</p>
+                    <p style="margin-top: 1rem;">For questions about these Terms, visit the <a href="../../index.html#contact">contact page</a>.</p>
                 </div>
             </div>
         </div>
@@ -445,7 +444,7 @@
 
                 <div class="footer-info">
                     <p style="font-style: italic;">Ultimo aggiornamento: 8 aprile 2026</p>
-                    <p style="margin-top: 1rem;">Per domande sui presenti Termini, visita la <a href="index.html#contact">pagina dei contatti</a>.</p>
+                    <p style="margin-top: 1rem;">Per domande sui presenti Termini, visita la <a href="../../index.html#contact">pagina dei contatti</a>.</p>
                 </div>
             </div>
         </div>
@@ -492,7 +491,7 @@
 
                 <div class="footer-info" style="direction: rtl; text-align: right;">
                     <p style="font-style: italic;">آخر تحديث: 8 أبريل 2026</p>
-                    <p style="margin-top: 1rem;">للأسئلة حول هذه الشروط، زر <a href="index.html#contact">صفحة الاتصال</a>.</p>
+                    <p style="margin-top: 1rem;">للأسئلة حول هذه الشروط، زر <a href="../../index.html#contact">صفحة الاتصال</a>.</p>
                 </div>
             </div>
         </div>
@@ -539,7 +538,7 @@
 
                 <div class="footer-info">
                     <p style="font-style: italic;">Letzte Aktualisierung: 8. April 2026</p>
-                    <p style="margin-top: 1rem;">Bei Fragen zu diesen Bedingungen besuchen Sie die <a href="index.html#contact">Kontaktseite</a>.</p>
+                    <p style="margin-top: 1rem;">Bei Fragen zu diesen Bedingungen besuchen Sie die <a href="../../index.html#contact">Kontaktseite</a>.</p>
                 </div>
             </div>
         </div>
@@ -586,7 +585,7 @@
 
                 <div class="footer-info">
                     <p style="font-style: italic;">Última actualización: 8 de abril de 2026</p>
-                    <p style="margin-top: 1rem;">Para preguntas sobre estos Términos, visita la <a href="index.html#contact">página de contacto</a>.</p>
+                    <p style="margin-top: 1rem;">Para preguntas sobre estos Términos, visita la <a href="../../index.html#contact">página de contacto</a>.</p>
                 </div>
             </div>
         </div>
@@ -609,19 +608,21 @@
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
                 themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-                localStorage.setItem('theme', 'light');
+                try { localStorage.setItem('theme', 'light'); } catch { /* The theme still works when storage is blocked. */ }
             } else {
                 body.setAttribute('data-theme', 'dark');
                 themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-                localStorage.setItem('theme', 'dark');
+                try { localStorage.setItem('theme', 'dark'); } catch { /* The theme still works when storage is blocked. */ }
             }
         });
 
-        const savedTheme = localStorage.getItem('theme');
+        let savedTheme = null;
+        try { savedTheme = localStorage.getItem('theme'); } catch { /* Use the default theme when storage is blocked. */ }
         if (savedTheme === 'dark') {
             body.setAttribute('data-theme', 'dark');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
     </script>
+<footer class="website-legal-links" aria-label="Informazioni sul sito"><a href="../../privacy.html">Website privacy &amp; cookies</a> · <a href="../../terms.html">Website terms</a></footer>
 </body>
 </html>
