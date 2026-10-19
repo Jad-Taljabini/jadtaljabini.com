@@ -14,6 +14,8 @@
   <link rel="icon" href="assets/favicon.svg?v=jt-cream-1" type="image/svg+xml">
   <link rel="stylesheet" href="assets/vendor/fonts/geist.css">
   <link rel="stylesheet" href="assets/site-walkthrough-v3.css">
+  <link rel="stylesheet" href="assets/hospitality.css">
+  <link rel="stylesheet" href="assets/hosting-arrival.css?v=2">
 </head>
 <body>
   <main>
@@ -111,9 +113,28 @@
       </div>
     </section>
 
+    <section class="hosting-preview" id="hospitality" aria-labelledby="hosting-title">
+      <div class="hosting-preview-inner">
+        <p class="section-index">03 / Beyond software</p>
+        <a class="hosting-preview-link" href="hospitality.html" data-hosting-arrival>
+          <div class="hosting-preview-copy">
+            <h2 id="hosting-title">Hospitality.<br>With a personal touch.</h2>
+            <p>Host &amp; co-host of 3+ stays in Gallarate.<br>A different side of what I do.</p>
+            <span class="hosting-preview-cta">Step inside <span aria-hidden="true">↗</span></span>
+          </div>
+          <div class="hosting-postcards" aria-hidden="true">
+            <img src="assets/hospitality/residence.jpg" alt="" width="960" height="1258" loading="lazy">
+            <img src="assets/hospitality/modern.jpg" alt="" width="960" height="1280" loading="lazy">
+            <img src="assets/hospitality/boutique.jpg" alt="" width="1200" height="800" loading="lazy">
+            <span>Gallarate, Italy · Three places to feel at home</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <section class="background" aria-labelledby="background-title">
       <div class="section-heading light-heading">
-        <p class="section-index">03 / Background</p>
+        <p class="section-index">04 / Background</p>
         <h2 id="background-title">Work and study, without the inflated résumé language.</h2>
       </div>
       <div class="timeline">
@@ -124,10 +145,9 @@
     </section>
 
     <section class="contact" id="contact" aria-labelledby="contact-title">
-      <p class="section-index">04 / Contact</p>
+      <p class="section-index">05 / Contact</p>
       <h2 id="contact-title">Have a concrete problem worth building for?</h2>
       <a class="contact-link" href="mailto:business@jadtaljabini.com">business@jadtaljabini.com <span aria-hidden="true">↗</span></a>
-      <p class="contact-privacy">Your email is used to respond to your enquiry. <a href="privacy.html">Website privacy policy</a>.</p>
     </section>
 
     <footer>
@@ -186,7 +206,7 @@
       introStyles.href = "assets/flight-intro.css?v=20260714-1";
       introStyles.addEventListener("load", () => {
         const introScript = document.createElement("script");
-        introScript.src = "assets/flight-intro.js?v=20260714-1";
+        introScript.src = "assets/flight-intro.js?v=20261019-1";
         document.body.append(introScript);
       }, { once: true });
       document.head.append(introStyles);
@@ -195,5 +215,6 @@
 
   <script src="assets/walkthrough-images.js?v=20260710-4" defer></script>
   <script src="assets/site.js?v=20260710-4" defer></script>
+  <script src="assets/hosting-arrival.js?v=3" defer></script>
 </body>
 </html>

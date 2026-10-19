@@ -1,4 +1,6 @@
 (() => {
+  // Deep links should land directly on the requested section, including returns from Hospitality.
+  if (window.location.hash) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   const intro = document.createElement("div");
