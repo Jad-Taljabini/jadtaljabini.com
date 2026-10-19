@@ -23,9 +23,8 @@
 .hosting-back { display:inline-flex; gap:1rem; padding:.5rem 0; color:var(--body); font-size:.82rem; }
 .hosting-back:hover { color:var(--rust); }
 .hosting-hero-grid { display:grid; grid-template-columns:1.15fr 1fr; gap:4rem; align-items:center; padding:3.5rem 0 4.5rem; }
-.hosting-hero h1 { margin:1.5rem 0; font-size:clamp(3.7rem,6.2vw,6.8rem); font-weight:550; line-height:.97; }
+.hosting-hero h1 { margin:1.5rem 0; font-size:clamp(3.3rem,5.5vw,6rem); font-weight:550; line-height:.97; }
 .hosting-hero .section-index { color:var(--hosting-green); font-size:.7rem; line-height:1.7; }
-.hosting-lead { margin:0 0 1.4rem; font-size:clamp(1.15rem,1.7vw,1.45rem); line-height:1.5; letter-spacing:-.025em; }
 .hosting-body { max-width:32rem; color:var(--body); font-size:1rem; line-height:1.75; }
 .hosting-hero .hosting-link { margin-top:.8rem; color:var(--hosting-green); }
 .hosting-hero-image { position:relative; margin:0; padding-top:1rem; }
@@ -94,7 +93,7 @@
   .hosting-preview-image .hosting-key { right:-1rem; top:-1.5rem; width:75px; }
   .hosting-hero { padding-top:7rem; }
   .hosting-hero-grid { padding-top:2.5rem; padding-bottom:3rem; gap:2.5rem; }
-  .hosting-hero h1 { font-size:clamp(3.7rem,13vw,5.5rem); }
+  .hosting-hero h1 { font-size:clamp(3.1rem,11vw,4.8rem); }
   .hosting-hero-image { max-width:500px; width:100%; justify-self:center; padding-right:.5rem; padding-left:.5rem; }
   .hosting-hero-image>img:first-child { height:370px; }
   .hosting-hero-image .hosting-key { left:0; width:100px; }
