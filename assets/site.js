@@ -188,6 +188,10 @@ function renderStep() {
 }
 
 function openProject(projectId) {
+  if (projectId === "hostario" && window.hostarioDemo) {
+    window.hostarioDemo.open();
+    return;
+  }
   activeProject = projectId;
   activeStep = 0;
   renderStep();
