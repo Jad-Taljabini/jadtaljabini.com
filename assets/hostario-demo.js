@@ -14,10 +14,10 @@
             <li data-stage="1"><span>02</span><div><strong>Scan. Check. Done.</strong><small>Turn a sample document into guest details.</small></div></li>
             <li data-stage="2"><span>03</span><div><strong>Bring it all together</strong><small>Reporting and receipts, in the same place.</small></div></li>
           </ol>
-          <p class="hd-hint" aria-live="polite">Start with “Nuovo Check-in” on the phone. It’s yours to explore.</p>
+          <p class="hd-hint" aria-live="polite">Start with “New check-in” on the phone. It’s yours to explore.</p>
           <div class="hd-links"><button class="hd-reset">↺ Start again</button><a href="https://apps.apple.com/it/app/hostario/id6753862247" target="_blank" rel="noreferrer">Get the iOS app ↗</a></div>
         </section>
-        <div class="hd-stage"><div class="hd-phone"><iframe title="Hostario interactive app demo, in Italian" data-src="assets/hostario-demo/index.html" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe></div></div>
+        <div class="hd-stage"><div class="hd-phone"><iframe title="Hostario interactive app demo, in English" data-src="assets/hostario-demo/index.html?v=english-1" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe></div></div>
       </div>
       <p class="hd-disclosure">Demo with sample data · Scanning and submissions are simulated.</p>
     </div>`;
@@ -47,7 +47,7 @@
   let opener;
   const hints = [
     'Choose a property, then set the dates and guest count.',
-    'Tap “Scansiona documento” to try a sample scan. You can edit the result.',
+    'Tap “Scan document” to try a sample scan. You can edit the result.',
     'Your stay is saved. Try a simulated submission or open the receipt.'
   ];
   function update(stage) {

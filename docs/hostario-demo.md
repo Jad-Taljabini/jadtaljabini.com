@@ -5,16 +5,18 @@ The Hostario “Explore the workflow” button opens a local interactive browser
 ## Files
 
 - `assets/hostario-demo.js` and `.css`: portfolio dialog, phone frame and contextual guide.
-- `assets/hostario-demo/index.html`, `app.js`, `app.css`: isolated Italian demo UI.
+- `assets/hostario-demo/index.html`, `app.js`, `app.css`: isolated English demo UI.
 - Existing hospitality images are reused for the three property cards.
 
 ## Basis in the native app
 
 The implementation was informed by the local Hostario SwiftUI source, specifically `CheckInView`, `ListingsView`, `ListingCardView`, `CheckInRowView`, `CheckInFormView`, `ListingSelectionStep`, `DatesAndGuestsStep`, `GuestFormView`, `StepProgressView`, `EditorNavigationDesign`, and `CheckInDetailView`.
 
-It reproduces the property → stay → per-guest → save → reporting → document workflow, including the blue editor navigation, Italian labels and service states. The October 2026 visual revision follows the user's iPhone reference screenshots for card proportions, neutral backgrounds, semantic colors, floating three-item tab bar, scroll headers and rounded editor sheets. The glass is recreated with CSS backdrop filters, edge highlights and a persistent sliding selection capsule; it is not the native SwiftUI material renderer.
+It reproduces the property → stay → per-guest → save → reporting → document workflow, including the blue editor navigation, English labels and service states. The October 2026 visual revision follows the user's iPhone reference screenshots for card proportions, neutral backgrounds, semantic colors, floating three-item tab bar, scroll headers and rounded editor sheets. The glass is recreated with CSS backdrop filters, edge highlights and a persistent sliding selection capsule; it is not the native SwiftUI material renderer.
 
 The reference screenshots are visual guidance only: no private guest identity, address, revenue or occupancy data is copied or included as an asset. Listing names and photos come from the public hospitality assets already used by the portfolio. Guest data and chart series are invented independently. A single persistent disclosure remains outside the phone.
+
+The demo uses English throughout to match the portfolio, including accessible labels, dates, chart labels and euro formatting. It has no language selector. Property names and Italian service names remain unchanged.
 
 ## Deliberate demo limits
 

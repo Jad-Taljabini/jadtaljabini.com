@@ -8,9 +8,9 @@
     { name: 'Lovely Apartment', image: '../hospitality/residence.jpg', city: 'Gallarate, VA' }
   ];
   const samples = [
-    { first: 'Emma', last: 'Martin', birth: '1994-05-18', country: 'Francia', doc: 'DEMO001' },
-    { first: 'Lucas', last: 'Martin', birth: '1992-08-04', country: 'Francia', doc: 'DEMO002' },
-    { first: 'Alex', last: 'Taylor', birth: '1996-03-12', country: 'Regno Unito', doc: 'DEMO003' }
+    { first: 'Emma', last: 'Martin', birth: '1994-05-18', country: 'France', doc: 'DEMO001' },
+    { first: 'Lucas', last: 'Martin', birth: '1992-08-04', country: 'France', doc: 'DEMO002' },
+    { first: 'Alex', last: 'Taylor', birth: '1996-03-12', country: 'United Kingdom', doc: 'DEMO003' }
   ];
   const paths = {
     house: '<path d="m2 11 10-8 10 8M17 4v3" stroke-width="2.2"/><path d="M5 10v11h5v-7h4v7h5V10l-7-5Z" fill="currentColor" stroke="none"/>',
@@ -42,16 +42,16 @@
   };
   const icon = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] || paths.doc}</svg>`;
   const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const dateLabel = (value, long = false) => new Date(`${value}T12:00:00`).toLocaleDateString('it-IT', { day: 'numeric', month: long ? 'long' : 'short', ...(long ? { year: 'numeric' } : {}) });
-  const fullDate = value => new Date(`${value}T12:00:00`).toLocaleDateString('it-IT', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  const dateLabel = (value, long = false) => new Date(`${value}T12:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: long ? 'long' : 'short', ...(long ? { year: 'numeric' } : {}) });
+  const fullDate = value => new Date(`${value}T12:00:00`).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
   const days = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / 86400000);
-  const nights = n => `${n} ${n === 1 ? 'notte' : 'notti'}`;
-  const euro = n => n.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' });
-  const blankGuest = () => ({ first: '', last: '', birth: '', country: 'Francia', doc: '' });
+  const nights = n => `${n} ${n === 1 ? 'night' : 'nights'}`;
+  const euro = n => n.toLocaleString('en-GB', { style: 'currency', currency: 'EUR' });
+  const blankGuest = () => ({ first: '', last: '', birth: '', country: 'France', doc: '' });
   const newDraft = () => ({ property: null, arrival: '2026-11-09', departure: '2026-11-12', count: 1, guests: [blankGuest()], sent: false });
-  const tabItems = [['properties', 'Proprietà', 'house'], ['checkins', 'Check-in', 'calendarTab'], ['settings', 'Impostazioni', 'gear']];
+  const tabItems = [['properties', 'Properties', 'house'], ['checkins', 'Check-ins', 'calendarTab'], ['settings', 'Settings', 'gear']];
   let state, timer, properties;
-  app.innerHTML = '<div id="screen"></div><nav class="tabs glass" aria-label="Navigazione Hostario"></nav>';
+  app.innerHTML = '<div id="screen"></div><nav class="tabs glass" aria-label="Hostario navigation"></nav>';
   const screen = app.querySelector('#screen');
   const tabBar = app.querySelector('.tabs');
   tabBar.innerHTML = `<span class="tab-lens" aria-hidden="true"></span>${tabItems.map(([key, title, symbol]) => `<button data-action="${key}">${icon(symbol)}<span>${title}</span></button>`).join('')}`;
@@ -78,7 +78,7 @@
     return 0;
   }
   function toolbar(title, backAction, trailing = '') {
-    return `<div class="toolbar">${backAction ? `<button class="icon-button glass" data-action="${backAction}" aria-label="Indietro">${icon('back')}</button>` : '<span></span>'}<strong>${title}</strong>${trailing || '<span></span>'}</div>`;
+    return `<div class="toolbar">${backAction ? `<button class="icon-button glass" data-action="${backAction}" aria-label="Back">${icon('back')}</button>` : '<span></span>'}<strong>${title}</strong>${trailing || '<span></span>'}</div>`;
   }
   function rootPage(title, content, extra = '') {
     return `<div class="root-toolbar"><strong>${title}</strong>${extra}</div><div class="scroll root-scroll">${pageTitle(title)}${content}</div>`;
@@ -90,62 +90,62 @@
     return p.image ? `<img src="${p.image}" alt="">` : `<span class="property-placeholder">${icon('house')}</span>`;
   }
   function propertyCard(p, index, select = false) {
-    return `<button class="property-card card ${select && state.draft.property === index ? 'selected' : ''}" data-action="${select ? 'select-property' : 'property'}" data-index="${index}" ${select ? `aria-pressed="${state.draft.property === index}"` : ''}>${propertyImage(p)}<span class="property-copy"><strong>${escape(p.name)}</strong><small>${icon('pin')} ${escape(p.city.toUpperCase())}</small><small>${icon('number')} Appartamento ${String(index + 1).padStart(2, '0')}</small></span></button>`;
+    return `<button class="property-card card ${select && state.draft.property === index ? 'selected' : ''}" data-action="${select ? 'select-property' : 'property'}" data-index="${index}" ${select ? `aria-pressed="${state.draft.property === index}"` : ''}>${propertyImage(p)}<span class="property-copy"><strong>${escape(p.name)}</strong><small>${icon('pin')} ${escape(p.city.toUpperCase())}</small><small>${icon('number')} Apartment ${String(index + 1).padStart(2, '0')}</small></span></button>`;
   }
   function actionBox(action, label, symbol, color) {
     return `<button class="action-box ${color}" data-action="${action}" ${action === 'add-property' && properties.length >= 5 ? 'disabled' : ''}>${icon(symbol)}<span>${label}</span></button>`;
   }
-  function filterSelect(name, value, title = 'Tutti') {
-    return `<label class="filter-control glass">${icon('building')}<select name="${name}" aria-label="Filtra ${name === 'statsProperty' ? 'statistiche' : 'check-in'} per proprietà"><option value="all">${title}</option>${properties.map((p, i) => `<option value="${i}" ${value === String(i) ? 'selected' : ''}>${escape(p.name)}</option>`).join('')}</select><span aria-hidden="true">⌄</span></label>`;
+  function filterSelect(name, value, title = 'All properties') {
+    return `<label class="filter-control glass">${icon('building')}<select name="${name}" aria-label="Filter ${name === 'statsProperty' ? 'statistics' : 'check-ins'} by property"><option value="all">${title}</option>${properties.map((p, i) => `<option value="${i}" ${value === String(i) ? 'selected' : ''}>${escape(p.name)}</option>`).join('')}</select><span aria-hidden="true">⌄</span></label>`;
   }
   function stayCard(r, i) {
-    return `<button class="stay-card card" data-action="record" data-index="${i}"><strong>${escape(properties[r.property].name)}</strong><small>${dateLabel(r.arrival)} – ${dateLabel(r.departure)}</small><div class="guest-row">${icon('person')} ${escape(r.guests[0].first)} ${escape(r.guests[0].last)} ${r.count > 1 ? `<span>(+${r.count - 1})</span>` : ''}</div><div class="stay-meta"><span>${icon('moon')} ${nights(days(r.arrival, r.departure))}</span>${r.arrival >= '2026-11-01' ? '<span class="blue">● In arrivo</span>' : ''}<span class="service-dots"><i class="${r.sent ? 'green' : 'red'}">●</i> AW &nbsp;<i class="${r.sent ? 'green' : 'red'}">●</i> ROSS</span></div></button>`;
+    return `<button class="stay-card card" data-action="record" data-index="${i}"><strong>${escape(properties[r.property].name)}</strong><small>${dateLabel(r.arrival)} – ${dateLabel(r.departure)}</small><div class="guest-row">${icon('person')} ${escape(r.guests[0].first)} ${escape(r.guests[0].last)} ${r.count > 1 ? `<span>(+${r.count - 1})</span>` : ''}</div><div class="stay-meta"><span>${icon('moon')} ${nights(days(r.arrival, r.departure))}</span>${r.arrival >= '2026-11-01' ? '<span class="blue">● Upcoming</span>' : ''}<span class="service-dots"><i class="${r.sent ? 'green' : 'red'}">●</i> AW &nbsp;<i class="${r.sent ? 'green' : 'red'}">●</i> ROSS</span></div></button>`;
   }
   function checkins() {
     const filtered = state.records.map((r, i) => [r, i]).filter(([r]) => state.filter === 'all' || r.property === Number(state.filter));
     const months = [...new Set(filtered.map(([r]) => r.arrival.slice(0, 7)))].sort().reverse();
-    const content = `<div class="action-bar">${actionBox('receipts', 'Scarica ricevute', 'download', 'indigo')}${actionBox('new', 'Nuovo Check-in', 'plus', 'teal')}</div>${months.map(month => {
+    const content = `<div class="action-bar">${actionBox('receipts', 'View receipts', 'download', 'indigo')}${actionBox('new', 'New check-in', 'plus', 'teal')}</div>${months.map(month => {
       const records = filtered.filter(([r]) => r.arrival.startsWith(month));
-      const label = new Date(`${month}-01T12:00:00`).toLocaleDateString('it-IT', { month: 'long', year: 'numeric' });
+      const label = new Date(`${month}-01T12:00:00`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
       return `<section class="month-group"><button class="month-heading" data-action="month" data-month="${month}" aria-expanded="${state.expanded.has(month)}"><h2>${label[0].toUpperCase() + label.slice(1)}</h2><span>${records.length} ${icon('chevron')}</span></button>${state.expanded.has(month) ? records.map(([r, i]) => stayCard(r, i)).join('') : ''}</section>`;
-    }).join('')}${!filtered.length ? '<p class="quiet-note">Nessun check-in per questa proprietà.</p>' : ''}`;
-    return rootPage('Check-in', content, filterSelect('filter', state.filter));
+    }).join('')}${!filtered.length ? '<p class="quiet-note">No check-ins for this property.</p>' : ''}`;
+    return rootPage('Check-ins', content, filterSelect('filter', state.filter));
   }
   function chart(metric) {
     // Independently invented statistics; never derived from the user's screenshots.
     const base = metric === 'guests' ? [3, 5, 4, 8, 6, 11, 9, 14, 10, 7, 4, 0] : [310, 520, 380, 970, 660, 1210, 850, 1370, 1060, 590, 430, 0];
     const values = state.statsProperty === 'all' ? base : base.map((v, i) => Math.round(v * (.22 + ((i + Number(state.statsProperty)) % 3) * .08)));
     const shown = state.statsPeriod === 'quarterly' ? [0, 3, 6, 9].map(i => values.slice(i, i + 3).reduce((a, b) => a + b, 0)) : values;
-    const labels = state.statsPeriod === 'quarterly' ? ['T1', 'T2', 'T3', 'T4'] : ['Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic'];
+    const labels = state.statsPeriod === 'quarterly' ? ['Q1', 'Q2', 'Q3', 'Q4'] : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const max = Math.ceil(Math.max(...shown) / (metric === 'guests' ? 10 : 500)) * (metric === 'guests' ? 10 : 500);
     const total = values.reduce((a, b) => a + b, 0);
     const col = 280 / shown.length;
-    return `<div class="card chart-card ${metric === 'guests' ? 'blue-chart' : 'green-chart'}"><div class="chart-controls"><span>${icon(metric === 'guests' ? 'people' : 'euro')} ${metric === 'guests' ? 'Ospiti' : 'Guadagni'}</span><label>${icon('calendar')}<select name="statsPeriod" aria-label="Periodo ${metric === 'guests' ? 'ospiti' : 'guadagni'}"><option value="monthly" ${state.statsPeriod === 'monthly' ? 'selected' : ''}>Mensile</option><option value="quarterly" ${state.statsPeriod === 'quarterly' ? 'selected' : ''}>Trimestrale</option></select></label></div><div class="chart-total"><span>Totale: <strong>${metric === 'guests' ? total : euro(total)}</strong></span><span>2026</span></div><svg class="statistics-chart" viewBox="0 0 310 205" role="img" aria-label="${metric === 'guests' ? 'Ospiti' : 'Guadagni'} per ${state.statsPeriod === 'monthly' ? 'mese' : 'trimestre'}, dati inventati"><defs><linearGradient id="bars-${metric}" x1="0" y1="0" x2="0" y2="1"><stop stop-color="currentColor"/><stop offset="1" stop-color="currentColor" stop-opacity=".58"/></linearGradient></defs>${[0, 1, 2, 3].map(i => `<line x1="0" y1="${8 + i * 58}" x2="280" y2="${8 + i * 58}"/><text x="284" y="${12 + i * 58}" class="axis-label">${metric === 'guests' ? Math.round(max * (1 - i / 3)) : (max * (1 - i / 3) / 1000).toFixed(1) + 'k'}</text>`).join('')}${shown.map((n, i) => `<rect x="${i * col + col * .15}" y="${182 - n / max * 174}" width="${col * .7}" height="${n / max * 174}" rx="4" fill="url(#bars-${metric})"/><text x="${i * col + col / 2}" y="198" text-anchor="middle" class="axis-label">${labels[i]}</text>`).join('')}</svg></div>`;
+    return `<div class="card chart-card ${metric === 'guests' ? 'blue-chart' : 'green-chart'}"><div class="chart-controls"><span>${icon(metric === 'guests' ? 'people' : 'euro')} ${metric === 'guests' ? 'Guests' : 'Revenue'}</span><label>${icon('calendar')}<select name="statsPeriod" aria-label="${metric === 'guests' ? 'Guest' : 'Revenue'} chart period"><option value="monthly" ${state.statsPeriod === 'monthly' ? 'selected' : ''}>Monthly</option><option value="quarterly" ${state.statsPeriod === 'quarterly' ? 'selected' : ''}>Quarterly</option></select></label></div><div class="chart-total"><span>Total: <strong>${metric === 'guests' ? total : euro(total)}</strong></span><span>2026</span></div><svg class="statistics-chart" viewBox="0 0 310 205" role="img" aria-label="${metric === 'guests' ? 'Guests' : 'Revenue'} by ${state.statsPeriod === 'monthly' ? 'month' : 'quarter'}, sample data"><defs><linearGradient id="bars-${metric}" x1="0" y1="0" x2="0" y2="1"><stop stop-color="currentColor"/><stop offset="1" stop-color="currentColor" stop-opacity=".58"/></linearGradient></defs>${[0, 1, 2, 3].map(i => `<line x1="0" y1="${8 + i * 58}" x2="280" y2="${8 + i * 58}"/><text x="284" y="${12 + i * 58}" class="axis-label">${metric === 'guests' ? Math.round(max * (1 - i / 3)) : (max * (1 - i / 3) / 1000).toFixed(1) + 'k'}</text>`).join('')}${shown.map((n, i) => `<rect x="${i * col + col * .15}" y="${182 - n / max * 174}" width="${col * .7}" height="${n / max * 174}" rx="4" fill="url(#bars-${metric})"/><text x="${i * col + col / 2}" y="198" text-anchor="middle" class="axis-label">${labels[i]}</text>`).join('')}</svg></div>`;
   }
   function propertiesScreen() {
-    return rootPage('Proprietà', `<div class="action-bar">${actionBox('add-property', 'Nuova Proprietà', 'plus', 'orange')}</div><div class="section-heading"><h2>Le tue Proprietà</h2><span class="count-badge">${properties.length}</span></div>${properties.map((p, i) => propertyCard(p, i)).join('')}<div class="section-heading stats-heading"><h2>Statistiche</h2>${filterSelect('statsProperty', state.statsProperty)}</div>${chart('guests')}${chart('revenue')}`);
+    return rootPage('Properties', `<div class="action-bar">${actionBox('add-property', 'New property', 'plus', 'orange')}</div><div class="section-heading"><h2>Your properties</h2><span class="count-badge">${properties.length}</span></div>${properties.map((p, i) => propertyCard(p, i)).join('')}<div class="section-heading stats-heading"><h2>Statistics</h2>${filterSelect('statsProperty', state.statsProperty)}</div>${chart('guests')}${chart('revenue')}`);
   }
   function propertyDetail() {
     const p = properties[state.selectedProperty];
-    return `${toolbar('Proprietà', 'properties')}<div class="scroll detail-scroll"><div class="property-cover">${propertyImage(p)}</div>${pageTitle(escape(p.name), escape(p.city))}<h2 class="section-title">Portali</h2><div class="card"><div class="data-row"><span>Alloggiati Web</span><span class="green">Configurato</span></div><div class="data-row"><span>ROSS1000</span><span class="green">Configurato</span></div></div><button class="primary" data-action="new-property">Nuovo Check-in ${icon('plus')}</button></div>`;
+    return `${toolbar('Properties', 'properties')}<div class="scroll detail-scroll"><div class="property-cover">${propertyImage(p)}</div>${pageTitle(escape(p.name), escape(p.city))}<h2 class="section-title">Portals</h2><div class="card"><div class="data-row"><span>Alloggiati Web</span><span class="green">Configured</span></div><div class="data-row"><span>ROSS1000</span><span class="green">Configured</span></div></div><button class="primary" data-action="new-property">New check-in ${icon('plus')}</button></div>`;
   }
   function addProperty() {
-    return `${toolbar('Nuova Proprietà', 'properties')}<div class="scroll sheet-content">${pageTitle('La tua Proprietà', 'I dettagli essenziali, in un posto solo.')}<form id="property-form" autocomplete="off"><div class="card"><label class="field"><span>Nome</span><input name="property-name" placeholder="Casa dei Gelsi" required maxlength="65"></label><label class="field"><span>Città</span><input name="property-city" placeholder="Como, CO" required maxlength="40"></label></div><button class="primary" type="submit">Aggiungi Proprietà ${icon('plus')}</button></form></div>`;
+    return `${toolbar('New property', 'properties')}<div class="scroll sheet-content">${pageTitle('Your property', 'The essentials, all in one place.')}<form id="property-form" autocomplete="off"><div class="card"><label class="field"><span>Name</span><input name="property-name" placeholder="Lakeside Apartment" required maxlength="65"></label><label class="field"><span>City</span><input name="property-city" placeholder="Como, CO" required maxlength="40"></label></div><button class="primary" type="submit">Add property ${icon('plus')}</button></form></div>`;
   }
-  function navFooter(nextLabel = 'Continua', disabled = false) {
-    return `<div class="actions">${state.step > 0 ? `<button class="round-back glass" data-action="back" aria-label="Passaggio precedente">${icon('back')}</button>` : ''}<button class="primary" data-action="next" ${disabled ? 'disabled' : ''}>${nextLabel} ${icon(nextLabel === 'Salva Check-in' ? 'check' : 'arrow')}</button></div>`;
+  function navFooter(nextLabel = 'Continue', disabled = false) {
+    return `<div class="actions">${state.step > 0 ? `<button class="round-back glass" data-action="back" aria-label="Previous step">${icon('back')}</button>` : ''}<button class="primary" data-action="next" ${disabled ? 'disabled' : ''}>${nextLabel} ${icon(nextLabel === 'Save check-in' ? 'check' : 'arrow')}</button></div>`;
   }
   function progress() {
     const current = state.step === 2 ? 2 + state.guest : state.step;
-    const labels = ['Proprietà', 'Soggiorno', ...Array.from({ length: state.draft.count }, (_, i) => `Ospite ${i + 1}`)];
-    return `<div class="progress" aria-label="Passaggio ${current + 1} di ${labels.length}: ${labels[current]}">${labels.map((label, i) => `<span class="${current === i ? 'active glass' : current > i ? 'done' : ''}">${current === i ? label : current > i ? icon('check') : i + 1}</span>`).join('')}</div>`;
+    const labels = ['Property', 'Stay', ...Array.from({ length: state.draft.count }, (_, i) => `Guest ${i + 1}`)];
+    return `<div class="progress" aria-label="Step ${current + 1} of ${labels.length}: ${labels[current]}">${labels.map((label, i) => `<span class="${current === i ? 'active glass' : current > i ? 'done' : ''}">${current === i ? label : current > i ? icon('check') : i + 1}</span>`).join('')}</div>`;
   }
   function dateField(key, label, value, min, max, color, symbol) {
-    return `<label class="date-field"><span class="${color}">${icon(symbol)}</span><span class="date-copy"><small>${label}</small><strong data-date-label="${key}">${fullDate(value)}</strong></span>${icon('chevron')}<input type="date" name="${key}" aria-label="Data di ${key === 'arrival' ? 'arrivo' : 'partenza'}" value="${value}" min="${min}" max="${max}" required></label>`;
+    return `<label class="date-field"><span class="${color}">${icon(symbol)}</span><span class="date-copy"><small>${label}</small><strong data-date-label="${key}">${fullDate(value)}</strong></span>${icon('chevron')}<input type="date" name="${key}" aria-label="${key === 'arrival' ? 'Arrival' : 'Departure'} date" value="${value}" min="${min}" max="${max}" required></label>`;
   }
   function stayFields() {
     const d = state.draft;
-    return `${pageTitle('Dettagli del Soggiorno', 'Quando arrivano e quanti saranno?')}<div class="card"><h2><span class="blue">${icon('calendar')}</span> Date del Soggiorno</h2>${dateField('arrival', 'Check-in', d.arrival, '2026-11-01', '2026-11-29', 'green', 'down')}<div class="nights"><span id="night-count">${nights(days(d.arrival, d.departure))}</span></div>${dateField('departure', 'Check-out', d.departure, nextDate(d.arrival), '2026-11-30', 'orange', 'up')}</div><div class="card"><h2><span class="purple">${icon('people')}</span> Numero di Ospiti</h2><div class="guest-count"><button data-action="less" aria-label="Rimuovi un ospite" ${d.count === 1 ? 'disabled' : ''}>−</button><div><strong>${d.count}</strong><small>${d.count === 1 ? 'Ospite' : 'Ospiti'}</small></div><button data-action="more" aria-label="Aggiungi un ospite" ${d.count === 3 ? 'disabled' : ''}>+</button></div></div>`;
+    return `${pageTitle('Stay details', 'When are they arriving, and how many guests?')}<div class="card"><h2><span class="blue">${icon('calendar')}</span> Stay dates</h2>${dateField('arrival', 'Check-in', d.arrival, '2026-11-01', '2026-11-29', 'green', 'down')}<div class="nights"><span id="night-count">${nights(days(d.arrival, d.departure))}</span></div>${dateField('departure', 'Check-out', d.departure, nextDate(d.arrival), '2026-11-30', 'orange', 'up')}</div><div class="card"><h2><span class="purple">${icon('people')}</span> Number of guests</h2><div class="guest-count"><button data-action="less" aria-label="Remove a guest" ${d.count === 1 ? 'disabled' : ''}>−</button><div><strong>${d.count}</strong><small>${d.count === 1 ? 'Guest' : 'Guests'}</small></div><button data-action="more" aria-label="Add a guest" ${d.count === 3 ? 'disabled' : ''}>+</button></div></div>`;
   }
   function nextDate(value) { return new Date(Date.parse(value) + 86400000).toISOString().slice(0, 10); }
   function guestValid() {
@@ -154,61 +154,61 @@
   }
   function guestFields() {
     const g = state.draft.guests[state.guest];
-    return `${pageTitle(state.guest === 0 ? 'Ospite Principale' : `Ospite ${state.guest + 1}`, 'Inserisci i dettagli dell’ospite')}<button class="scan-button" data-action="scan">${icon('scan')}<span>Scansiona documento</span>${icon('chevron')}</button><form id="guest-form" autocomplete="off"><div class="card"><h2><span class="blue">${icon('person')}</span> Informazioni Personali</h2><label class="field"><span>Nome</span><input name="first" value="${escape(g.first)}" placeholder="Emma" maxlength="35" required></label><label class="field"><span>Cognome</span><input name="last" value="${escape(g.last)}" placeholder="Martin" maxlength="35" required></label><label class="field"><span>Data di nascita</span><input type="date" name="birth" value="${g.birth}" min="1900-01-01" max="2025-12-31" required></label><label class="field"><span>Cittadinanza</span><select name="country">${['Francia', 'Italia', 'Regno Unito', 'Germania'].map(c => `<option ${g.country === c ? 'selected' : ''}>${c}</option>`).join('')}</select></label></div><div class="card"><h2><span class="orange">${icon('doc')}</span> Documento</h2><label class="field"><span>Numero</span><input name="doc" value="${escape(g.doc)}" placeholder="DEMO001" maxlength="20" required></label></div></form>`;
+    return `${pageTitle(state.guest === 0 ? 'Lead guest' : `Guest ${state.guest + 1}`, 'Enter the guest’s details')}<button class="scan-button" data-action="scan">${icon('scan')}<span>Scan document</span>${icon('chevron')}</button><form id="guest-form" autocomplete="off"><div class="card"><h2><span class="blue">${icon('person')}</span> Personal details</h2><label class="field"><span>First name</span><input name="first" value="${escape(g.first)}" placeholder="Emma" maxlength="35" required></label><label class="field"><span>Last name</span><input name="last" value="${escape(g.last)}" placeholder="Martin" maxlength="35" required></label><label class="field"><span>Date of birth</span><input type="date" name="birth" value="${g.birth}" min="1900-01-01" max="2025-12-31" required></label><label class="field"><span>Citizenship</span><select name="country">${['France', 'Italy', 'United Kingdom', 'Germany'].map(c => `<option ${g.country === c ? 'selected' : ''}>${c}</option>`).join('')}</select></label></div><div class="card"><h2><span class="orange">${icon('doc')}</span> Document</h2><label class="field"><span>Number</span><input name="doc" value="${escape(g.doc)}" placeholder="DEMO001" maxlength="20" required></label></div></form>`;
   }
   function wizard() {
     const last = state.guest === state.draft.count - 1;
-    return `<div class="toolbar sheet-toolbar"><button class="cancel-button glass" data-action="cancel">Annulla</button><strong>Nuovo Check-in</strong><span></span></div>${progress()}<div class="scroll wizard-content">${state.step === 0 ? `${pageTitle('Scegli la tua Proprietà', 'Seleziona il listing per questo check-in')}<div class="property-list">${properties.map((p, i) => propertyCard(p, i, true)).join('')}</div>` : state.step === 1 ? stayFields() : guestFields()}</div>${navFooter(state.step === 2 && last ? 'Salva Check-in' : 'Continua', state.step === 0 ? state.draft.property === null : state.step === 2 && !guestValid())}`;
+    return `<div class="toolbar sheet-toolbar"><button class="cancel-button glass" data-action="cancel">Cancel</button><strong>New check-in</strong><span></span></div>${progress()}<div class="scroll wizard-content">${state.step === 0 ? `${pageTitle('Choose your property', 'Select the listing for this check-in')}<div class="property-list">${properties.map((p, i) => propertyCard(p, i, true)).join('')}</div>` : state.step === 1 ? stayFields() : guestFields()}</div>${navFooter(state.step === 2 && last ? 'Save check-in' : 'Continue', state.step === 0 ? state.draft.property === null : state.step === 2 && !guestValid())}`;
   }
   function scanner() {
     const g = samples[state.guest];
-    return `${toolbar('Scansione documento', 'scan-cancel')}<div class="scroll scanner">${pageTitle('Inquadra il documento')}<div class="scan-frame"><div class="sample-id"><span>DOCUMENTO DI ESEMPIO</span><div><div class="id-avatar">${icon('person')}</div><p><strong>${g.last.toUpperCase()}<br>${g.first.toUpperCase()}</strong><small>${g.birth}<br>${g.doc}</small></p></div><code>DEMO&lt;&lt;${g.last.toUpperCase()}&lt;&lt;${g.first.toUpperCase()}<br>SOLO&lt;DATI&lt;DI&lt;ESEMPIO&lt;&lt;&lt;</code></div><div class="scan-line"></div></div><p class="scan-status" role="status">${icon('scan')} Lettura dei dati…</p></div>`;
+    return `${toolbar('Document scan', 'scan-cancel')}<div class="scroll scanner">${pageTitle('Position the document in the frame')}<div class="scan-frame"><div class="sample-id"><span>SAMPLE DOCUMENT</span><div><div class="id-avatar">${icon('person')}</div><p><strong>${g.last.toUpperCase()}<br>${g.first.toUpperCase()}</strong><small>${g.birth}<br>${g.doc}</small></p></div><code>DEMO&lt;&lt;${g.last.toUpperCase()}&lt;&lt;${g.first.toUpperCase()}<br>SAMPLE&lt;DATA&lt;ONLY&lt;&lt;&lt;</code></div><div class="scan-line"></div></div><p class="scan-status" role="status">${icon('scan')} Reading details…</p></div>`;
   }
   function guestRows(r) {
-    return r.guests.map((g, i) => `<div class="data-row portal-guest"><span class="secondary">${i + 1}</span><span>${escape(g.first)} ${escape(g.last)}</span><span class="secondary">Completi</span></div>`).join('');
+    return r.guests.map((g, i) => `<div class="data-row portal-guest"><span class="secondary">${i + 1}</span><span>${escape(g.first)} ${escape(g.last)}</span><span class="secondary">Complete</span></div>`).join('');
   }
   function portal(r, title, ross = false) {
-    return `<h2 class="section-title">${title}</h2>${ross ? `<div class="card room-row"><span class="indigo">${icon('bed')}</span><span>Camere</span><strong>1</strong></div>` : ''}<div class="card">${guestRows(r)}</div><div class="card portal-status"><span>${icon(r.sent ? 'check' : 'info')} ${r.sent ? 'Inviato' : 'Non inviato'}</span>${r.sent ? '<span class="green">Completato</span>' : `<button class="text-button" data-action="send-prompt">${icon('send')} Invia</button>`}</div>`;
+    return `<h2 class="section-title">${title}</h2>${ross ? `<div class="card room-row"><span class="indigo">${icon('bed')}</span><span>Rooms</span><strong>1</strong></div>` : ''}<div class="card">${guestRows(r)}</div><div class="card portal-status"><span>${icon(r.sent ? 'check' : 'info')} ${r.sent ? 'Sent' : 'Not sent'}</span>${r.sent ? '<span class="green">Complete</span>' : `<button class="text-button" data-action="send-prompt">${icon('send')} Send</button>`}</div>`;
   }
   function detail() {
     const r = state.records[state.active], p = properties[r.property];
-    return `${toolbar('Check-in', 'checkins')}<div class="scroll detail-scroll"><div class="card checkin-summary"><div class="summary-property">${propertyImage(p)}<h1 tabindex="-1">${escape(p.name)}</h1></div><div class="summary-counts"><div>${icon('calendar')}<strong>${days(r.arrival, r.departure)}</strong><span>Notti</span></div><div>${icon('people')}<strong>${r.count}</strong><span>Ospiti</span></div></div></div><h2 class="section-title">Soggiorno</h2><div class="card"><div class="data-row"><span>Arrivo</span><strong>${dateLabel(r.arrival, true)}</strong></div><div class="data-row"><span>Partenza</span><strong>${dateLabel(r.departure, true)}</strong></div></div><h2 class="section-title">Ospiti</h2>${r.guests.map((g, i) => `<div class="card guest-detail"><div><strong>${i + 1}. ${escape(g.first)} ${escape(g.last)}</strong>${i === 0 ? '<span class="primary-badge">Principale</span>' : ''}</div><p>${icon('person')} ${r.count === 1 ? 'Ospite Singolo' : i === 0 ? 'Capogruppo' : 'Membro Gruppo'}</p><hr><p>${icon('calendar')} Nato il ${dateLabel(g.birth, true)}</p><p>${icon('flag')} ${escape(g.country.toUpperCase())}</p></div>`).join('')}${portal(r, 'Alloggiati Web')}${portal(r, 'ROSS1000', true)}<h2 class="section-title">Documenti</h2><button class="card document-button" data-action="receipt"><span class="orange">${icon('doc')}</span><span><strong>Ricevuta / Quietanza Soggiorno</strong><small>Ricevuta con dati locatore e pagamento</small></span>${icon('chevron')}</button></div>`;
+    return `${toolbar('Check-in', 'checkins')}<div class="scroll detail-scroll"><div class="card checkin-summary"><div class="summary-property">${propertyImage(p)}<h1 tabindex="-1">${escape(p.name)}</h1></div><div class="summary-counts"><div>${icon('calendar')}<strong>${days(r.arrival, r.departure)}</strong><span>Nights</span></div><div>${icon('people')}<strong>${r.count}</strong><span>Guests</span></div></div></div><h2 class="section-title">Stay</h2><div class="card"><div class="data-row"><span>Arrival</span><strong>${dateLabel(r.arrival, true)}</strong></div><div class="data-row"><span>Departure</span><strong>${dateLabel(r.departure, true)}</strong></div></div><h2 class="section-title">Guests</h2>${r.guests.map((g, i) => `<div class="card guest-detail"><div><strong>${i + 1}. ${escape(g.first)} ${escape(g.last)}</strong>${i === 0 ? '<span class="primary-badge">Lead guest</span>' : ''}</div><p>${icon('person')} ${r.count === 1 ? 'Individual guest' : i === 0 ? 'Group leader' : 'Group member'}</p><hr><p>${icon('calendar')} Born on ${dateLabel(g.birth, true)}</p><p>${icon('flag')} ${escape(g.country.toUpperCase())}</p></div>`).join('')}${portal(r, 'Alloggiati Web')}${portal(r, 'ROSS1000', true)}<h2 class="section-title">Documents</h2><button class="card document-button" data-action="receipt"><span class="orange">${icon('doc')}</span><span><strong>Stay receipt</strong><small>Host and payment details</small></span>${icon('chevron')}</button></div>`;
   }
   function sendScreen() {
     const r = state.records[state.active];
-    return `${toolbar('Invio ai portali', 'detail')}<div class="scroll send-screen"><div class="success-symbol">${icon(state.sending ? 'send' : 'check')}</div>${pageTitle(state.sending ? 'Invio in corso…' : 'Check-in salvato', state.sending ? 'Preparazione dei dati' : 'Vuoi inviare i dati ai portali?')}<div class="card"><div class="data-row"><strong>Alloggiati Web</strong><span>${state.sending ? 'In corso…' : 'Pronto'}</span></div><div class="data-row"><strong>ROSS1000</strong><span>${state.sending ? 'In corso…' : 'Pronto'}</span></div><div class="data-row"><span>Ospiti</span><strong>${r.count}</strong></div></div></div><div class="send-actions">${state.sending ? '<button class="primary" disabled>Invio in corso…</button>' : '<button class="primary" data-action="send">Invia ai portali</button><button class="text-button" data-action="detail">Non ora, apri il riepilogo</button>'}</div>`;
+    return `${toolbar('Submit to portals', 'detail')}<div class="scroll send-screen"><div class="success-symbol">${icon(state.sending ? 'send' : 'check')}</div>${pageTitle(state.sending ? 'Sending…' : 'Check-in saved', state.sending ? 'Preparing guest details' : 'Send guest details to the portals?')}<div class="card"><div class="data-row"><strong>Alloggiati Web</strong><span>${state.sending ? 'In progress…' : 'Ready'}</span></div><div class="data-row"><strong>ROSS1000</strong><span>${state.sending ? 'In progress…' : 'Ready'}</span></div><div class="data-row"><span>Guests</span><strong>${r.count}</strong></div></div></div><div class="send-actions">${state.sending ? '<button class="primary" disabled>Sending…</button>' : '<button class="primary" data-action="send">Send to portals</button><button class="text-button" data-action="detail">Not now, view summary</button>'}</div>`;
   }
   function receipt() {
     const r = state.records[state.active], n = days(r.arrival, r.departure);
-    return `${toolbar('Anteprima ricevuta', 'receipt-back')}<div class="scroll receipt-wrap"><article class="receipt"><div class="receipt-brand">HOSTARIO<span>RICEVUTA DI ESEMPIO</span></div><h1 tabindex="-1">Un soggiorno.<br>Tutto in ordine.</h1><span class="receipt-number">DEMO / 2026 · 001</span><hr><small>STRUTTURA</small><h2>${escape(properties[r.property].name)}</h2><p>${escape(properties[r.property].city)}</p><small>OSPITE</small><p>${escape(r.guests[0].first)} ${escape(r.guests[0].last)}</p><hr><div class="data-row"><span>Arrivo</span><strong>${dateLabel(r.arrival, true)}</strong></div><div class="data-row"><span>Partenza</span><strong>${dateLabel(r.departure, true)}</strong></div><div class="data-row"><span>${nights(n)} × € 95,00</span><strong>${euro(n * 95)}</strong></div><div class="receipt-total"><span>Totale</span><strong>${euro(n * 95)}</strong></div><p class="receipt-disclaimer">FACSIMILE · NON VALIDO AI FINI FISCALI<br>Importi e ospiti sono inventati.</p></article></div>`;
+    return `${toolbar('Receipt preview', 'receipt-back')}<div class="scroll receipt-wrap"><article class="receipt"><div class="receipt-brand">HOSTARIO<span>SAMPLE RECEIPT</span></div><h1 tabindex="-1">One stay.<br>Everything in order.</h1><span class="receipt-number">DEMO / 2026 · 001</span><hr><small>PROPERTY</small><h2>${escape(properties[r.property].name)}</h2><p>${escape(properties[r.property].city)}</p><small>GUEST</small><p>${escape(r.guests[0].first)} ${escape(r.guests[0].last)}</p><hr><div class="data-row"><span>Arrival</span><strong>${dateLabel(r.arrival, true)}</strong></div><div class="data-row"><span>Departure</span><strong>${dateLabel(r.departure, true)}</strong></div><div class="data-row"><span>${nights(n)} × ${euro(95)}</span><strong>${euro(n * 95)}</strong></div><div class="receipt-total"><span>Total</span><strong>${euro(n * 95)}</strong></div><p class="receipt-disclaimer">SAMPLE · NOT VALID FOR TAX PURPOSES<br>Amounts and guests are fictional.</p></article></div>`;
   }
   function receipts() {
-    return `${toolbar('Ricevute', 'receipts-back')}<div class="scroll detail-scroll">${pageTitle('Ricevute Soggiorno')}${state.records.map((r, i) => `<button class="card document-button" data-action="open-receipt" data-index="${i}"><span class="orange">${icon('doc')}</span><span><strong>${escape(r.guests[0].first)} ${escape(r.guests[0].last)}</strong><small>${dateLabel(r.arrival)} · ${escape(properties[r.property].name)}</small></span>${icon('chevron')}</button>`).join('')}</div>`;
+    return `${toolbar('Receipts', 'receipts-back')}<div class="scroll detail-scroll">${pageTitle('Stay receipts')}${state.records.map((r, i) => `<button class="card document-button" data-action="open-receipt" data-index="${i}"><span class="orange">${icon('doc')}</span><span><strong>${escape(r.guests[0].first)} ${escape(r.guests[0].last)}</strong><small>${dateLabel(r.arrival)} · ${escape(properties[r.property].name)}</small></span>${icon('chevron')}</button>`).join('')}</div>`;
   }
   const settingItems = [
-    ['plan', 'Hostario Start', 'Fino a 5 proprietà.', 'house', 'teal'],
-    ['documents', 'Documenti e Ricevute', 'Stili PDF e ricevute Alloggiati Web', 'doc', 'orange'],
-    ['privacy', 'Privacy e Sicurezza', 'Gestisci i tuoi dati', 'shield', 'green'],
-    ['info', 'Informazioni App', 'Versione e dettagli', 'info', 'blue'],
-    ['support', 'Supporto', 'Aiuto e feedback', 'help', 'purple']
+    ['plan', 'Hostario Start', 'Up to 5 properties.', 'house', 'teal'],
+    ['documents', 'Documents and receipts', 'PDF styles and Alloggiati Web receipts', 'doc', 'orange'],
+    ['privacy', 'Privacy and security', 'Manage your data', 'shield', 'green'],
+    ['info', 'About the app', 'Version and details', 'info', 'blue'],
+    ['support', 'Support', 'Help and feedback', 'help', 'purple']
   ];
   function settings() {
     const row = ([key, title, subtitle, symbol, color]) => `<button class="card settings-row" data-action="setting" data-key="${key}"><span class="settings-icon ${color}">${icon(symbol)}</span><span><strong>${title}</strong><small>${subtitle}</small></span>${icon('chevron')}</button>`;
-    return rootPage('Impostazioni', `<h2 class="section-title">Generali</h2>${settingItems.slice(0, 3).map(row).join('')}<h2 class="section-title">Info e Supporto</h2>${settingItems.slice(3).map(row).join('')}`);
+    return rootPage('Settings', `<h2 class="section-title">General</h2>${settingItems.slice(0, 3).map(row).join('')}<h2 class="section-title">About and support</h2>${settingItems.slice(3).map(row).join('')}`);
   }
   function settingDetail() {
     const item = settingItems.find(item => item[0] === state.settingsPage);
     const content = {
-      plan: `<div class="card"><div class="data-row"><span>Piano</span><strong>Hostario Start</strong></div><div class="data-row"><span>Proprietà</span><strong>${properties.length} / 5</strong></div></div>`,
-      documents: `<button class="card document-button" data-action="settings-receipts">${icon('doc')}<span><strong>Ricevute Soggiorno</strong><small>Apri le anteprime</small></span>${icon('chevron')}</button>`,
-      privacy: `<div class="card"><h2>Dati della sessione</h2><p>Le modifiche restano in questa sessione e si cancellano ricaricando la pagina.</p><button class="text-button" data-action="reset-prompt">Ripristina la sessione</button></div>`,
-      info: `<div class="card"><h2>Hostario</h2><p>Proprietà, ospiti e documenti.<br>Un’app nativa per i tuoi check-in.</p><div class="data-row"><span>Realizzata da</span><strong>Jad Taljabini</strong></div></div>`,
-      support: `<div class="card"><h2>Da dove cominciare</h2><p>Apri Check-in, scegli una proprietà e aggiungi i tuoi ospiti. Puoi provare la scansione del documento e ritrovare tutto nel riepilogo.</p><button class="text-button" data-action="new">Crea un Check-in ${icon('arrow')}</button></div>`
+      plan: `<div class="card"><div class="data-row"><span>Plan</span><strong>Hostario Start</strong></div><div class="data-row"><span>Properties</span><strong>${properties.length} / 5</strong></div></div>`,
+      documents: `<button class="card document-button" data-action="settings-receipts">${icon('doc')}<span><strong>Stay receipts</strong><small>View previews</small></span>${icon('chevron')}</button>`,
+      privacy: `<div class="card"><h2>Session data</h2><p>Changes stay in this session and are cleared when you reload the page.</p><button class="text-button" data-action="reset-prompt">Reset session</button></div>`,
+      info: `<div class="card"><h2>Hostario</h2><p>Properties, guests and documents.<br>A native app for your check-ins.</p><div class="data-row"><span>Created by</span><strong>Jad Taljabini</strong></div></div>`,
+      support: `<div class="card"><h2>Getting started</h2><p>Open Check-ins, choose a property and add your guests. Try scanning a sample document, then review everything in the summary.</p><button class="text-button" data-action="new">Create a check-in ${icon('arrow')}</button></div>`
     };
     return `${toolbar(item[1], 'settings')}<div class="scroll detail-scroll">${pageTitle(item[1])}${content[state.settingsPage]}</div>`;
   }
   function resetPrompt() {
-    return `${toolbar('Dati della sessione', 'setting-back')}<div class="scroll sheet-content">${pageTitle('Ricominciare?', 'Le modifiche fatte in questa demo saranno ripristinate.')}<button class="primary" data-action="reset-confirm">Ripristina sessione</button><button class="text-button" data-action="setting-back">Annulla</button></div>`;
+    return `${toolbar('Session data', 'setting-back')}<div class="scroll sheet-content">${pageTitle('Start again?', 'This will reset the changes you made in this demo.')}<button class="primary" data-action="reset-confirm">Reset session</button><button class="text-button" data-action="setting-back">Cancel</button></div>`;
   }
   function render(focus = true, preserveScroll = false) {
     clearTimeout(timer);
