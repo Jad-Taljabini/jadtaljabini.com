@@ -1,0 +1,9 @@
+# Preserve old app-policy links with permanent redirects to the current pages.
+/hostario-privacy.html /apps/hostario/privacy 301
+/hostario-privacy /apps/hostario/privacy 301
+/hostario-terms.html /apps/hostario/terms 301
+/hostario-terms /apps/hostario/terms 301
+/water-alert-privacy.html /apps/water-alert/privacy 301
+/water-alert-privacy /apps/water-alert/privacy 301
+/water-alert-terms.html /apps/water-alert/terms 301
+/water-alert-terms /apps/water-alert/terms 301
